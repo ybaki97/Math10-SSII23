@@ -31,6 +31,24 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen></iframe>
 
+### More Complex Examples of Boolean Indexing (NumPy)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MrxSMxo7qOs"
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### More Examples with the axis Keyword Arguments
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HSF-hVJx9yM" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Functions in Python
+<iframe width="560" height="315" src="https://www.youtube.com/embed/AGNdRzS9Sqc" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
 
 
 
