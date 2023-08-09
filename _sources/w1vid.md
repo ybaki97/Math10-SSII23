@@ -49,7 +49,43 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen></iframe>
 
+## Lecture 2: Wednesday, August 9th, 2023
 
+### Why pandas? Wrong Approach 1
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p79EalugkwA" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Aside: Numerical Precision and Making Copies
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fslrOiziYL4" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Why pandas? Wrong Approach 2
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0s9dLYk6tKE" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Why pandas? Right Approach
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7PadaX22lpU" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Two ways to index in pandas
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JIw-ne3TYJM" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Boolean indexing in pandas
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MmPLzq2dWQQ" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
 
 
 
