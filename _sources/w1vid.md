@@ -87,5 +87,30 @@ title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen></iframe>
 
+## Lecture 3: Friday, August 11th, 2023
+
+### Exploring the taxis dataset
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-bHv3J7wpEc" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Indexing the taxis dataset
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DkGrHyWQ2Sg" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Working with dates in pandas
+<iframe width="560" height="315" src="https://www.youtube.com/embed/esXOQiuB10Y" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Working with strings in pandas
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qto74qitAAU" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
 
 
