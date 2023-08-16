@@ -36,7 +36,7 @@ allowfullscreen></iframe>
 <font color = red>
 Note: There are few videos from EDA Unit 2 that I have yet
 to film. They will be up shortly. (The material is included at the end of
-Lecture 4, and was covered by Anthony in discussion.
+Lecture 4, and was covered by Anthony in discussion.)
 </font>
 
 ### Introduction to plotting based on "The Grammar of Graphics"
