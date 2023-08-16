@@ -30,3 +30,29 @@ allowfullscreen></iframe>
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen></iframe>
+
+## Lecture 5: Wednesday, August 16th, 2023
+
+### Introduction to plotting based on "The Grammar of Graphics"
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2TouHmueckI" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Introduction to Seaborn and the mpg dataset
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oRJfXV10vbw" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Visualizing the data using Altair
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ICgqoxiHfec" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Visualizing the data using Seaborn and Plotly
+<iframe width="560" height="315" src="https://www.youtube.com/embed/74ir99lMjJc" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
