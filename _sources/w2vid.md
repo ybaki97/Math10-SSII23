@@ -33,6 +33,12 @@ allowfullscreen></iframe>
 
 ## Lecture 5: Wednesday, August 16th, 2023
 
+<font color = red>
+Note: There are few videos from EDA Unit 2 that I have yet
+to film. They will be up shortly. (The material is included at the end of
+Lecture 4, and was covered by Anthony in discussion.
+</font>
+
 ### Introduction to plotting based on "The Grammar of Graphics"
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2TouHmueckI" 
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
