@@ -62,3 +62,29 @@ allowfullscreen></iframe>
 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
 clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 allowfullscreen></iframe>
+
+## Lecture 6: Friday, August 18th, 2023
+
+### Data encoding in Altair - Part 1
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hxmN0jzX9bk" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Data encoding in Altair - Part 2
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cihqp1imchE" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Other types of charts in Altair: Bar Charts
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qJ6YfS3-b1U" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+
+### Other types of charts in Altair: Rectangle Charts and Multi-View Charts
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sT5xxPhtvvg" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
