@@ -1,0 +1,2246 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 8: August 23nd, 2023 &#8212; Math 10, Summer Session II 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/lec8';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lecture 9: August 25th, 2023" href="lec9.html" />
+    <link rel="prev" title="Lecture 7: August 21st, 2023" href="lec7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/anteater.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/anteater.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Summer 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../w1vid.html">Week 1 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec1.html">Lecture 1: August 7th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/wkst1.html">Discussion 1: August 7th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec2.html">Lecture 2: August 9th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/wkst2.html">Discussion 2: August 9th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec3.html">Lecture 3: August 11th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../w2vid.html">Week 2 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec4.html">Lecture 4: August 14th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec5.html">Lecture 5: August 16th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec6.html">Lecture 6: August 18th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lec7.html">Lecture 7: August 21st, 2023</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 8: August 23nd, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec9.html">Lecture 9: August 25th, 2023</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ybaki97/Math10-SSI23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ybaki97/Math10-SSI23/issues/new?title=Issue%20on%20page%20%2Flectures/lec8.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lectures/lec8.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 8: August 23nd, 2023</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-question">Overall Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data">Preparing the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-df-groupby-and-a-for-loop">Using <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> and a for-loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-solved-after-the-df-groupby-practice">What we solved after the <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> practice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-solved-after-the-f-strings-practice">What we solved after the f-strings practice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#itearting-through-df-groupby-objects">Itearting through <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-charts">Plotting charts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-dataframe-method-apply-and-lambda-functions">Practice with the DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code> and lambda functions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-8-august-23nd-2023">
+<h1>Lecture 8: August 23nd, 2023<a class="headerlink" href="#lecture-8-august-23nd-2023" title="Permalink to this headline">#</a></h1>
+<p><strong>Check-in Question:</strong>
+Happy Wednesday! Would you rather be able to fly at 10mph, or run at 100mph?</p>
+<p><strong>Updates and Reminders:</strong></p>
+<ul class="simple">
+<li><p>Homework 3 and Homework 4 due tonight at midnight.</p></li>
+<li><p>Homework 5 and Homework 6 will be posted tonight. They are due Wednesday, Week 4 at midnight.</p></li>
+<li><p>Extra attempts should have been added for last week’s outcome quizzes. If you did not get credit for an outcome quiz last week, you have 2 extra attempts this week. Let me know if these attempts are not showing up.</p></li>
+<li><p>I am still working on getting new outcome quizzes up. I’ll make an announcement when they are live.</p></li>
+</ul>
+<p><strong>Today:</strong></p>
+<ul class="simple">
+<li><p>Last EDA lecture! We’ll go through some important python concepts (f-strings, lambda functions, list comprehension). This is part of what’s called pythonic code.</p></li>
+</ul>
+<section id="overall-question">
+<h2>Overall Question<a class="headerlink" href="#overall-question" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>From 2002 to 2008, how did the unemployment rate change across different industries?</p></li>
+</ul>
+<p>For each of 14 industries, we will write one sentence briefly addressing this question.</p>
+</section>
+<section id="preparing-the-data">
+<h2>Preparing the Data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Load the attached unemployment.csv file as a pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p></li>
+<li><p>Convert the “date” column to a datetime dtype, by using <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>. (Make sure you’ve actually replaced the “date” column, as opposed to displaying a new Series and leaving <code class="docutils literal notranslate"><span class="pre">df</span></code> the same.)</p></li>
+<li><p>Add a “year” column to <code class="docutils literal notranslate"><span class="pre">df</span></code> using the <code class="docutils literal notranslate"><span class="pre">dt</span></code> accessor.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;unemployment.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;unemployment.csv&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/util/_decorators.py:311,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">arguments</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">311</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/io/parsers/readers.py:678,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">663</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>     <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;delimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">},</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">676</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">678</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/io/parsers/readers.py:575,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">575</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/io/parsers/readers.py:932,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">931</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">932</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/io/parsers/readers.py:1216,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1212</span>     <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;rb&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1213</span> <span class="c1"># error: No overload variant of &quot;get_handle&quot; matches argument types</span>
+<span class="g g-Whitespace">   </span><span class="mi">1214</span> <span class="c1"># &quot;Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1215</span> <span class="c1"># , &quot;str&quot;, &quot;bool&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;, &quot;Any&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1216</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>  <span class="c1"># type: ignore[call-overload]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1217</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1219</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1220</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1221</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1223</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1224</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1225</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1226</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1227</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/io/common.py:786,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">781</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">782</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">785</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">786</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">787</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;unemployment.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [4],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;industry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;industry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;industry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;industry&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s convert the date column to a datetime dtype.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#have I actually changed the column?</span>
+<span class="c1">#no!</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [7],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#have I actually changed the column?</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1">#no!</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s add a “year” column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-df-groupby-and-a-for-loop">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> and a for-loop<a class="headerlink" href="#using-df-groupby-and-a-for-loop" title="Permalink to this headline">#</a></h2>
+<p><strong>Overview of our setup:</strong> We’ll first go through the problem statement and talk about what the problem is asking for. We’ll then break the problem into smaller pieces and better under <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> objects before formally writing out a solution.</p>
+<p>GroupBy objects can be pretty mysterious. The point of these problems is to get more comfortable with them.</p>
+<p>(There are other solutions possible, but the point of this lecture is to practice iterating over a pandas GroupBy object.)</p>
+<p>There are 14 total industries in the dataset. Here are two examples of the sentences we want to produce. Notice how in one of the sentences we use the word “increased” and in the other sentence we use the word “decreased”. Notice also that each of our numbers shows two decimal places.</p>
+<blockquote>
+<div><p>From 2002 to 2008, the median unemployment rate in Leisure and hospitality increased by 2.94%, from 8.50 to 8.75.</p>
+</div></blockquote>
+<blockquote>
+<div><p>From 2002 to 2008, the median unemployment rate in Manufacturing decreased by 18.18%, from 6.60 to 5.40.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Take a minute to understand these computations. For example, do you see why we are saying 8.50 to 8.75 is an increase of 2.94%?</p></li>
+</ul>
+<p>Note: I’m not worried about the sign of this number. We’ll take care of it when we code the solution to the problem.
+Formula for percent change:
+$<span class="math notranslate nohighlight">\(
+\frac{x_{\text{new}}-x_{\text{old}}}{x_{\text{old}}} \times 100
+\)</span>$</p>
+<p>Let’s do a sanity check computation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mf">8.75</span><span class="o">-</span><span class="mf">8.5</span><span class="p">)</span><span class="o">/</span><span class="mf">8.5</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.941176470588235
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>For each of the 14 industries, append the corresponding sentence to <code class="docutils literal notranslate"><span class="pre">text_list</span></code>. Use the following template.</p></li>
+</ul>
+<p>Before we solve this problem, we’ll go over a few related concepts.</p>
+<p>Note for those reading this after the lecture. We built this code slowly after trying the examples below.</p>
+<ul class="simple">
+<li><p>Make sure you understand the logic of this skeleton, even if you don’t understand all the individual parts yet.</p></li>
+</ul>
+<div class="highlight-years notranslate"><div class="highlight"><pre><span></span>text_list = []
+for ???, ??? in df.groupby(???):
+    ??? (as many lines as you need)
+    change = ??? if ??? else ??? # &quot;increased&quot; or &quot;decreased&quot; as appropriate
+    sentence = f&#39;&#39;&#39;From {years[0]} to {years[1]}, the median unemployment rate in {???} {change} by {???:.2%}, from {???:.2f} to {???:.2f}.&#39;&#39;&#39;
+    text_list.append(sentence)
+</pre></div>
+</div>
+<section id="what-we-solved-after-the-df-groupby-practice">
+<h3>What we solved after the <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> practice<a class="headerlink" href="#what-we-solved-after-the-df-groupby-practice" title="Permalink to this headline">#</a></h3>
+<p>What do you think we should organized our data based on?
+The chat has answered: For this problem, it makes sense for us to sort by “industry”.</p>
+<p>Notes from building this code together:</p>
+<ul class="simple">
+<li><p>In the tuple unpacking below, the first variable gives industry, and the second variable gives the sub-DataFrame corresponding to that industry.</p></li>
+<li><p>How will I know if the median unemployment rate increased or decreased? If <code class="docutils literal notranslate"><span class="pre">median_2002</span> <span class="pre">&lt;</span> <span class="pre">median_2008</span></code>, then we can say that the rate increased.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2008</span><span class="p">]</span>
+<span class="n">text_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;industry&quot;</span><span class="p">):</span>
+    <span class="c1">#let&#39;s get the median unemployment rate for these two years</span>
+    <span class="n">median_2002</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">median_2008</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="s2">&quot;increased&quot;</span> <span class="k">if</span> <span class="n">median_2002</span> <span class="o">&lt;</span> <span class="n">median_2008</span> <span class="k">else</span> <span class="s2">&quot;decreased&quot;</span> <span class="c1"># &quot;increased&quot; or &quot;decreased&quot; as appropriate</span>
+    <span class="c1">#I know that no values stayed fixed in this data, so let&#39;s not worry about if the rate is equal</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2008</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">text_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;industry&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1">#let&#39;s get the median unemployment rate for these two years</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">median_2002</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">median_2008</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-we-solved-after-the-f-strings-practice">
+<h3>What we solved after the f-strings practice<a class="headerlink" href="#what-we-solved-after-the-f-strings-practice" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2008</span><span class="p">]</span>
+<span class="n">text_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;industry&quot;</span><span class="p">):</span>
+    <span class="c1">#let&#39;s get the median unemployment rate for these two years</span>
+    <span class="n">median_2002</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">median_2008</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">change</span> <span class="o">=</span> <span class="s2">&quot;increased&quot;</span> <span class="k">if</span> <span class="n">median_2002</span> <span class="o">&lt;</span> <span class="n">median_2008</span> <span class="k">else</span> <span class="s2">&quot;decreased&quot;</span> <span class="c1"># &quot;increased&quot; or &quot;decreased&quot; as appropriate</span>
+    <span class="c1">#I know that no values stayed fixed in this data, so let&#39;s not worry about if the rate is equal</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;From </span><span class="si">{</span><span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">, the median unemployment rate in </span><span class="si">{</span><span class="n">ind_name</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">change</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="nb">abs</span><span class="p">((</span><span class="n">median_2008</span><span class="o">-</span><span class="n">median_2002</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">median_2002</span><span class="p">))</span><span class="si">:</span><span class="s1">.2%</span><span class="si">}</span><span class="s1">, from </span><span class="si">{</span><span class="n">median_2002</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">median_2008</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">.&#39;&#39;&#39;</span>
+    <span class="n">text_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">years</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2002</span><span class="p">,</span><span class="mi">2008</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">text_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;industry&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="c1">#let&#39;s get the median unemployment rate for these two years</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">median_2002</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">median_2008</span> <span class="o">=</span> <span class="n">sub_df</span><span class="p">[</span><span class="n">sub_df</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">years</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="s2">&quot;rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="itearting-through-df-groupby-objects">
+<h3>Itearting through <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> objects<a class="headerlink" href="#itearting-through-df-groupby-objects" title="Permalink to this headline">#</a></h3>
+<p>We’ve seen examples of calling methods on GroupBy objects, but how could we iterate through a GroupBy object? What does it even look like?</p>
+<ul class="simple">
+<li><p>Recall, we’ve seen <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> with the <code class="docutils literal notranslate"><span class="pre">mpg</span></code> dataset. Here’s a quick refresher of how we used it.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">mpg</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+    </tr>
+    <tr>
+      <th>origin</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>europe</th>
+      <td>26.5</td>
+      <td>4.0</td>
+      <td>104.5</td>
+      <td>76.5</td>
+      <td>2240.0</td>
+      <td>15.7</td>
+      <td>76.0</td>
+    </tr>
+    <tr>
+      <th>japan</th>
+      <td>31.6</td>
+      <td>4.0</td>
+      <td>97.0</td>
+      <td>75.0</td>
+      <td>2155.0</td>
+      <td>16.4</td>
+      <td>78.0</td>
+    </tr>
+    <tr>
+      <th>usa</th>
+      <td>18.5</td>
+      <td>6.0</td>
+      <td>250.0</td>
+      <td>105.0</td>
+      <td>3365.0</td>
+      <td>15.0</td>
+      <td>76.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Maybe you feel that GroupBy is a little mysterious? We’ve seen examples of calling methods on this object, but what does the object itself actually look like?</p>
+<ul class="simple">
+<li><p>For example, if we think of <code class="docutils literal notranslate"><span class="pre">list</span></code> objects, we know the general shape of a list. Similar for things like dictionaries, tuples, sets, etc.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mpg</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fddc97f5cd0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start by looking at an example taken from <a class="reference external" href="https://www.geeksforgeeks.org/how-to-iterate-over-dataframe-groups-in-python-pandas/">this link</a>. This is good advice for math in general: we’re going to start with a much easier example before we use our ideas to solve the more complicated problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;X&#39;: [&#39;A&#39;, &#39;B&#39;, &#39;A&#39;, &#39;B&#39;], &#39;Y&#39;: [1, 4, 3, 2]}
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Convert <code class="docutils literal notranslate"><span class="pre">my_dict</span></code> to a pandas DataFrame by using the pandas function <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. Call the result <code class="docutils literal notranslate"><span class="pre">df</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">groupby</span></code> to group <code class="docutils literal notranslate"><span class="pre">df</span></code> by “X”. Call the result <code class="docutils literal notranslate"><span class="pre">df_groups</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_groups</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fddc87c7220&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Iterate through <code class="docutils literal notranslate"><span class="pre">df_groups</span></code> using a for-loop. For each iteration, print the following to get a feel for what the objects look like:</p>
+<ul>
+<li><p>The data type of the returned object</p></li>
+<li><p>The length of each object</p></li>
+<li><p>The 0th element of each object, the 1st element of each object, etc.</p></li>
+<li><p>name of the group along with the sub-DataFrame belonging to that group. Can you predict how many times we will go through the for-loop, based on our sample data?</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">unknown</span> <span class="ow">in</span> <span class="n">df_groups</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">unknown</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;tuple&#39;&gt;
+&lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Maybe this is strange? If we iterate through <code class="docutils literal notranslate"><span class="pre">df_groups</span></code>, we see that the objects are tuples. The next natural question to ask is how long is each tuple?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">df_groups</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tup</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we know that each tuple is length 2. Maybe now we want to ask what is each element?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print the 0th element of each tuple</span>
+<span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">df_groups</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
+&lt;class &#39;str&#39;&gt;
+B
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Big Reminder:</strong> We’re grouping <code class="docutils literal notranslate"><span class="pre">df</span></code> by “X”, so we sort based on what values appear in the “X” column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print the 1st element of each tuple</span>
+<span class="k">for</span> <span class="n">tup</span> <span class="ow">in</span> <span class="n">df_groups</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">tup</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   X  Y
+0  A  1
+2  A  3
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+   X  Y
+1  B  4
+3  B  2
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of tuple unpacking</span>
+<span class="c1">#split the tuple into two variables</span>
+<span class="k">for</span> <span class="n">group_name</span><span class="p">,</span><span class="n">sub_data</span> <span class="ow">in</span> <span class="n">df_groups</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The name of the group is: </span><span class="si">{group_name}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sub_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The name of the group is: {group_name}
+   X  Y
+0  A  1
+2  A  3
+The name of the group is: {group_name}
+   X  Y
+1  B  4
+3  B  2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of tuple unpacking</span>
+<span class="c1">#split the tuple into two variables</span>
+<span class="c1">#we also use f-strings to format</span>
+<span class="k">for</span> <span class="n">group_name</span><span class="p">,</span><span class="n">sub_data</span> <span class="ow">in</span> <span class="n">df_groups</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The name of the group is: </span><span class="si">{</span><span class="n">group_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sub_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The name of the group is: A
+   X  Y
+0  A  1
+2  A  3
+The name of the group is: B
+   X  Y
+1  B  4
+3  B  2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>X</th>
+      <th>Y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>A</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>B</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>A</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>B</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Observations:</strong></p>
+<p>Recall <code class="docutils literal notranslate"><span class="pre">df_groups</span></code> sorts the data by “X” values. When we iterate through <code class="docutils literal notranslate"><span class="pre">df_groups</span></code>, we get tuples where the 0th entry represents a value of “X”, and the 1st entry represent the sub-DataFrame of <code class="docutils literal notranslate"><span class="pre">df</span></code> where all the “X” values are equal to what’s in position 0.</p>
+</section>
+<section id="f-strings">
+<h3>f-strings<a class="headerlink" href="#f-strings" title="Permalink to this headline">#</a></h3>
+<p>Before we try the above problem, let’s see some examples with f-strings and string formatting.</p>
+<p>f-strings stands for “format”-strings, and gives us a nice way of passing variables to strings. These are relatively new to Python, and all new code should use them over the older methods. However, if you’re reading older code, you might see strings formatted in a different way.</p>
+<p><a class="reference external" href="https://fstring.help/cheat/">See this link</a> for f-string formatting options.</p>
+<ul class="simple">
+<li><p>Import NumPy and instantiate a random number generator object.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Make a length 100 NumPy array of random real numbers between 0 and 1. Call it <code class="docutils literal notranslate"><span class="pre">arr</span></code>. Iterate through this array by using <code class="docutils literal notranslate"><span class="pre">n,x</span> <span class="pre">in</span> <span class="pre">enumerate(arr)</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>Random real number n of 100: x</p>
+</div></blockquote>
+<p>Let’s see a quick example with enumerate, just to get an idea of what’s going on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Math&quot;</span><span class="p">,</span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="s2">&quot;fun&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((0, &#39;Math&#39;), (1, &#39;10&#39;), (2, &#39;is&#39;), (3, &#39;fun&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.83225053, 0.89233443, 0.72268261, 0.23862734, 0.18481456,
+       0.69303434, 0.15252382, 0.56741462, 0.79775067, 0.80928075,
+       0.44885501, 0.25199459, 0.94183906, 0.65417938, 0.85248361,
+       0.9437066 , 0.77201332, 0.66511094, 0.75511901, 0.04651922,
+       0.31257314, 0.86864878, 0.22009988, 0.36363003, 0.13868726,
+       0.98928423, 0.9893698 , 0.87428832, 0.33302739, 0.10799492,
+       0.88628514, 0.59175777, 0.43382787, 0.28445833, 0.11541708,
+       0.41160997, 0.55137071, 0.94743751, 0.1864816 , 0.58641979,
+       0.50918341, 0.40164212, 0.1230375 , 0.2702702 , 0.39776215,
+       0.12306976, 0.83785185, 0.36536041, 0.9906501 , 0.72139504,
+       0.66249806, 0.87405125, 0.82381837, 0.02297304, 0.0733689 ,
+       0.405039  , 0.66185386, 0.98181891, 0.93616306, 0.92152939,
+       0.43520362, 0.38502913, 0.81392108, 0.20676778, 0.26489326,
+       0.48641338, 0.8303987 , 0.55445557, 0.75329212, 0.23763219,
+       0.01565932, 0.40584535, 0.54538338, 0.55265029, 0.26797723,
+       0.16467068, 0.77916422, 0.42878481, 0.80698378, 0.84712147,
+       0.65796553, 0.7261127 , 0.43208838, 0.4230995 , 0.52195918,
+       0.34759707, 0.8110285 , 0.20273004, 0.81903036, 0.06464654,
+       0.18626828, 0.79050868, 0.38013576, 0.67508948, 0.83501541,
+       0.4582217 , 0.43194812, 0.69273016, 0.67395987, 0.44561529])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This will print the same sentence 100 times</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Random real number index of 100: value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+Random real number index of 100: value
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Random real number </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> of 100: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random real number 0 of 100: 0.832250526185226
+Random real number 1 of 100: 0.8923344328128373
+Random real number 2 of 100: 0.7226826118288507
+Random real number 3 of 100: 0.23862733978468342
+Random real number 4 of 100: 0.18481456116693362
+Random real number 5 of 100: 0.6930343399300858
+Random real number 6 of 100: 0.15252382004332232
+Random real number 7 of 100: 0.5674146216100785
+Random real number 8 of 100: 0.7977506744498813
+Random real number 9 of 100: 0.8092807456711104
+Random real number 10 of 100: 0.448855007232583
+Random real number 11 of 100: 0.2519945860459476
+Random real number 12 of 100: 0.9418390592865207
+Random real number 13 of 100: 0.6541793774531498
+Random real number 14 of 100: 0.8524836142286076
+Random real number 15 of 100: 0.9437066005830038
+Random real number 16 of 100: 0.7720133163090223
+Random real number 17 of 100: 0.665110936106121
+Random real number 18 of 100: 0.7551190121166783
+Random real number 19 of 100: 0.04651921998535469
+Random real number 20 of 100: 0.3125731425352851
+Random real number 21 of 100: 0.8686487828102586
+Random real number 22 of 100: 0.22009987986444524
+Random real number 23 of 100: 0.36363003464691157
+Random real number 24 of 100: 0.13868725789540126
+Random real number 25 of 100: 0.9892842253191683
+Random real number 26 of 100: 0.9893697962065322
+Random real number 27 of 100: 0.8742883202099353
+Random real number 28 of 100: 0.3330273945775192
+Random real number 29 of 100: 0.10799492062884208
+Random real number 30 of 100: 0.8862851400165168
+Random real number 31 of 100: 0.5917577682026077
+Random real number 32 of 100: 0.4338278653043077
+Random real number 33 of 100: 0.28445832943262217
+Random real number 34 of 100: 0.11541708269217432
+Random real number 35 of 100: 0.41160996598974375
+Random real number 36 of 100: 0.5513707124435888
+Random real number 37 of 100: 0.947437513492564
+Random real number 38 of 100: 0.18648159575444723
+Random real number 39 of 100: 0.586419791188773
+Random real number 40 of 100: 0.5091834120292932
+Random real number 41 of 100: 0.40164211666532446
+Random real number 42 of 100: 0.12303749683186682
+Random real number 43 of 100: 0.27027019568312727
+Random real number 44 of 100: 0.39776214850334435
+Random real number 45 of 100: 0.12306975867131542
+Random real number 46 of 100: 0.8378518512759313
+Random real number 47 of 100: 0.36536041488629656
+Random real number 48 of 100: 0.9906501000410853
+Random real number 49 of 100: 0.7213950360115576
+Random real number 50 of 100: 0.662498057580572
+Random real number 51 of 100: 0.8740512537079722
+Random real number 52 of 100: 0.8238183702858567
+Random real number 53 of 100: 0.022973042866035964
+Random real number 54 of 100: 0.0733689028657416
+Random real number 55 of 100: 0.4050389970634636
+Random real number 56 of 100: 0.6618538646225287
+Random real number 57 of 100: 0.9818189128822015
+Random real number 58 of 100: 0.9361630611371764
+Random real number 59 of 100: 0.9215293939878453
+Random real number 60 of 100: 0.435203615849591
+Random real number 61 of 100: 0.38502912883435214
+Random real number 62 of 100: 0.8139210775846283
+Random real number 63 of 100: 0.20676778004539187
+Random real number 64 of 100: 0.2648932577640971
+Random real number 65 of 100: 0.4864133799791971
+Random real number 66 of 100: 0.830398695907892
+Random real number 67 of 100: 0.554455573318964
+Random real number 68 of 100: 0.7532921205634067
+Random real number 69 of 100: 0.23763219385240208
+Random real number 70 of 100: 0.01565932408565096
+Random real number 71 of 100: 0.40584534783936776
+Random real number 72 of 100: 0.5453833796027513
+Random real number 73 of 100: 0.5526502946544347
+Random real number 74 of 100: 0.2679772322588392
+Random real number 75 of 100: 0.164670682279345
+Random real number 76 of 100: 0.779164216745928
+Random real number 77 of 100: 0.42878481014499525
+Random real number 78 of 100: 0.8069837811480093
+Random real number 79 of 100: 0.8471214659042864
+Random real number 80 of 100: 0.6579655306805325
+Random real number 81 of 100: 0.7261127033168878
+Random real number 82 of 100: 0.43208837823433377
+Random real number 83 of 100: 0.42309950138127883
+Random real number 84 of 100: 0.521959178915994
+Random real number 85 of 100: 0.3475970737742089
+Random real number 86 of 100: 0.8110285016417065
+Random real number 87 of 100: 0.20273003987662774
+Random real number 88 of 100: 0.8190303561035639
+Random real number 89 of 100: 0.06464653950666377
+Random real number 90 of 100: 0.1862682779995778
+Random real number 91 of 100: 0.7905086778467685
+Random real number 92 of 100: 0.3801357609535655
+Random real number 93 of 100: 0.6750894830459565
+Random real number 94 of 100: 0.8350154083426968
+Random real number 95 of 100: 0.458221703568243
+Random real number 96 of 100: 0.43194811955295476
+Random real number 97 of 100: 0.6927301575012619
+Random real number 98 of 100: 0.6739598718329914
+Random real number 99 of 100: 0.4456152880263755
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Use f-strings and string formatting to print the corresponding versions of this sentence:</p></li>
+</ul>
+<blockquote>
+<div><p>Percent chance that Math 10 is fun today: x.yz%</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Percent chance that Math 10 is fun on day </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> of 100: </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percent chance that Math 10 is fun on day 0 of 100: 83.23%
+Percent chance that Math 10 is fun on day 1 of 100: 89.23%
+Percent chance that Math 10 is fun on day 2 of 100: 72.27%
+Percent chance that Math 10 is fun on day 3 of 100: 23.86%
+Percent chance that Math 10 is fun on day 4 of 100: 18.48%
+Percent chance that Math 10 is fun on day 5 of 100: 69.30%
+Percent chance that Math 10 is fun on day 6 of 100: 15.25%
+Percent chance that Math 10 is fun on day 7 of 100: 56.74%
+Percent chance that Math 10 is fun on day 8 of 100: 79.78%
+Percent chance that Math 10 is fun on day 9 of 100: 80.93%
+Percent chance that Math 10 is fun on day 10 of 100: 44.89%
+Percent chance that Math 10 is fun on day 11 of 100: 25.20%
+Percent chance that Math 10 is fun on day 12 of 100: 94.18%
+Percent chance that Math 10 is fun on day 13 of 100: 65.42%
+Percent chance that Math 10 is fun on day 14 of 100: 85.25%
+Percent chance that Math 10 is fun on day 15 of 100: 94.37%
+Percent chance that Math 10 is fun on day 16 of 100: 77.20%
+Percent chance that Math 10 is fun on day 17 of 100: 66.51%
+Percent chance that Math 10 is fun on day 18 of 100: 75.51%
+Percent chance that Math 10 is fun on day 19 of 100: 4.65%
+Percent chance that Math 10 is fun on day 20 of 100: 31.26%
+Percent chance that Math 10 is fun on day 21 of 100: 86.86%
+Percent chance that Math 10 is fun on day 22 of 100: 22.01%
+Percent chance that Math 10 is fun on day 23 of 100: 36.36%
+Percent chance that Math 10 is fun on day 24 of 100: 13.87%
+Percent chance that Math 10 is fun on day 25 of 100: 98.93%
+Percent chance that Math 10 is fun on day 26 of 100: 98.94%
+Percent chance that Math 10 is fun on day 27 of 100: 87.43%
+Percent chance that Math 10 is fun on day 28 of 100: 33.30%
+Percent chance that Math 10 is fun on day 29 of 100: 10.80%
+Percent chance that Math 10 is fun on day 30 of 100: 88.63%
+Percent chance that Math 10 is fun on day 31 of 100: 59.18%
+Percent chance that Math 10 is fun on day 32 of 100: 43.38%
+Percent chance that Math 10 is fun on day 33 of 100: 28.45%
+Percent chance that Math 10 is fun on day 34 of 100: 11.54%
+Percent chance that Math 10 is fun on day 35 of 100: 41.16%
+Percent chance that Math 10 is fun on day 36 of 100: 55.14%
+Percent chance that Math 10 is fun on day 37 of 100: 94.74%
+Percent chance that Math 10 is fun on day 38 of 100: 18.65%
+Percent chance that Math 10 is fun on day 39 of 100: 58.64%
+Percent chance that Math 10 is fun on day 40 of 100: 50.92%
+Percent chance that Math 10 is fun on day 41 of 100: 40.16%
+Percent chance that Math 10 is fun on day 42 of 100: 12.30%
+Percent chance that Math 10 is fun on day 43 of 100: 27.03%
+Percent chance that Math 10 is fun on day 44 of 100: 39.78%
+Percent chance that Math 10 is fun on day 45 of 100: 12.31%
+Percent chance that Math 10 is fun on day 46 of 100: 83.79%
+Percent chance that Math 10 is fun on day 47 of 100: 36.54%
+Percent chance that Math 10 is fun on day 48 of 100: 99.07%
+Percent chance that Math 10 is fun on day 49 of 100: 72.14%
+Percent chance that Math 10 is fun on day 50 of 100: 66.25%
+Percent chance that Math 10 is fun on day 51 of 100: 87.41%
+Percent chance that Math 10 is fun on day 52 of 100: 82.38%
+Percent chance that Math 10 is fun on day 53 of 100: 2.30%
+Percent chance that Math 10 is fun on day 54 of 100: 7.34%
+Percent chance that Math 10 is fun on day 55 of 100: 40.50%
+Percent chance that Math 10 is fun on day 56 of 100: 66.19%
+Percent chance that Math 10 is fun on day 57 of 100: 98.18%
+Percent chance that Math 10 is fun on day 58 of 100: 93.62%
+Percent chance that Math 10 is fun on day 59 of 100: 92.15%
+Percent chance that Math 10 is fun on day 60 of 100: 43.52%
+Percent chance that Math 10 is fun on day 61 of 100: 38.50%
+Percent chance that Math 10 is fun on day 62 of 100: 81.39%
+Percent chance that Math 10 is fun on day 63 of 100: 20.68%
+Percent chance that Math 10 is fun on day 64 of 100: 26.49%
+Percent chance that Math 10 is fun on day 65 of 100: 48.64%
+Percent chance that Math 10 is fun on day 66 of 100: 83.04%
+Percent chance that Math 10 is fun on day 67 of 100: 55.45%
+Percent chance that Math 10 is fun on day 68 of 100: 75.33%
+Percent chance that Math 10 is fun on day 69 of 100: 23.76%
+Percent chance that Math 10 is fun on day 70 of 100: 1.57%
+Percent chance that Math 10 is fun on day 71 of 100: 40.58%
+Percent chance that Math 10 is fun on day 72 of 100: 54.54%
+Percent chance that Math 10 is fun on day 73 of 100: 55.27%
+Percent chance that Math 10 is fun on day 74 of 100: 26.80%
+Percent chance that Math 10 is fun on day 75 of 100: 16.47%
+Percent chance that Math 10 is fun on day 76 of 100: 77.92%
+Percent chance that Math 10 is fun on day 77 of 100: 42.88%
+Percent chance that Math 10 is fun on day 78 of 100: 80.70%
+Percent chance that Math 10 is fun on day 79 of 100: 84.71%
+Percent chance that Math 10 is fun on day 80 of 100: 65.80%
+Percent chance that Math 10 is fun on day 81 of 100: 72.61%
+Percent chance that Math 10 is fun on day 82 of 100: 43.21%
+Percent chance that Math 10 is fun on day 83 of 100: 42.31%
+Percent chance that Math 10 is fun on day 84 of 100: 52.20%
+Percent chance that Math 10 is fun on day 85 of 100: 34.76%
+Percent chance that Math 10 is fun on day 86 of 100: 81.10%
+Percent chance that Math 10 is fun on day 87 of 100: 20.27%
+Percent chance that Math 10 is fun on day 88 of 100: 81.90%
+Percent chance that Math 10 is fun on day 89 of 100: 6.46%
+Percent chance that Math 10 is fun on day 90 of 100: 18.63%
+Percent chance that Math 10 is fun on day 91 of 100: 79.05%
+Percent chance that Math 10 is fun on day 92 of 100: 38.01%
+Percent chance that Math 10 is fun on day 93 of 100: 67.51%
+Percent chance that Math 10 is fun on day 94 of 100: 83.50%
+Percent chance that Math 10 is fun on day 95 of 100: 45.82%
+Percent chance that Math 10 is fun on day 96 of 100: 43.19%
+Percent chance that Math 10 is fun on day 97 of 100: 69.27%
+Percent chance that Math 10 is fun on day 98 of 100: 67.40%
+Percent chance that Math 10 is fun on day 99 of 100: 44.56%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Go back to the original question about the unemployment dataset now! We are ready to tackle it!</p>
+</section>
+</section>
+<section id="plotting-charts">
+<h2>Plotting charts<a class="headerlink" href="#plotting-charts" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Using the same dataset, now group <code class="docutils literal notranslate"><span class="pre">df</span></code> by “Industry”. Call this object <code class="docutils literal notranslate"><span class="pre">df_ind</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ind</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;industry&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">Input In [39],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df_ind</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;industry&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/core/frame.py:7721,</span> in <span class="ni">DataFrame.groupby</span><span class="nt">(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7716</span> <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">7718</span> <span class="c1"># https://github.com/python/mypy/issues/7642</span>
+<span class="g g-Whitespace">   </span><span class="mi">7719</span> <span class="c1"># error: Argument &quot;squeeze&quot; to &quot;DataFrameGroupBy&quot; has incompatible type</span>
+<span class="g g-Whitespace">   </span><span class="mi">7720</span> <span class="c1"># &quot;Union[bool, NoDefault]&quot;; expected &quot;bool&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">7721</span> <span class="k">return</span> <span class="n">DataFrameGroupBy</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">7722</span>     <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7723</span>     <span class="n">keys</span><span class="o">=</span><span class="n">by</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7724</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7725</span>     <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7726</span>     <span class="n">as_index</span><span class="o">=</span><span class="n">as_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7727</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7728</span>     <span class="n">group_keys</span><span class="o">=</span><span class="n">group_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7729</span>     <span class="n">squeeze</span><span class="o">=</span><span class="n">squeeze</span><span class="p">,</span>  <span class="c1"># type: ignore[arg-type]</span>
+<span class="g g-Whitespace">   </span><span class="mi">7730</span>     <span class="n">observed</span><span class="o">=</span><span class="n">observed</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7731</span>     <span class="n">dropna</span><span class="o">=</span><span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">7732</span> <span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/core/groupby/groupby.py:882,</span> in <span class="ni">GroupBy.__init__</span><span class="nt">(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">879</span> <span class="k">if</span> <span class="n">grouper</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="kn">from</span> <span class="nn">pandas.core.groupby.grouper</span> <span class="kn">import</span> <span class="n">get_grouper</span>
+<span class="ne">--&gt; </span><span class="mi">882</span>     <span class="n">grouper</span><span class="p">,</span> <span class="n">exclusions</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">get_grouper</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span>         <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span>         <span class="n">keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">885</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>         <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>         <span class="n">observed</span><span class="o">=</span><span class="n">observed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span>         <span class="n">mutated</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mutated</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span>         <span class="n">dropna</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">891</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">893</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span>
+<span class="g g-Whitespace">    </span><span class="mi">894</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/math9/lib/python3.9/site-packages/pandas/core/groupby/grouper.py:882,</span> in <span class="ni">get_grouper</span><span class="nt">(obj, key, axis, level, sort, observed, mutated, validate, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>         <span class="n">in_axis</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">gpr</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">gpr</span><span class="p">,</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">882</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">gpr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">883</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gpr</span><span class="p">,</span> <span class="n">Grouper</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gpr</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">884</span>     <span class="c1"># Add key to exclusions</span>
+<span class="g g-Whitespace">    </span><span class="mi">885</span>     <span class="n">exclusions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gpr</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;industry&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_chart</span><span class="p">(</span><span class="n">df_sub</span><span class="p">):</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_sub</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;year:N&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;median(rate)&quot;</span><span class="p">,</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span><span class="s2">&quot;median(rate)&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">chart</span><span class="o">+</span><span class="n">chart</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_chart</span><span class="p">(</span><span class="n">df_ind</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="s2">&quot;Manufacturing&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [42],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">make_chart</span><span class="p">(</span><span class="n">df_ind</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="s2">&quot;Manufacturing&quot;</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;df_ind&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">make_chart</span></code> which takes as input a DataFrame of <code class="docutils literal notranslate"><span class="pre">df_ind</span></code>, and as output returns a chart that looks like the following:</p></li>
+</ul>
+<p><img alt="" src="../_images/sample-chart1.png" /></p>
+<ul class="simple">
+<li><p>Using list comprehension, create a list of charts by using <code class="docutils literal notranslate"><span class="pre">make_chart</span></code> applied to each industry in <code class="docutils literal notranslate"><span class="pre">df_ind</span></code>. Use f-strings and <code class="docutils literal notranslate"><span class="pre">.property(title=)</span></code> to give each chart a title telling us which industry is being represented. Call this list <code class="docutils literal notranslate"><span class="pre">chart_list</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#list of charts without titles</span>
+<span class="n">chart_list0</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_chart</span><span class="p">(</span><span class="n">sub_df</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df_ind</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [43],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#list of charts without titles</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">chart_list0</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_chart</span><span class="p">(</span><span class="n">sub_df</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df_ind</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df_ind&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Recall that the <code class="docutils literal notranslate"><span class="pre">make_chart</span></code> function returns a chart, which means that we can directly edit properties of the resulting chart.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_chart</span><span class="p">(</span><span class="n">sub_df</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Industry: </span><span class="si">{</span><span class="n">ind_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df_ind</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [44],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">chart_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_chart</span><span class="p">(</span><span class="n">sub_df</span><span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Industry: </span><span class="si">{</span><span class="n">ind_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind_name</span><span class="p">,</span><span class="n">sub_df</span> <span class="ow">in</span> <span class="n">df_ind</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;df_ind&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Apply the Altair function <code class="docutils literal notranslate"><span class="pre">vconcat</span></code> to <code class="docutils literal notranslate"><span class="pre">chart_list</span></code>. You’ll need to unpack <code class="docutils literal notranslate"><span class="pre">char_list</span></code> using <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#without the titles</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">chart_list0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [45],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#without the titles</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">chart_list0</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;chart_list0&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#with the titles </span>
+<span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">chart_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [46],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#with the titles </span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">alt</span><span class="o">.</span><span class="n">vconcat</span><span class="p">(</span><span class="o">*</span><span class="n">chart_list</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;chart_list&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-with-the-dataframe-method-apply-and-lambda-functions">
+<h2>Practice with the DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code> and lambda functions<a class="headerlink" href="#practice-with-the-dataframe-method-apply-and-lambda-functions" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Load the “taxis” dataset from Seaborn and drop rows with missing values.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxis</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;taxis&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3591</th>
+      <td>2019-03-08 09:39:40</td>
+      <td>2019-03-08 09:57:44</td>
+      <td>1</td>
+      <td>1.75</td>
+      <td>12.5</td>
+      <td>3.95</td>
+      <td>0.0</td>
+      <td>19.75</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Upper West Side South</td>
+      <td>Times Sq/Theatre District</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>5834</th>
+      <td>2019-03-04 16:31:12</td>
+      <td>2019-03-04 16:58:59</td>
+      <td>1</td>
+      <td>6.30</td>
+      <td>25.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>26.80</td>
+      <td>green</td>
+      <td>credit card</td>
+      <td>DUMBO/Vinegar Hill</td>
+      <td>West Village</td>
+      <td>Brooklyn</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>3315</th>
+      <td>2019-03-05 19:41:18</td>
+      <td>2019-03-05 19:48:35</td>
+      <td>5</td>
+      <td>1.39</td>
+      <td>7.0</td>
+      <td>1.50</td>
+      <td>0.0</td>
+      <td>12.80</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Midtown East</td>
+      <td>Gramercy</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>2019-03-24 20:14:24</td>
+      <td>2019-03-24 20:19:18</td>
+      <td>1</td>
+      <td>0.70</td>
+      <td>5.5</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>9.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Lincoln Square East</td>
+      <td>Lincoln Square West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>5054</th>
+      <td>2019-03-08 19:02:58</td>
+      <td>2019-03-08 19:21:16</td>
+      <td>1</td>
+      <td>3.01</td>
+      <td>14.0</td>
+      <td>2.00</td>
+      <td>0.0</td>
+      <td>20.30</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Garment District</td>
+      <td>Lenox Hill West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>As a warm-up with <code class="docutils literal notranslate"><span class="pre">apply</span></code>, try applying the <code class="docutils literal notranslate"><span class="pre">len</span></code> function using first <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> and then <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>. We’ll see more serious uses below.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(6433, 14)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickup             6433
+dropoff            6433
+passengers         6433
+distance           6433
+fare               6433
+tip                6433
+tolls              6433
+total              6433
+color              6433
+payment            6433
+pickup_zone        6433
+dropoff_zone       6433
+pickup_borough     6433
+dropoff_borough    6433
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       14
+1       14
+2       14
+3       14
+4       14
+        ..
+6428    14
+6429    14
+6430    14
+6431    14
+6432    14
+Length: 6433, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see an example now where the values will be different for different columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">taxis</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pickup             datetime64[ns]
+dropoff            datetime64[ns]
+passengers                  int64
+distance                  float64
+fare                      float64
+tip                       float64
+tolls                     float64
+total                     float64
+color                      object
+payment                    object
+pickup_zone                object
+dropoff_zone               object
+pickup_borough             object
+dropoff_borough            object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Write a function <code class="docutils literal notranslate"><span class="pre">has_airport</span></code> which takes as input a row from <code class="docutils literal notranslate"><span class="pre">df</span></code> (not a row label but an entire row) and as output returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the “pickup_zone” or “dropoff_zone” entry contains the substring “Airport”.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Make a new column “Airport0” which contains <code class="docutils literal notranslate"><span class="pre">True</span></code> if the “pickup_zone” or “dropoff_zone” contains the substring “Airport”, and otherwise contains <code class="docutils literal notranslate"><span class="pre">False</span></code>. Use the has_airport function and <code class="docutils literal notranslate"><span class="pre">df.apply(???,</span> <span class="pre">axis=???)</span></code>.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Make a column “Airport1” with the same values, again using <code class="docutils literal notranslate"><span class="pre">apply</span></code>, but this time using a lambda function.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Notice that <code class="docutils literal notranslate"><span class="pre">df[[&quot;pickup_zone&quot;,</span> <span class="pre">&quot;dropoff_zone&quot;]]</span></code> is a DataFrame containing just those two columns we’re interested in. Use <code class="docutils literal notranslate"><span class="pre">apply</span></code> this time to apply a lambda function to the columns rather than the rows, then use <code class="docutils literal notranslate"><span class="pre">any</span></code>. Name the result “Airport2”.</p></li>
+</ul>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=98096096-f388-42b1-a826-5b162842890b' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lec7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 7: August 21st, 2023</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lec9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 9: August 25th, 2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-question">Overall Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-the-data">Preparing the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-df-groupby-and-a-for-loop">Using <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> and a for-loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-solved-after-the-df-groupby-practice">What we solved after the <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> practice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-solved-after-the-f-strings-practice">What we solved after the f-strings practice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#itearting-through-df-groupby-objects">Itearting through <code class="docutils literal notranslate"><span class="pre">df.groupby</span></code> objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-strings">f-strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-charts">Plotting charts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-with-the-dataframe-method-apply-and-lambda-functions">Practice with the DataFrame method <code class="docutils literal notranslate"><span class="pre">apply</span></code> and lambda functions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis and Yasmeen Baki
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
