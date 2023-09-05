@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lec10.html">Lecture 10: August 28th, 2023</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lec12.html">Lecture 12: September 1st, 2023</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
@@ -192,6 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../final/final.html">🎉 Final Project Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../final/extra.html">Possible Extra Topics</a></li>
 </ul>
 
     </div>
@@ -909,7 +911,7 @@ The chat has answered: For this problem, it makes sense for us to sort by “ind
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fc1414e4070&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fac2b3df070&gt;
 </pre></div>
 </div>
 </div>
@@ -1016,7 +1018,7 @@ The chat has answered: For this problem, it makes sense for us to sort by “ind
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fc1414e4ac0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7fac2b3df970&gt;
 </pre></div>
 </div>
 </div>
@@ -1310,26 +1312,31 @@ The name of the group is: B
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.26199984, 0.1749569 , 0.04237217, 0.20448949, 0.69808461,
-       0.20975611, 0.05765022, 0.44373629, 0.77040557, 0.55721337,
-       0.48854583, 0.51849856, 0.61228914, 0.54464903, 0.45929444,
-       0.04259415, 0.87821444, 0.04369593, 0.53889641, 0.92047227,
-       0.72643589, 0.43511331, 0.18435712, 0.99474218, 0.68653801,
-       0.60314134, 0.17811013, 0.97920411, 0.27320559, 0.72930892,
-       0.30975239, 0.4072353 , 0.34279678, 0.27113161, 0.47808332,
-       0.04817613, 0.23521302, 0.70725168, 0.51132804, 0.83914654,
-       0.42864973, 0.11855971, 0.10220423, 0.60948003, 0.17709908,
-       0.36051631, 0.30083578, 0.05090247, 0.57222835, 0.17901268,
-       0.3667024 , 0.35997701, 0.48340344, 0.44187411, 0.64812225,
-       0.15995432, 0.25000942, 0.14700332, 0.75235678, 0.93683697,
-       0.79343621, 0.08696076, 0.49031939, 0.92952787, 0.86741288,
-       0.12243464, 0.20528228, 0.76906691, 0.6060668 , 0.29952641,
-       0.6898227 , 0.19205733, 0.95263018, 0.15064174, 0.50437593,
-       0.17962469, 0.98192278, 0.01293478, 0.41289082, 0.24038717,
-       0.05723845, 0.72109917, 0.5704724 , 0.05165753, 0.66723334,
-       0.76844643, 0.58710573, 0.85082226, 0.26743169, 0.29332258,
-       0.62981001, 0.56377177, 0.99829355, 0.47938651, 0.2530675 ,
-       0.70123182, 0.98365325, 0.67199329, 0.19869843, 0.52476487])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.23528030e-01, 6.41998274e-01, 4.07732293e-01, 3.06995914e-02,
+       4.78159561e-01, 8.99978641e-01, 7.70387127e-01, 8.29636779e-01,
+       2.11625811e-01, 2.62169169e-02, 6.79597966e-01, 3.11774711e-01,
+       3.66671394e-01, 4.54138907e-01, 8.26881247e-01, 1.24852961e-01,
+       1.81726625e-01, 6.17424077e-01, 4.45229675e-01, 8.38128832e-01,
+       6.91186541e-01, 2.87500727e-02, 2.98780282e-02, 5.31691128e-01,
+       6.60731364e-01, 7.51959767e-01, 4.80057850e-01, 5.63963364e-01,
+       6.57126741e-01, 8.94067056e-01, 3.08176038e-01, 5.83149805e-01,
+       5.81455628e-01, 4.60883350e-01, 7.11919594e-01, 1.00991171e-01,
+       1.15059987e-02, 4.44574221e-01, 4.30224462e-01, 8.25217566e-01,
+       6.60575760e-01, 7.82218278e-01, 8.98743344e-01, 4.23261864e-01,
+       6.32891047e-01, 8.27281798e-01, 5.90739504e-01, 8.87417254e-05,
+       1.84902517e-01, 9.82515253e-01, 8.27120941e-01, 7.96061635e-01,
+       3.22099793e-01, 5.14891450e-01, 3.47349932e-01, 6.72170293e-02,
+       8.40537042e-01, 2.85374240e-01, 2.91148659e-01, 2.53120366e-01,
+       4.83730641e-01, 2.82525915e-01, 9.61627892e-01, 4.54734199e-01,
+       7.48211832e-01, 3.49116301e-01, 8.27784895e-01, 6.68545642e-01,
+       7.65781549e-01, 4.41347382e-01, 2.66503739e-01, 3.29120468e-01,
+       3.69616023e-01, 5.64625590e-01, 8.25089114e-01, 4.29167479e-01,
+       5.16965739e-01, 3.23731698e-01, 7.08093238e-01, 4.58601817e-01,
+       4.09088377e-01, 4.59540058e-01, 9.81535039e-01, 1.34284871e-01,
+       8.82422503e-02, 2.31459242e-01, 2.67359003e-01, 6.11821362e-01,
+       5.73990290e-02, 5.05310112e-01, 3.56339739e-01, 9.62194586e-01,
+       6.23559477e-01, 3.45648528e-03, 2.96533776e-01, 2.91620021e-01,
+       2.87095789e-01, 1.93782033e-01, 6.84562015e-01, 5.25642216e-01])
 </pre></div>
 </div>
 </div>
@@ -1455,106 +1462,106 @@ Random real number index of 100: value
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random real number 0 of 100: 0.2619998420539983
-Random real number 1 of 100: 0.17495689653999058
-Random real number 2 of 100: 0.04237217229894752
-Random real number 3 of 100: 0.2044894948585424
-Random real number 4 of 100: 0.6980846098711196
-Random real number 5 of 100: 0.2097561070151932
-Random real number 6 of 100: 0.05765021772948187
-Random real number 7 of 100: 0.4437362875012423
-Random real number 8 of 100: 0.7704055738829283
-Random real number 9 of 100: 0.5572133700390676
-Random real number 10 of 100: 0.48854582622550147
-Random real number 11 of 100: 0.5184985564720225
-Random real number 12 of 100: 0.6122891402906901
-Random real number 13 of 100: 0.5446490269918183
-Random real number 14 of 100: 0.45929443576969764
-Random real number 15 of 100: 0.04259414837957931
-Random real number 16 of 100: 0.8782144444202522
-Random real number 17 of 100: 0.04369593365207425
-Random real number 18 of 100: 0.5388964078030893
-Random real number 19 of 100: 0.9204722746545497
-Random real number 20 of 100: 0.726435885484072
-Random real number 21 of 100: 0.43511331023451494
-Random real number 22 of 100: 0.1843571212201921
-Random real number 23 of 100: 0.9947421761921902
-Random real number 24 of 100: 0.6865380085460384
-Random real number 25 of 100: 0.6031413366684495
-Random real number 26 of 100: 0.1781101332705971
-Random real number 27 of 100: 0.9792041139582577
-Random real number 28 of 100: 0.27320559337700034
-Random real number 29 of 100: 0.7293089191721719
-Random real number 30 of 100: 0.30975238553149465
-Random real number 31 of 100: 0.40723530493744964
-Random real number 32 of 100: 0.3427967818458256
-Random real number 33 of 100: 0.2711316068631817
-Random real number 34 of 100: 0.4780833181022347
-Random real number 35 of 100: 0.04817613440857016
-Random real number 36 of 100: 0.23521302312169035
-Random real number 37 of 100: 0.7072516768461433
-Random real number 38 of 100: 0.5113280420696439
-Random real number 39 of 100: 0.8391465407154605
-Random real number 40 of 100: 0.42864973203594214
-Random real number 41 of 100: 0.1185597137055796
-Random real number 42 of 100: 0.10220423090282249
-Random real number 43 of 100: 0.6094800332544245
-Random real number 44 of 100: 0.17709908403187535
-Random real number 45 of 100: 0.3605163084230042
-Random real number 46 of 100: 0.30083578215861073
-Random real number 47 of 100: 0.05090247049224028
-Random real number 48 of 100: 0.572228354325714
-Random real number 49 of 100: 0.17901267940832555
-Random real number 50 of 100: 0.36670239728333365
-Random real number 51 of 100: 0.3599770086420825
-Random real number 52 of 100: 0.4834034411889032
-Random real number 53 of 100: 0.44187411283034983
-Random real number 54 of 100: 0.6481222499816036
-Random real number 55 of 100: 0.1599543165969527
-Random real number 56 of 100: 0.2500094241330575
-Random real number 57 of 100: 0.14700331851193493
-Random real number 58 of 100: 0.7523567837281913
-Random real number 59 of 100: 0.9368369716397432
-Random real number 60 of 100: 0.7934362073570829
-Random real number 61 of 100: 0.08696076366707539
-Random real number 62 of 100: 0.4903193922951943
-Random real number 63 of 100: 0.9295278667932089
-Random real number 64 of 100: 0.8674128777896607
-Random real number 65 of 100: 0.12243463855977954
-Random real number 66 of 100: 0.20528228409555982
-Random real number 67 of 100: 0.7690669111664233
-Random real number 68 of 100: 0.6060667965159887
-Random real number 69 of 100: 0.2995264090739025
-Random real number 70 of 100: 0.6898227017164121
-Random real number 71 of 100: 0.19205732781155138
-Random real number 72 of 100: 0.9526301764842173
-Random real number 73 of 100: 0.15064174248671136
-Random real number 74 of 100: 0.504375926199593
-Random real number 75 of 100: 0.17962468969410061
-Random real number 76 of 100: 0.9819227828171465
-Random real number 77 of 100: 0.012934775088406014
-Random real number 78 of 100: 0.4128908218302556
-Random real number 79 of 100: 0.24038717098673557
-Random real number 80 of 100: 0.057238450483227066
-Random real number 81 of 100: 0.7210991724025526
-Random real number 82 of 100: 0.5704724009857135
-Random real number 83 of 100: 0.05165752995661477
-Random real number 84 of 100: 0.6672333419220517
-Random real number 85 of 100: 0.768446430079163
-Random real number 86 of 100: 0.5871057299916669
-Random real number 87 of 100: 0.8508222613272006
-Random real number 88 of 100: 0.2674316869120664
-Random real number 89 of 100: 0.29332257838563547
-Random real number 90 of 100: 0.6298100094749791
-Random real number 91 of 100: 0.563771774414023
-Random real number 92 of 100: 0.9982935500335618
-Random real number 93 of 100: 0.4793865091470295
-Random real number 94 of 100: 0.2530674950777613
-Random real number 95 of 100: 0.7012318173154657
-Random real number 96 of 100: 0.9836532494144773
-Random real number 97 of 100: 0.6719932944608977
-Random real number 98 of 100: 0.19869842692890494
-Random real number 99 of 100: 0.524764874531691
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Random real number 0 of 100: 0.5235280301078727
+Random real number 1 of 100: 0.6419982742106475
+Random real number 2 of 100: 0.4077322931709423
+Random real number 3 of 100: 0.030699591362733147
+Random real number 4 of 100: 0.47815956111626867
+Random real number 5 of 100: 0.8999786406090013
+Random real number 6 of 100: 0.7703871267401224
+Random real number 7 of 100: 0.8296367785942917
+Random real number 8 of 100: 0.21162581105693257
+Random real number 9 of 100: 0.026216916880849372
+Random real number 10 of 100: 0.6795979660768847
+Random real number 11 of 100: 0.3117747105448496
+Random real number 12 of 100: 0.3666713944361364
+Random real number 13 of 100: 0.4541389072230829
+Random real number 14 of 100: 0.8268812467261447
+Random real number 15 of 100: 0.12485296071951624
+Random real number 16 of 100: 0.18172662505280623
+Random real number 17 of 100: 0.6174240771431346
+Random real number 18 of 100: 0.44522967539371894
+Random real number 19 of 100: 0.8381288318882388
+Random real number 20 of 100: 0.691186540862446
+Random real number 21 of 100: 0.02875007272544372
+Random real number 22 of 100: 0.029878028217555364
+Random real number 23 of 100: 0.5316911280672675
+Random real number 24 of 100: 0.6607313639527878
+Random real number 25 of 100: 0.7519597668081485
+Random real number 26 of 100: 0.4800578500413879
+Random real number 27 of 100: 0.5639633639582304
+Random real number 28 of 100: 0.6571267409412
+Random real number 29 of 100: 0.894067055965611
+Random real number 30 of 100: 0.308176038102542
+Random real number 31 of 100: 0.5831498051958625
+Random real number 32 of 100: 0.5814556281333941
+Random real number 33 of 100: 0.4608833502970645
+Random real number 34 of 100: 0.7119195937898578
+Random real number 35 of 100: 0.10099117050307438
+Random real number 36 of 100: 0.011505998710429788
+Random real number 37 of 100: 0.44457422130005675
+Random real number 38 of 100: 0.43022446229148104
+Random real number 39 of 100: 0.8252175660146118
+Random real number 40 of 100: 0.6605757595207818
+Random real number 41 of 100: 0.7822182779935934
+Random real number 42 of 100: 0.8987433443033811
+Random real number 43 of 100: 0.42326186414741085
+Random real number 44 of 100: 0.6328910472967287
+Random real number 45 of 100: 0.8272817976268354
+Random real number 46 of 100: 0.5907395041971933
+Random real number 47 of 100: 8.874172537232106e-05
+Random real number 48 of 100: 0.18490251708340466
+Random real number 49 of 100: 0.9825152529672462
+Random real number 50 of 100: 0.8271209413303369
+Random real number 51 of 100: 0.796061634575487
+Random real number 52 of 100: 0.32209979313920556
+Random real number 53 of 100: 0.5148914504834072
+Random real number 54 of 100: 0.3473499315039418
+Random real number 55 of 100: 0.06721702925929529
+Random real number 56 of 100: 0.8405370416790084
+Random real number 57 of 100: 0.2853742399350374
+Random real number 58 of 100: 0.2911486592020006
+Random real number 59 of 100: 0.2531203658009218
+Random real number 60 of 100: 0.4837306405411095
+Random real number 61 of 100: 0.2825259149911047
+Random real number 62 of 100: 0.961627892160318
+Random real number 63 of 100: 0.45473419868436205
+Random real number 64 of 100: 0.748211831977207
+Random real number 65 of 100: 0.3491163006192891
+Random real number 66 of 100: 0.8277848948131686
+Random real number 67 of 100: 0.6685456418423883
+Random real number 68 of 100: 0.7657815488219516
+Random real number 69 of 100: 0.4413473818841409
+Random real number 70 of 100: 0.26650373908695146
+Random real number 71 of 100: 0.32912046760150515
+Random real number 72 of 100: 0.3696160228049077
+Random real number 73 of 100: 0.5646255897970498
+Random real number 74 of 100: 0.8250891141456789
+Random real number 75 of 100: 0.42916747913635467
+Random real number 76 of 100: 0.5169657390485278
+Random real number 77 of 100: 0.32373169837757676
+Random real number 78 of 100: 0.7080932379136672
+Random real number 79 of 100: 0.4586018167439909
+Random real number 80 of 100: 0.4090883767879836
+Random real number 81 of 100: 0.4595400582689739
+Random real number 82 of 100: 0.981535039479039
+Random real number 83 of 100: 0.13428487120560262
+Random real number 84 of 100: 0.08824225032893596
+Random real number 85 of 100: 0.23145924183139266
+Random real number 86 of 100: 0.26735900322088535
+Random real number 87 of 100: 0.6118213621824584
+Random real number 88 of 100: 0.05739902899508664
+Random real number 89 of 100: 0.5053101118207144
+Random real number 90 of 100: 0.3563397386622916
+Random real number 91 of 100: 0.9621945855475244
+Random real number 92 of 100: 0.6235594767613414
+Random real number 93 of 100: 0.0034564852840652804
+Random real number 94 of 100: 0.29653377581763696
+Random real number 95 of 100: 0.29162002086766703
+Random real number 96 of 100: 0.2870957889971866
+Random real number 97 of 100: 0.19378203304941466
+Random real number 98 of 100: 0.6845620148382546
+Random real number 99 of 100: 0.5256422164784562
 </pre></div>
 </div>
 </div>
@@ -1573,106 +1580,106 @@ Random real number 99 of 100: 0.524764874531691
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percent chance that Math 10 is fun on day 0 of 100: 26.20%
-Percent chance that Math 10 is fun on day 1 of 100: 17.50%
-Percent chance that Math 10 is fun on day 2 of 100: 4.24%
-Percent chance that Math 10 is fun on day 3 of 100: 20.45%
-Percent chance that Math 10 is fun on day 4 of 100: 69.81%
-Percent chance that Math 10 is fun on day 5 of 100: 20.98%
-Percent chance that Math 10 is fun on day 6 of 100: 5.77%
-Percent chance that Math 10 is fun on day 7 of 100: 44.37%
-Percent chance that Math 10 is fun on day 8 of 100: 77.04%
-Percent chance that Math 10 is fun on day 9 of 100: 55.72%
-Percent chance that Math 10 is fun on day 10 of 100: 48.85%
-Percent chance that Math 10 is fun on day 11 of 100: 51.85%
-Percent chance that Math 10 is fun on day 12 of 100: 61.23%
-Percent chance that Math 10 is fun on day 13 of 100: 54.46%
-Percent chance that Math 10 is fun on day 14 of 100: 45.93%
-Percent chance that Math 10 is fun on day 15 of 100: 4.26%
-Percent chance that Math 10 is fun on day 16 of 100: 87.82%
-Percent chance that Math 10 is fun on day 17 of 100: 4.37%
-Percent chance that Math 10 is fun on day 18 of 100: 53.89%
-Percent chance that Math 10 is fun on day 19 of 100: 92.05%
-Percent chance that Math 10 is fun on day 20 of 100: 72.64%
-Percent chance that Math 10 is fun on day 21 of 100: 43.51%
-Percent chance that Math 10 is fun on day 22 of 100: 18.44%
-Percent chance that Math 10 is fun on day 23 of 100: 99.47%
-Percent chance that Math 10 is fun on day 24 of 100: 68.65%
-Percent chance that Math 10 is fun on day 25 of 100: 60.31%
-Percent chance that Math 10 is fun on day 26 of 100: 17.81%
-Percent chance that Math 10 is fun on day 27 of 100: 97.92%
-Percent chance that Math 10 is fun on day 28 of 100: 27.32%
-Percent chance that Math 10 is fun on day 29 of 100: 72.93%
-Percent chance that Math 10 is fun on day 30 of 100: 30.98%
-Percent chance that Math 10 is fun on day 31 of 100: 40.72%
-Percent chance that Math 10 is fun on day 32 of 100: 34.28%
-Percent chance that Math 10 is fun on day 33 of 100: 27.11%
-Percent chance that Math 10 is fun on day 34 of 100: 47.81%
-Percent chance that Math 10 is fun on day 35 of 100: 4.82%
-Percent chance that Math 10 is fun on day 36 of 100: 23.52%
-Percent chance that Math 10 is fun on day 37 of 100: 70.73%
-Percent chance that Math 10 is fun on day 38 of 100: 51.13%
-Percent chance that Math 10 is fun on day 39 of 100: 83.91%
-Percent chance that Math 10 is fun on day 40 of 100: 42.86%
-Percent chance that Math 10 is fun on day 41 of 100: 11.86%
-Percent chance that Math 10 is fun on day 42 of 100: 10.22%
-Percent chance that Math 10 is fun on day 43 of 100: 60.95%
-Percent chance that Math 10 is fun on day 44 of 100: 17.71%
-Percent chance that Math 10 is fun on day 45 of 100: 36.05%
-Percent chance that Math 10 is fun on day 46 of 100: 30.08%
-Percent chance that Math 10 is fun on day 47 of 100: 5.09%
-Percent chance that Math 10 is fun on day 48 of 100: 57.22%
-Percent chance that Math 10 is fun on day 49 of 100: 17.90%
-Percent chance that Math 10 is fun on day 50 of 100: 36.67%
-Percent chance that Math 10 is fun on day 51 of 100: 36.00%
-Percent chance that Math 10 is fun on day 52 of 100: 48.34%
-Percent chance that Math 10 is fun on day 53 of 100: 44.19%
-Percent chance that Math 10 is fun on day 54 of 100: 64.81%
-Percent chance that Math 10 is fun on day 55 of 100: 16.00%
-Percent chance that Math 10 is fun on day 56 of 100: 25.00%
-Percent chance that Math 10 is fun on day 57 of 100: 14.70%
-Percent chance that Math 10 is fun on day 58 of 100: 75.24%
-Percent chance that Math 10 is fun on day 59 of 100: 93.68%
-Percent chance that Math 10 is fun on day 60 of 100: 79.34%
-Percent chance that Math 10 is fun on day 61 of 100: 8.70%
-Percent chance that Math 10 is fun on day 62 of 100: 49.03%
-Percent chance that Math 10 is fun on day 63 of 100: 92.95%
-Percent chance that Math 10 is fun on day 64 of 100: 86.74%
-Percent chance that Math 10 is fun on day 65 of 100: 12.24%
-Percent chance that Math 10 is fun on day 66 of 100: 20.53%
-Percent chance that Math 10 is fun on day 67 of 100: 76.91%
-Percent chance that Math 10 is fun on day 68 of 100: 60.61%
-Percent chance that Math 10 is fun on day 69 of 100: 29.95%
-Percent chance that Math 10 is fun on day 70 of 100: 68.98%
-Percent chance that Math 10 is fun on day 71 of 100: 19.21%
-Percent chance that Math 10 is fun on day 72 of 100: 95.26%
-Percent chance that Math 10 is fun on day 73 of 100: 15.06%
-Percent chance that Math 10 is fun on day 74 of 100: 50.44%
-Percent chance that Math 10 is fun on day 75 of 100: 17.96%
-Percent chance that Math 10 is fun on day 76 of 100: 98.19%
-Percent chance that Math 10 is fun on day 77 of 100: 1.29%
-Percent chance that Math 10 is fun on day 78 of 100: 41.29%
-Percent chance that Math 10 is fun on day 79 of 100: 24.04%
-Percent chance that Math 10 is fun on day 80 of 100: 5.72%
-Percent chance that Math 10 is fun on day 81 of 100: 72.11%
-Percent chance that Math 10 is fun on day 82 of 100: 57.05%
-Percent chance that Math 10 is fun on day 83 of 100: 5.17%
-Percent chance that Math 10 is fun on day 84 of 100: 66.72%
-Percent chance that Math 10 is fun on day 85 of 100: 76.84%
-Percent chance that Math 10 is fun on day 86 of 100: 58.71%
-Percent chance that Math 10 is fun on day 87 of 100: 85.08%
-Percent chance that Math 10 is fun on day 88 of 100: 26.74%
-Percent chance that Math 10 is fun on day 89 of 100: 29.33%
-Percent chance that Math 10 is fun on day 90 of 100: 62.98%
-Percent chance that Math 10 is fun on day 91 of 100: 56.38%
-Percent chance that Math 10 is fun on day 92 of 100: 99.83%
-Percent chance that Math 10 is fun on day 93 of 100: 47.94%
-Percent chance that Math 10 is fun on day 94 of 100: 25.31%
-Percent chance that Math 10 is fun on day 95 of 100: 70.12%
-Percent chance that Math 10 is fun on day 96 of 100: 98.37%
-Percent chance that Math 10 is fun on day 97 of 100: 67.20%
-Percent chance that Math 10 is fun on day 98 of 100: 19.87%
-Percent chance that Math 10 is fun on day 99 of 100: 52.48%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percent chance that Math 10 is fun on day 0 of 100: 52.35%
+Percent chance that Math 10 is fun on day 1 of 100: 64.20%
+Percent chance that Math 10 is fun on day 2 of 100: 40.77%
+Percent chance that Math 10 is fun on day 3 of 100: 3.07%
+Percent chance that Math 10 is fun on day 4 of 100: 47.82%
+Percent chance that Math 10 is fun on day 5 of 100: 90.00%
+Percent chance that Math 10 is fun on day 6 of 100: 77.04%
+Percent chance that Math 10 is fun on day 7 of 100: 82.96%
+Percent chance that Math 10 is fun on day 8 of 100: 21.16%
+Percent chance that Math 10 is fun on day 9 of 100: 2.62%
+Percent chance that Math 10 is fun on day 10 of 100: 67.96%
+Percent chance that Math 10 is fun on day 11 of 100: 31.18%
+Percent chance that Math 10 is fun on day 12 of 100: 36.67%
+Percent chance that Math 10 is fun on day 13 of 100: 45.41%
+Percent chance that Math 10 is fun on day 14 of 100: 82.69%
+Percent chance that Math 10 is fun on day 15 of 100: 12.49%
+Percent chance that Math 10 is fun on day 16 of 100: 18.17%
+Percent chance that Math 10 is fun on day 17 of 100: 61.74%
+Percent chance that Math 10 is fun on day 18 of 100: 44.52%
+Percent chance that Math 10 is fun on day 19 of 100: 83.81%
+Percent chance that Math 10 is fun on day 20 of 100: 69.12%
+Percent chance that Math 10 is fun on day 21 of 100: 2.88%
+Percent chance that Math 10 is fun on day 22 of 100: 2.99%
+Percent chance that Math 10 is fun on day 23 of 100: 53.17%
+Percent chance that Math 10 is fun on day 24 of 100: 66.07%
+Percent chance that Math 10 is fun on day 25 of 100: 75.20%
+Percent chance that Math 10 is fun on day 26 of 100: 48.01%
+Percent chance that Math 10 is fun on day 27 of 100: 56.40%
+Percent chance that Math 10 is fun on day 28 of 100: 65.71%
+Percent chance that Math 10 is fun on day 29 of 100: 89.41%
+Percent chance that Math 10 is fun on day 30 of 100: 30.82%
+Percent chance that Math 10 is fun on day 31 of 100: 58.31%
+Percent chance that Math 10 is fun on day 32 of 100: 58.15%
+Percent chance that Math 10 is fun on day 33 of 100: 46.09%
+Percent chance that Math 10 is fun on day 34 of 100: 71.19%
+Percent chance that Math 10 is fun on day 35 of 100: 10.10%
+Percent chance that Math 10 is fun on day 36 of 100: 1.15%
+Percent chance that Math 10 is fun on day 37 of 100: 44.46%
+Percent chance that Math 10 is fun on day 38 of 100: 43.02%
+Percent chance that Math 10 is fun on day 39 of 100: 82.52%
+Percent chance that Math 10 is fun on day 40 of 100: 66.06%
+Percent chance that Math 10 is fun on day 41 of 100: 78.22%
+Percent chance that Math 10 is fun on day 42 of 100: 89.87%
+Percent chance that Math 10 is fun on day 43 of 100: 42.33%
+Percent chance that Math 10 is fun on day 44 of 100: 63.29%
+Percent chance that Math 10 is fun on day 45 of 100: 82.73%
+Percent chance that Math 10 is fun on day 46 of 100: 59.07%
+Percent chance that Math 10 is fun on day 47 of 100: 0.01%
+Percent chance that Math 10 is fun on day 48 of 100: 18.49%
+Percent chance that Math 10 is fun on day 49 of 100: 98.25%
+Percent chance that Math 10 is fun on day 50 of 100: 82.71%
+Percent chance that Math 10 is fun on day 51 of 100: 79.61%
+Percent chance that Math 10 is fun on day 52 of 100: 32.21%
+Percent chance that Math 10 is fun on day 53 of 100: 51.49%
+Percent chance that Math 10 is fun on day 54 of 100: 34.73%
+Percent chance that Math 10 is fun on day 55 of 100: 6.72%
+Percent chance that Math 10 is fun on day 56 of 100: 84.05%
+Percent chance that Math 10 is fun on day 57 of 100: 28.54%
+Percent chance that Math 10 is fun on day 58 of 100: 29.11%
+Percent chance that Math 10 is fun on day 59 of 100: 25.31%
+Percent chance that Math 10 is fun on day 60 of 100: 48.37%
+Percent chance that Math 10 is fun on day 61 of 100: 28.25%
+Percent chance that Math 10 is fun on day 62 of 100: 96.16%
+Percent chance that Math 10 is fun on day 63 of 100: 45.47%
+Percent chance that Math 10 is fun on day 64 of 100: 74.82%
+Percent chance that Math 10 is fun on day 65 of 100: 34.91%
+Percent chance that Math 10 is fun on day 66 of 100: 82.78%
+Percent chance that Math 10 is fun on day 67 of 100: 66.85%
+Percent chance that Math 10 is fun on day 68 of 100: 76.58%
+Percent chance that Math 10 is fun on day 69 of 100: 44.13%
+Percent chance that Math 10 is fun on day 70 of 100: 26.65%
+Percent chance that Math 10 is fun on day 71 of 100: 32.91%
+Percent chance that Math 10 is fun on day 72 of 100: 36.96%
+Percent chance that Math 10 is fun on day 73 of 100: 56.46%
+Percent chance that Math 10 is fun on day 74 of 100: 82.51%
+Percent chance that Math 10 is fun on day 75 of 100: 42.92%
+Percent chance that Math 10 is fun on day 76 of 100: 51.70%
+Percent chance that Math 10 is fun on day 77 of 100: 32.37%
+Percent chance that Math 10 is fun on day 78 of 100: 70.81%
+Percent chance that Math 10 is fun on day 79 of 100: 45.86%
+Percent chance that Math 10 is fun on day 80 of 100: 40.91%
+Percent chance that Math 10 is fun on day 81 of 100: 45.95%
+Percent chance that Math 10 is fun on day 82 of 100: 98.15%
+Percent chance that Math 10 is fun on day 83 of 100: 13.43%
+Percent chance that Math 10 is fun on day 84 of 100: 8.82%
+Percent chance that Math 10 is fun on day 85 of 100: 23.15%
+Percent chance that Math 10 is fun on day 86 of 100: 26.74%
+Percent chance that Math 10 is fun on day 87 of 100: 61.18%
+Percent chance that Math 10 is fun on day 88 of 100: 5.74%
+Percent chance that Math 10 is fun on day 89 of 100: 50.53%
+Percent chance that Math 10 is fun on day 90 of 100: 35.63%
+Percent chance that Math 10 is fun on day 91 of 100: 96.22%
+Percent chance that Math 10 is fun on day 92 of 100: 62.36%
+Percent chance that Math 10 is fun on day 93 of 100: 0.35%
+Percent chance that Math 10 is fun on day 94 of 100: 29.65%
+Percent chance that Math 10 is fun on day 95 of 100: 29.16%
+Percent chance that Math 10 is fun on day 96 of 100: 28.71%
+Percent chance that Math 10 is fun on day 97 of 100: 19.38%
+Percent chance that Math 10 is fun on day 98 of 100: 68.46%
+Percent chance that Math 10 is fun on day 99 of 100: 52.56%
 </pre></div>
 </div>
 </div>
@@ -1929,87 +1936,87 @@ Percent chance that Math 10 is fun on day 99 of 100: 52.48%
   </thead>
   <tbody>
     <tr>
-      <th>6255</th>
-      <td>2019-03-08 18:51:57</td>
-      <td>2019-03-08 19:01:43</td>
+      <th>3421</th>
+      <td>2019-03-03 15:28:02</td>
+      <td>2019-03-03 15:34:11</td>
       <td>1</td>
-      <td>1.50</td>
-      <td>8.5</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>10.30</td>
-      <td>green</td>
-      <td>cash</td>
-      <td>Park Slope</td>
-      <td>Park Slope</td>
-      <td>Brooklyn</td>
-      <td>Brooklyn</td>
-    </tr>
-    <tr>
-      <th>1691</th>
-      <td>2019-03-13 17:22:08</td>
-      <td>2019-03-13 17:34:08</td>
-      <td>1</td>
-      <td>3.10</td>
-      <td>12.0</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>16.30</td>
-      <td>yellow</td>
-      <td>cash</td>
-      <td>Upper West Side South</td>
-      <td>East Harlem North</td>
-      <td>Manhattan</td>
-      <td>Manhattan</td>
-    </tr>
-    <tr>
-      <th>2231</th>
-      <td>2019-03-11 10:17:31</td>
-      <td>2019-03-11 11:03:55</td>
-      <td>1</td>
-      <td>26.35</td>
-      <td>130.0</td>
-      <td>0.00</td>
-      <td>5.76</td>
-      <td>136.56</td>
-      <td>yellow</td>
-      <td>cash</td>
-      <td>East Harlem North</td>
-      <td>NaN</td>
-      <td>Manhattan</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6232</th>
-      <td>2019-03-21 19:29:01</td>
-      <td>2019-03-21 19:36:20</td>
-      <td>3</td>
-      <td>0.80</td>
+      <td>1.06</td>
       <td>6.0</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>7.80</td>
-      <td>green</td>
-      <td>cash</td>
-      <td>Jackson Heights</td>
-      <td>Elmhurst</td>
-      <td>Queens</td>
-      <td>Queens</td>
+      <td>2.79</td>
+      <td>0.0</td>
+      <td>12.09</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>East Village</td>
+      <td>Gramercy</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
     </tr>
     <tr>
-      <th>6414</th>
-      <td>2019-03-30 14:04:46</td>
-      <td>2019-03-30 14:18:58</td>
-      <td>2</td>
-      <td>2.60</td>
-      <td>11.0</td>
-      <td>2.91</td>
-      <td>0.00</td>
-      <td>17.46</td>
-      <td>green</td>
+      <th>4945</th>
+      <td>2019-03-25 10:11:59</td>
+      <td>2019-03-25 10:19:56</td>
+      <td>5</td>
+      <td>0.67</td>
+      <td>6.5</td>
+      <td>1.96</td>
+      <td>0.0</td>
+      <td>11.76</td>
+      <td>yellow</td>
       <td>credit card</td>
-      <td>Central Harlem</td>
+      <td>Sutton Place/Turtle Bay North</td>
+      <td>Sutton Place/Turtle Bay North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>5375</th>
+      <td>2019-03-24 07:16:26</td>
+      <td>2019-03-24 07:19:29</td>
+      <td>1</td>
+      <td>0.90</td>
+      <td>4.5</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>7.80</td>
+      <td>yellow</td>
+      <td>credit card</td>
       <td>Yorkville West</td>
+      <td>Upper East Side North</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>166</th>
+      <td>2019-03-06 12:43:50</td>
+      <td>2019-03-06 12:59:59</td>
+      <td>1</td>
+      <td>1.40</td>
+      <td>11.0</td>
+      <td>2.85</td>
+      <td>0.0</td>
+      <td>17.15</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Gramercy</td>
+      <td>Flatiron</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>315</th>
+      <td>2019-03-12 23:55:59</td>
+      <td>2019-03-13 00:06:04</td>
+      <td>1</td>
+      <td>1.20</td>
+      <td>8.0</td>
+      <td>1.50</td>
+      <td>0.0</td>
+      <td>13.30</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Hudson Sq</td>
+      <td>Lower East Side</td>
       <td>Manhattan</td>
       <td>Manhattan</td>
     </tr>
