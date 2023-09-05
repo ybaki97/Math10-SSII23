@@ -1,0 +1,1315 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lecture 11: August 30th, 2023 &#8212; Math 10, Summer Session II 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/lec11';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lecture 12: September 1st, 2023" href="lec12.html" />
+    <link rel="prev" title="Lecture 10: August 28th, 2023" href="lec10.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/anteater.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/anteater.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    UC Irvine, Math 10, Summer 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../w1vid.html">Week 1 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec1.html">Lecture 1: August 7th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/wkst1.html">Discussion 1: August 7th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec2.html">Lecture 2: August 9th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../worksheets/wkst2.html">Discussion 2: August 9th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec3.html">Lecture 3: August 11th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../w2vid.html">Week 2 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec4.html">Lecture 4: August 14th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec5.html">Lecture 5: August 16th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec6.html">Lecture 6: August 18th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../w3vid.html">Week 3 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec7.html">Lecture 7: August 21st, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec8.html">Lecture 8: August 23nd, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec9.html">Lecture 9: August 25th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lec10.html">Lecture 10: August 28th, 2023</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Lecture 11: August 30th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec12.html">Lecture 12: September 1st, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../w5vid.html">Week 5 Lecture Videos</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../final/final.html">🎉 Final Project Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../final/extra.html">Possible Extra Topics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ybaki97/Math10-SSI23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ybaki97/Math10-SSI23/issues/new?title=Issue%20on%20page%20%2Flectures/lec11.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/lectures/lec11.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lecture 11: August 30th, 2023</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-information">Final Project Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warnings-about-polynomial-regression">Warnings about polynomial regression</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lecture-11-august-30th-2023">
+<h1>Lecture 11: August 30th, 2023<a class="headerlink" href="#lecture-11-august-30th-2023" title="Permalink to this headline">#</a></h1>
+<p><strong>Reminders:</strong></p>
+<ul class="simple">
+<li><p>Homework 5 and Homework 6 are due Friday at midnight. There are only two homework assignments remaining. They will be released Friday, and are due a week from then.</p></li>
+<li><p>Deadline for EDA outcome quizzes is tonight. ML outcomes will start to be released tonight.</p></li>
+<li><p>Monday is a holiday. No class or discussion :( Maybe I will release some extra videos to help with the missed day..but we will see.</p></li>
+</ul>
+<p><strong>Today:</strong></p>
+<ul class="simple">
+<li><p>Main focus for today will be getting us all on board for the final project. I’ll also give us some time in lecture to get started thinking about the project and filling out the planning worksheet.</p></li>
+<li><p>With the remaining class time, we’ll finish the notes from Monday about polynomial regression.</p></li>
+</ul>
+<section id="final-project-information">
+<h2>Final Project Information<a class="headerlink" href="#final-project-information" title="Permalink to this headline">#</a></h2>
+<p>In this part of the lecture, we went through the information about the final project. Here are some questions from the chat:</p>
+<ul class="simple">
+<li><p>Tokens cannot be used to extend the deadline of the final project. The Wednesday, September 13 deadline is a hard deadline.</p></li>
+<li><p>Nothing happens with extra tokens, so be sure to use them, if you would like.</p></li>
+<li><p>Something I forgot to put in the project instructions: it can be really fun to use a personal dataset. These can be things like your Spotify listening history, workout information from a smart watch, etc.</p></li>
+<li><p>You can get data from anywhere you’d like! Just be sure to tell me where you found it.</p></li>
+<li><p>Workflow for the project: Pick a dataset &gt; ask an (open-ended) question about the data that you want to know the answer to &gt; Use Math 10 techniques to help answer the question (it’s totally fine if you are unable to answer the question in the end.)</p>
+<ul>
+<li><p>The question you ask should have some complexity; it shouldn’t be something that you can easily answer by just glancing at the data for a minute or so.</p></li>
+</ul>
+</li>
+<li><p>Should claims be statistically significant? Or can we make inferences based on general trends we see in the data/plot? Great question! You can make inferences, but something you could use for your extra portion is to determine whether your claims are statistically significant.</p></li>
+</ul>
+</section>
+<section id="polynomial-regression">
+<h2>Polynomial Regression<a class="headerlink" href="#polynomial-regression" title="Permalink to this headline">#</a></h2>
+<p>We’ve already seen examples of performing linear regression with multiple input features. If we can do this, then performing polynomial regression is also possible.</p>
+<p><strong>Key Point:</strong> Polynomial regression is no more difficult than linear regression.</p>
+<p>Think back to the taxis dataset where we performed linear regression on multiple input columns:
+$<span class="math notranslate nohighlight">\(
+\text{duration} = c_1*\text{passengers} + c_2*\text{hour} + c_3*\text{distance} + c_0
+\)</span>$</p>
+<p>Imagine now we want to fit to a degree three polynomial:</p>
+<div class="math notranslate nohighlight">
+\[
+y \approx c_0 + c_1x^1 + c_2x^2 + c_3x^3
+\]</div>
+<p>Imagine now that the difference powers of <span class="math notranslate nohighlight">\(x\)</span> are all just different columns in the data that we’re fitting to.</p>
+<ul class="simple">
+<li><p>Load the mpg dataset from Seaborn and drop missing values. Name the result df.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;mpg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc rebel sst</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302.0</td>
+      <td>140.0</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford torino</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Goal:</strong> Find a degree 3 polynomial to model “mpg” as a function of “horsepower”.</p>
+<font color = red>
+Warning 1: The coefficients will not be as nicely/easily interpretable as in linear regression.
+Warning 2: We will later learn to automate some of the following steps using the scikit-learn class PolynomialFeatures.
+</font><ul class="simple">
+<li><p>Create a range object that stores the degrees that we want.</p></li>
+</ul>
+<p>We store the degrees this way so that if we want to try a higher degree polynomial it’s easy to change.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#degree we want</span>
+<span class="n">degs</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">degs</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Add a new column to <code class="docutils literal notranslate"><span class="pre">df</span></code> for each desired power of horsepower. Call the corresponding columns hd, where d is the degree that we raise horsepower to.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">degs</span><span class="p">:</span>
+    <span class="n">df</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;h</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;horsepower&quot;</span><span class="p">]</span><span class="o">**</span><span class="n">d</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+      <th>h1</th>
+      <th>h2</th>
+      <th>h3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+      <td>130.0</td>
+      <td>16900.0</td>
+      <td>2197000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+      <td>165.0</td>
+      <td>27225.0</td>
+      <td>4492125.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+      <td>150.0</td>
+      <td>22500.0</td>
+      <td>3375000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc rebel sst</td>
+      <td>150.0</td>
+      <td>22500.0</td>
+      <td>3375000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302.0</td>
+      <td>140.0</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford torino</td>
+      <td>140.0</td>
+      <td>19600.0</td>
+      <td>2744000.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Sanity check: h1 should be the same as horsepower.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;horsepower&quot;</span><span class="p">,</span><span class="s2">&quot;h1&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>horsepower</th>
+      <th>h1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>130.0</td>
+      <td>130.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>165.0</td>
+      <td>165.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>150.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>150.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>140.0</td>
+      <td>140.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>86.0</td>
+      <td>86.0</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>52.0</td>
+      <td>52.0</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>84.0</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>79.0</td>
+      <td>79.0</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>82.0</td>
+      <td>82.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 2 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Instantiate a new <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> object and fit it to the columns that we just made for input, and mpg for target.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is worth pointing out! At this step, what will be the result of the following code?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span>
+
+<span class="ne">AttributeError</span>: &#39;LinearRegression&#39; object has no attribute &#39;coef_&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice! We haven’t fitted any data yet! <code class="docutils literal notranslate"><span class="pre">reg</span></code> has no idea what data we’re working with, so <code class="docutils literal notranslate"><span class="pre">coef_</span></code> doesn’t exist yet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred_col</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;h</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">degs</span><span class="p">]</span>
+<span class="n">pred_col</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;h1&#39;, &#39;h2&#39;, &#39;h3&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pred_col</span><span class="p">],</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;mpg&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">LinearRegression</label><div class="sk-toggleable__content"><pre>LinearRegression()</pre></div></div></div></div></div></div></div>
+</div>
+<p>Now, let’s take a look at the coefficients:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-5.68850128e-01,  2.07901126e-03, -2.14662591e-06])
+</pre></div>
+</div>
+</div>
+</div>
+<p>These coefficients might seem really small…however, recall that h2 and h3 are powers of h1, and these end up being pretty big numbers. So, multiplying h3 by <span class="math notranslate nohighlight">\(-2 \times 10^{-6}\)</span> still has some sway on the result/has a meaningful impact from these columns</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">pred_col</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>h1</th>
+      <th>h2</th>
+      <th>h3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>130.0</td>
+      <td>16900.0</td>
+      <td>2197000.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>165.0</td>
+      <td>27225.0</td>
+      <td>4492125.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>22500.0</td>
+      <td>3375000.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>22500.0</td>
+      <td>3375000.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>140.0</td>
+      <td>19600.0</td>
+      <td>2744000.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>86.0</td>
+      <td>7396.0</td>
+      <td>636056.0</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>52.0</td>
+      <td>2704.0</td>
+      <td>140608.0</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>84.0</td>
+      <td>7056.0</td>
+      <td>592704.0</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>79.0</td>
+      <td>6241.0</td>
+      <td>493039.0</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>82.0</td>
+      <td>6724.0</td>
+      <td>551368.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 3 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Create a new column in <code class="docutils literal notranslate"><span class="pre">df</span></code> which stores the predictions.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">pred_col</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;mpg&quot;</span><span class="p">,</span><span class="s2">&quot;pred&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>17.153421</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>13.782683</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>15.904046</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>393</th>
+      <td>27.0</td>
+      <td>25.774667</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>44.0</td>
+      <td>36.424392</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>32.0</td>
+      <td>26.298564</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>28.0</td>
+      <td>27.662364</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>31.0</td>
+      <td>26.834765</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 2 columns</p>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>Create plots with the true data and the fit data. View them together.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;horsepower&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;mpg&quot;</span>
+<span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;horsepower&quot;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;pred&quot;</span>
+<span class="p">)</span>
+<span class="n">c1</span><span class="o">+</span><span class="n">c2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+  #altair-viz-3e570c07ccef4161a072d526ba052643.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-3e570c07ccef4161a072d526ba052643.vega-embed details,
+  #altair-viz-3e570c07ccef4161a072d526ba052643.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-3e570c07ccef4161a072d526ba052643"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-3e570c07ccef4161a072d526ba052643") {
+      outputDiv = document.getElementById("altair-viz-3e570c07ccef4161a072d526ba052643");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.8.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.8.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "circle"}, "encoding": {"x": {"field": "horsepower", "type": "quantitative"}, "y": {"field": "mpg", "type": "quantitative"}}}, {"mark": {"type": "circle", "color": "red"}, "encoding": {"x": {"field": "horsepower", "type": "quantitative"}, "y": {"field": "pred", "type": "quantitative"}}}], "data": {"name": "data-6b0a5ae1c7ac862c57908df3a96ecaba"}, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-6b0a5ae1c7ac862c57908df3a96ecaba": [{"mpg": 18.0, "cylinders": 8, "displacement": 307.0, "horsepower": 130.0, "weight": 3504, "acceleration": 12.0, "model_year": 70, "origin": "usa", "name": "chevrolet chevelle malibu", "h1": 130.0, "h2": 16900.0, "h3": 2197000.0, "pred": 17.15342143823247}, {"mpg": 15.0, "cylinders": 8, "displacement": 350.0, "horsepower": 165.0, "weight": 3693, "acceleration": 11.5, "model_year": 70, "origin": "usa", "name": "buick skylark 320", "h1": 165.0, "h2": 27225.0, "h3": 4492125.0, "pred": 13.782683444506674}, {"mpg": 18.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 3436, "acceleration": 11.0, "model_year": 70, "origin": "usa", "name": "plymouth satellite", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 16.0, "cylinders": 8, "displacement": 304.0, "horsepower": 150.0, "weight": 3433, "acceleration": 12.0, "model_year": 70, "origin": "usa", "name": "amc rebel sst", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 17.0, "cylinders": 8, "displacement": 302.0, "horsepower": 140.0, "weight": 3449, "acceleration": 10.5, "model_year": 70, "origin": "usa", "name": "ford torino", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 15.0, "cylinders": 8, "displacement": 429.0, "horsepower": 198.0, "weight": 4341, "acceleration": 10.0, "model_year": 70, "origin": "usa", "name": "ford galaxie 500", "h1": 198.0, "h2": 39204.0, "h3": 7762392.0, "pred": 12.895065253107987}, {"mpg": 14.0, "cylinders": 8, "displacement": 454.0, "horsepower": 220.0, "weight": 4354, "acceleration": 9.0, "model_year": 70, "origin": "usa", "name": "chevrolet impala", "h1": 220.0, "h2": 48400.0, "h3": 10648000.0, "pred": 13.304629104448637}, {"mpg": 14.0, "cylinders": 8, "displacement": 440.0, "horsepower": 215.0, "weight": 4312, "acceleration": 8.5, "model_year": 70, "origin": "usa", "name": "plymouth fury iii", "h1": 215.0, "h2": 46225.0, "h3": 9938375.0, "pred": 13.150329660718207}, {"mpg": 14.0, "cylinders": 8, "displacement": 455.0, "horsepower": 225.0, "weight": 4425, "acceleration": 10.0, "model_year": 70, "origin": "usa", "name": "pontiac catalina", "h1": 225.0, "h2": 50625.0, "h3": 11390625.0, "pred": 13.49204045628366}, {"mpg": 15.0, "cylinders": 8, "displacement": 390.0, "horsepower": 190.0, "weight": 3850, "acceleration": 8.5, "model_year": 70, "origin": "usa", "name": "amc ambassador dpl", "h1": 190.0, "h2": 36100.0, "h3": 6859000.0, "pred": 12.931859993802796}, {"mpg": 15.0, "cylinders": 8, "displacement": 383.0, "horsepower": 170.0, "weight": 3563, "acceleration": 10.0, "model_year": 70, "origin": "usa", "name": "dodge challenger se", "h1": 170.0, "h2": 28900.0, "h3": 4913000.0, "pred": 13.517315488356196}, {"mpg": 14.0, "cylinders": 8, "displacement": 340.0, "horsepower": 160.0, "weight": 3609, "acceleration": 8.0, "model_year": 70, "origin": "usa", "name": "plymouth 'cuda 340", "h1": 160.0, "h2": 25600.0, "h3": 4096000.0, "pred": 14.098872972528739}, {"mpg": 15.0, "cylinders": 8, "displacement": 400.0, "horsepower": 150.0, "weight": 3761, "acceleration": 9.5, "model_year": 70, "origin": "usa", "name": "chevrolet monte carlo", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 14.0, "cylinders": 8, "displacement": 455.0, "horsepower": 225.0, "weight": 3086, "acceleration": 10.0, "model_year": 70, "origin": "usa", "name": "buick estate wagon (sw)", "h1": 225.0, "h2": 50625.0, "h3": 11390625.0, "pred": 13.49204045628366}, {"mpg": 24.0, "cylinders": 4, "displacement": 113.0, "horsepower": 95.0, "weight": 2372, "acceleration": 15.0, "model_year": 70, "origin": "japan", "name": "toyota corona mark ii", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 22.0, "cylinders": 6, "displacement": 198.0, "horsepower": 95.0, "weight": 2833, "acceleration": 15.5, "model_year": 70, "origin": "usa", "name": "plymouth duster", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 18.0, "cylinders": 6, "displacement": 199.0, "horsepower": 97.0, "weight": 2774, "acceleration": 15.5, "model_year": 70, "origin": "usa", "name": "amc hornet", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 21.0, "cylinders": 6, "displacement": 200.0, "horsepower": 85.0, "weight": 2587, "acceleration": 16.0, "model_year": 70, "origin": "usa", "name": "ford maverick", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 27.0, "cylinders": 4, "displacement": 97.0, "horsepower": 88.0, "weight": 2130, "acceleration": 14.5, "model_year": 70, "origin": "japan", "name": "datsun pl510", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 26.0, "cylinders": 4, "displacement": 97.0, "horsepower": 46.0, "weight": 1835, "acceleration": 20.5, "model_year": 70, "origin": "europe", "name": "volkswagen 1131 deluxe sedan", "h1": 46.0, "h2": 2116.0, "h3": 97336.0, "pred": 38.70792285334704}, {"mpg": 25.0, "cylinders": 4, "displacement": 110.0, "horsepower": 87.0, "weight": 2672, "acceleration": 17.5, "model_year": 70, "origin": "europe", "name": "peugeot 504", "h1": 87.0, "h2": 7569.0, "h3": 658503.0, "pred": 25.51730038524655}, {"mpg": 24.0, "cylinders": 4, "displacement": 107.0, "horsepower": 90.0, "weight": 2430, "acceleration": 14.5, "model_year": 70, "origin": "europe", "name": "audi 100 ls", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 25.0, "cylinders": 4, "displacement": 104.0, "horsepower": 95.0, "weight": 2375, "acceleration": 17.5, "model_year": 70, "origin": "europe", "name": "saab 99e", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 26.0, "cylinders": 4, "displacement": 121.0, "horsepower": 113.0, "weight": 2234, "acceleration": 12.5, "model_year": 70, "origin": "europe", "name": "bmw 2002", "h1": 113.0, "h2": 12769.0, "h3": 1442897.0, "pred": 19.854255131449065}, {"mpg": 21.0, "cylinders": 6, "displacement": 199.0, "horsepower": 90.0, "weight": 2648, "acceleration": 15.0, "model_year": 70, "origin": "usa", "name": "amc gremlin", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 10.0, "cylinders": 8, "displacement": 360.0, "horsepower": 215.0, "weight": 4615, "acceleration": 14.0, "model_year": 70, "origin": "usa", "name": "ford f250", "h1": 215.0, "h2": 46225.0, "h3": 9938375.0, "pred": 13.150329660718207}, {"mpg": 10.0, "cylinders": 8, "displacement": 307.0, "horsepower": 200.0, "weight": 4376, "acceleration": 15.0, "model_year": 70, "origin": "usa", "name": "chevy c20", "h1": 200.0, "h2": 40000.0, "h3": 8000000.0, "pred": 12.902202472488177}, {"mpg": 11.0, "cylinders": 8, "displacement": 318.0, "horsepower": 210.0, "weight": 4382, "acceleration": 13.5, "model_year": 70, "origin": "usa", "name": "dodge d200", "h1": 210.0, "h2": 44100.0, "h3": 9261000.0, "pred": 13.030752094525752}, {"mpg": 9.0, "cylinders": 8, "displacement": 304.0, "horsepower": 193.0, "weight": 4732, "acceleration": 18.5, "model_year": 70, "origin": "usa", "name": "hi 1200d", "h1": 193.0, "h2": 37249.0, "h3": 7189057.0, "pred": 12.905584641906145}, {"mpg": 27.0, "cylinders": 4, "displacement": 97.0, "horsepower": 88.0, "weight": 2130, "acceleration": 14.5, "model_year": 71, "origin": "japan", "name": "datsun pl510", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 28.0, "cylinders": 4, "displacement": 140.0, "horsepower": 90.0, "weight": 2264, "acceleration": 15.5, "model_year": 71, "origin": "usa", "name": "chevrolet vega 2300", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 25.0, "cylinders": 4, "displacement": 113.0, "horsepower": 95.0, "weight": 2228, "acceleration": 14.0, "model_year": 71, "origin": "japan", "name": "toyota corona", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 19.0, "cylinders": 6, "displacement": 232.0, "horsepower": 100.0, "weight": 2634, "acceleration": 13.0, "model_year": 71, "origin": "usa", "name": "amc gremlin", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 16.0, "cylinders": 6, "displacement": 225.0, "horsepower": 105.0, "weight": 3439, "acceleration": 15.5, "model_year": 71, "origin": "usa", "name": "plymouth satellite custom", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 17.0, "cylinders": 6, "displacement": 250.0, "horsepower": 100.0, "weight": 3329, "acceleration": 15.5, "model_year": 71, "origin": "usa", "name": "chevrolet chevelle malibu", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 19.0, "cylinders": 6, "displacement": 250.0, "horsepower": 88.0, "weight": 3302, "acceleration": 15.5, "model_year": 71, "origin": "usa", "name": "ford torino 500", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 18.0, "cylinders": 6, "displacement": 232.0, "horsepower": 100.0, "weight": 3288, "acceleration": 15.5, "model_year": 71, "origin": "usa", "name": "amc matador", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 14.0, "cylinders": 8, "displacement": 350.0, "horsepower": 165.0, "weight": 4209, "acceleration": 12.0, "model_year": 71, "origin": "usa", "name": "chevrolet impala", "h1": 165.0, "h2": 27225.0, "h3": 4492125.0, "pred": 13.782683444506674}, {"mpg": 14.0, "cylinders": 8, "displacement": 400.0, "horsepower": 175.0, "weight": 4464, "acceleration": 11.5, "model_year": 71, "origin": "usa", "name": "pontiac catalina brougham", "h1": 175.0, "h2": 30625.0, "h3": 5359375.0, "pred": 13.301159134643925}, {"mpg": 14.0, "cylinders": 8, "displacement": 351.0, "horsepower": 153.0, "weight": 4154, "acceleration": 13.5, "model_year": 71, "origin": "usa", "name": "ford galaxie 500", "h1": 153.0, "h2": 23409.0, "h3": 3581577.0, "pred": 14.629983934305002}, {"mpg": 14.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4096, "acceleration": 13.0, "model_year": 71, "origin": "usa", "name": "plymouth fury iii", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 12.0, "cylinders": 8, "displacement": 383.0, "horsepower": 180.0, "weight": 4955, "acceleration": 11.5, "model_year": 71, "origin": "usa", "name": "dodge monaco (sw)", "h1": 180.0, "h2": 32400.0, "h3": 5832000.0, "pred": 13.132604413936505}, {"mpg": 13.0, "cylinders": 8, "displacement": 400.0, "horsepower": 170.0, "weight": 4746, "acceleration": 12.0, "model_year": 71, "origin": "usa", "name": "ford country squire (sw)", "h1": 170.0, "h2": 28900.0, "h3": 4913000.0, "pred": 13.517315488356196}, {"mpg": 13.0, "cylinders": 8, "displacement": 400.0, "horsepower": 175.0, "weight": 5140, "acceleration": 12.0, "model_year": 71, "origin": "usa", "name": "pontiac safari (sw)", "h1": 175.0, "h2": 30625.0, "h3": 5359375.0, "pred": 13.301159134643925}, {"mpg": 18.0, "cylinders": 6, "displacement": 258.0, "horsepower": 110.0, "weight": 2962, "acceleration": 13.5, "model_year": 71, "origin": "usa", "name": "amc hornet sportabout (sw)", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 22.0, "cylinders": 4, "displacement": 140.0, "horsepower": 72.0, "weight": 2408, "acceleration": 19.0, "model_year": 71, "origin": "usa", "name": "chevrolet vega (sw)", "h1": 72.0, "h2": 5184.0, "h3": 373248.0, "pred": 29.703946222426843}, {"mpg": 19.0, "cylinders": 6, "displacement": 250.0, "horsepower": 100.0, "weight": 3282, "acceleration": 15.0, "model_year": 71, "origin": "usa", "name": "pontiac firebird", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 18.0, "cylinders": 6, "displacement": 250.0, "horsepower": 88.0, "weight": 3139, "acceleration": 14.5, "model_year": 71, "origin": "usa", "name": "ford mustang", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 23.0, "cylinders": 4, "displacement": 122.0, "horsepower": 86.0, "weight": 2220, "acceleration": 14.0, "model_year": 71, "origin": "usa", "name": "mercury capri 2000", "h1": 86.0, "h2": 7396.0, "h3": 636056.0, "pred": 25.77466687691218}, {"mpg": 28.0, "cylinders": 4, "displacement": 116.0, "horsepower": 90.0, "weight": 2123, "acceleration": 14.0, "model_year": 71, "origin": "europe", "name": "opel 1900", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 30.0, "cylinders": 4, "displacement": 79.0, "horsepower": 70.0, "weight": 2074, "acceleration": 19.5, "model_year": 71, "origin": "europe", "name": "peugeot 304", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 30.0, "cylinders": 4, "displacement": 88.0, "horsepower": 76.0, "weight": 2065, "acceleration": 14.5, "model_year": 71, "origin": "europe", "name": "fiat 124b", "h1": 76.0, "h2": 5776.0, "h3": 438976.0, "pred": 28.518226948841573}, {"mpg": 31.0, "cylinders": 4, "displacement": 71.0, "horsepower": 65.0, "weight": 1773, "acceleration": 19.0, "model_year": 71, "origin": "japan", "name": "toyota corolla 1200", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 35.0, "cylinders": 4, "displacement": 72.0, "horsepower": 69.0, "weight": 1613, "acceleration": 18.0, "model_year": 71, "origin": "japan", "name": "datsun 1200", "h1": 69.0, "h2": 4761.0, "h3": 328509.0, "pred": 30.627112739871134}, {"mpg": 27.0, "cylinders": 4, "displacement": 97.0, "horsepower": 60.0, "weight": 1834, "acceleration": 19.0, "model_year": 71, "origin": "europe", "name": "volkswagen model 111", "h1": 60.0, "h2": 3600.0, "h3": 216000.0, "pred": 33.5745465533774}, {"mpg": 26.0, "cylinders": 4, "displacement": 91.0, "horsepower": 70.0, "weight": 1955, "acceleration": 20.5, "model_year": 71, "origin": "usa", "name": "plymouth cricket", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 24.0, "cylinders": 4, "displacement": 113.0, "horsepower": 95.0, "weight": 2278, "acceleration": 15.5, "model_year": 72, "origin": "japan", "name": "toyota corona hardtop", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 25.0, "cylinders": 4, "displacement": 97.5, "horsepower": 80.0, "weight": 2126, "acceleration": 17.0, "model_year": 72, "origin": "usa", "name": "dodge colt hardtop", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 23.0, "cylinders": 4, "displacement": 97.0, "horsepower": 54.0, "weight": 2254, "acceleration": 23.5, "model_year": 72, "origin": "europe", "name": "volkswagen type 3", "h1": 54.0, "h2": 2916.0, "h3": 157464.0, "pred": 35.69125851400213}, {"mpg": 20.0, "cylinders": 4, "displacement": 140.0, "horsepower": 90.0, "weight": 2408, "acceleration": 19.5, "model_year": 72, "origin": "usa", "name": "chevrolet vega", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 21.0, "cylinders": 4, "displacement": 122.0, "horsepower": 86.0, "weight": 2226, "acceleration": 16.5, "model_year": 72, "origin": "usa", "name": "ford pinto runabout", "h1": 86.0, "h2": 7396.0, "h3": 636056.0, "pred": 25.77466687691218}, {"mpg": 13.0, "cylinders": 8, "displacement": 350.0, "horsepower": 165.0, "weight": 4274, "acceleration": 12.0, "model_year": 72, "origin": "usa", "name": "chevrolet impala", "h1": 165.0, "h2": 27225.0, "h3": 4492125.0, "pred": 13.782683444506674}, {"mpg": 14.0, "cylinders": 8, "displacement": 400.0, "horsepower": 175.0, "weight": 4385, "acceleration": 12.0, "model_year": 72, "origin": "usa", "name": "pontiac catalina", "h1": 175.0, "h2": 30625.0, "h3": 5359375.0, "pred": 13.301159134643925}, {"mpg": 15.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4135, "acceleration": 13.5, "model_year": 72, "origin": "usa", "name": "plymouth fury iii", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 14.0, "cylinders": 8, "displacement": 351.0, "horsepower": 153.0, "weight": 4129, "acceleration": 13.0, "model_year": 72, "origin": "usa", "name": "ford galaxie 500", "h1": 153.0, "h2": 23409.0, "h3": 3581577.0, "pred": 14.629983934305002}, {"mpg": 17.0, "cylinders": 8, "displacement": 304.0, "horsepower": 150.0, "weight": 3672, "acceleration": 11.5, "model_year": 72, "origin": "usa", "name": "amc ambassador sst", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 11.0, "cylinders": 8, "displacement": 429.0, "horsepower": 208.0, "weight": 4633, "acceleration": 11.0, "model_year": 72, "origin": "usa", "name": "mercury marquis", "h1": 208.0, "h2": 43264.0, "h3": 8998912.0, "pred": 12.99300382691247}, {"mpg": 13.0, "cylinders": 8, "displacement": 350.0, "horsepower": 155.0, "weight": 4502, "acceleration": 13.5, "model_year": 72, "origin": "usa", "name": "buick lesabre custom", "h1": 155.0, "h2": 24025.0, "h3": 3723875.0, "pred": 14.467494041855744}, {"mpg": 12.0, "cylinders": 8, "displacement": 350.0, "horsepower": 160.0, "weight": 4456, "acceleration": 13.5, "model_year": 72, "origin": "usa", "name": "oldsmobile delta 88 royale", "h1": 160.0, "h2": 25600.0, "h3": 4096000.0, "pred": 14.098872972528739}, {"mpg": 13.0, "cylinders": 8, "displacement": 400.0, "horsepower": 190.0, "weight": 4422, "acceleration": 12.5, "model_year": 72, "origin": "usa", "name": "chrysler newport royal", "h1": 190.0, "h2": 36100.0, "h3": 6859000.0, "pred": 12.931859993802796}, {"mpg": 19.0, "cylinders": 3, "displacement": 70.0, "horsepower": 97.0, "weight": 2330, "acceleration": 13.5, "model_year": 72, "origin": "japan", "name": "mazda rx2 coupe", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 15.0, "cylinders": 8, "displacement": 304.0, "horsepower": 150.0, "weight": 3892, "acceleration": 12.5, "model_year": 72, "origin": "usa", "name": "amc matador (sw)", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 13.0, "cylinders": 8, "displacement": 307.0, "horsepower": 130.0, "weight": 4098, "acceleration": 14.0, "model_year": 72, "origin": "usa", "name": "chevrolet chevelle concours (sw)", "h1": 130.0, "h2": 16900.0, "h3": 2197000.0, "pred": 17.15342143823247}, {"mpg": 13.0, "cylinders": 8, "displacement": 302.0, "horsepower": 140.0, "weight": 4294, "acceleration": 16.0, "model_year": 72, "origin": "usa", "name": "ford gran torino (sw)", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 14.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4077, "acceleration": 14.0, "model_year": 72, "origin": "usa", "name": "plymouth satellite custom (sw)", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 18.0, "cylinders": 4, "displacement": 121.0, "horsepower": 112.0, "weight": 2933, "acceleration": 14.5, "model_year": 72, "origin": "europe", "name": "volvo 145e (sw)", "h1": 112.0, "h2": 12544.0, "h3": 1404928.0, "pred": 20.03683296480814}, {"mpg": 22.0, "cylinders": 4, "displacement": 121.0, "horsepower": 76.0, "weight": 2511, "acceleration": 18.0, "model_year": 72, "origin": "europe", "name": "volkswagen 411 (sw)", "h1": 76.0, "h2": 5776.0, "h3": 438976.0, "pred": 28.518226948841573}, {"mpg": 21.0, "cylinders": 4, "displacement": 120.0, "horsepower": 87.0, "weight": 2979, "acceleration": 19.5, "model_year": 72, "origin": "europe", "name": "peugeot 504 (sw)", "h1": 87.0, "h2": 7569.0, "h3": 658503.0, "pred": 25.51730038524655}, {"mpg": 26.0, "cylinders": 4, "displacement": 96.0, "horsepower": 69.0, "weight": 2189, "acceleration": 18.0, "model_year": 72, "origin": "europe", "name": "renault 12 (sw)", "h1": 69.0, "h2": 4761.0, "h3": 328509.0, "pred": 30.627112739871134}, {"mpg": 22.0, "cylinders": 4, "displacement": 122.0, "horsepower": 86.0, "weight": 2395, "acceleration": 16.0, "model_year": 72, "origin": "usa", "name": "ford pinto (sw)", "h1": 86.0, "h2": 7396.0, "h3": 636056.0, "pred": 25.77466687691218}, {"mpg": 28.0, "cylinders": 4, "displacement": 97.0, "horsepower": 92.0, "weight": 2288, "acceleration": 17.0, "model_year": 72, "origin": "japan", "name": "datsun 510 (sw)", "h1": 92.0, "h2": 8464.0, "h3": 778688.0, "pred": 24.27577258882829}, {"mpg": 23.0, "cylinders": 4, "displacement": 120.0, "horsepower": 97.0, "weight": 2506, "acceleration": 14.5, "model_year": 72, "origin": "japan", "name": "toyouta corona mark ii (sw)", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 28.0, "cylinders": 4, "displacement": 98.0, "horsepower": 80.0, "weight": 2164, "acceleration": 15.0, "model_year": 72, "origin": "usa", "name": "dodge colt (sw)", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 27.0, "cylinders": 4, "displacement": 97.0, "horsepower": 88.0, "weight": 2100, "acceleration": 16.5, "model_year": 72, "origin": "japan", "name": "toyota corolla 1600 (sw)", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 13.0, "cylinders": 8, "displacement": 350.0, "horsepower": 175.0, "weight": 4100, "acceleration": 13.0, "model_year": 73, "origin": "usa", "name": "buick century 350", "h1": 175.0, "h2": 30625.0, "h3": 5359375.0, "pred": 13.301159134643925}, {"mpg": 14.0, "cylinders": 8, "displacement": 304.0, "horsepower": 150.0, "weight": 3672, "acceleration": 11.5, "model_year": 73, "origin": "usa", "name": "amc matador", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 13.0, "cylinders": 8, "displacement": 350.0, "horsepower": 145.0, "weight": 3988, "acceleration": 13.0, "model_year": 73, "origin": "usa", "name": "chevrolet malibu", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 14.0, "cylinders": 8, "displacement": 302.0, "horsepower": 137.0, "weight": 4042, "acceleration": 14.5, "model_year": 73, "origin": "usa", "name": "ford gran torino", "h1": 137.0, "h2": 18769.0, "h3": 2571353.0, "pred": 16.253546740999866}, {"mpg": 15.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 3777, "acceleration": 12.5, "model_year": 73, "origin": "usa", "name": "dodge coronet custom", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 12.0, "cylinders": 8, "displacement": 429.0, "horsepower": 198.0, "weight": 4952, "acceleration": 11.5, "model_year": 73, "origin": "usa", "name": "mercury marquis brougham", "h1": 198.0, "h2": 39204.0, "h3": 7762392.0, "pred": 12.895065253107987}, {"mpg": 13.0, "cylinders": 8, "displacement": 400.0, "horsepower": 150.0, "weight": 4464, "acceleration": 12.0, "model_year": 73, "origin": "usa", "name": "chevrolet caprice classic", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 13.0, "cylinders": 8, "displacement": 351.0, "horsepower": 158.0, "weight": 4363, "acceleration": 13.0, "model_year": 73, "origin": "usa", "name": "ford ltd", "h1": 158.0, "h2": 24964.0, "h3": 3944312.0, "pred": 14.239939457014685}, {"mpg": 14.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4237, "acceleration": 14.5, "model_year": 73, "origin": "usa", "name": "plymouth fury gran sedan", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 13.0, "cylinders": 8, "displacement": 440.0, "horsepower": 215.0, "weight": 4735, "acceleration": 11.0, "model_year": 73, "origin": "usa", "name": "chrysler new yorker brougham", "h1": 215.0, "h2": 46225.0, "h3": 9938375.0, "pred": 13.150329660718207}, {"mpg": 12.0, "cylinders": 8, "displacement": 455.0, "horsepower": 225.0, "weight": 4951, "acceleration": 11.0, "model_year": 73, "origin": "usa", "name": "buick electra 225 custom", "h1": 225.0, "h2": 50625.0, "h3": 11390625.0, "pred": 13.49204045628366}, {"mpg": 13.0, "cylinders": 8, "displacement": 360.0, "horsepower": 175.0, "weight": 3821, "acceleration": 11.0, "model_year": 73, "origin": "usa", "name": "amc ambassador brougham", "h1": 175.0, "h2": 30625.0, "h3": 5359375.0, "pred": 13.301159134643925}, {"mpg": 18.0, "cylinders": 6, "displacement": 225.0, "horsepower": 105.0, "weight": 3121, "acceleration": 16.5, "model_year": 73, "origin": "usa", "name": "plymouth valiant", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 16.0, "cylinders": 6, "displacement": 250.0, "horsepower": 100.0, "weight": 3278, "acceleration": 18.0, "model_year": 73, "origin": "usa", "name": "chevrolet nova custom", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 18.0, "cylinders": 6, "displacement": 232.0, "horsepower": 100.0, "weight": 2945, "acceleration": 16.0, "model_year": 73, "origin": "usa", "name": "amc hornet", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 18.0, "cylinders": 6, "displacement": 250.0, "horsepower": 88.0, "weight": 3021, "acceleration": 16.5, "model_year": 73, "origin": "usa", "name": "ford maverick", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 23.0, "cylinders": 6, "displacement": 198.0, "horsepower": 95.0, "weight": 2904, "acceleration": 16.0, "model_year": 73, "origin": "usa", "name": "plymouth duster", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 26.0, "cylinders": 4, "displacement": 97.0, "horsepower": 46.0, "weight": 1950, "acceleration": 21.0, "model_year": 73, "origin": "europe", "name": "volkswagen super beetle", "h1": 46.0, "h2": 2116.0, "h3": 97336.0, "pred": 38.70792285334704}, {"mpg": 11.0, "cylinders": 8, "displacement": 400.0, "horsepower": 150.0, "weight": 4997, "acceleration": 14.0, "model_year": 73, "origin": "usa", "name": "chevrolet impala", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 12.0, "cylinders": 8, "displacement": 400.0, "horsepower": 167.0, "weight": 4906, "acceleration": 12.5, "model_year": 73, "origin": "usa", "name": "ford country", "h1": 167.0, "h2": 27889.0, "h3": 4657463.0, "pred": 13.67052783171016}, {"mpg": 13.0, "cylinders": 8, "displacement": 360.0, "horsepower": 170.0, "weight": 4654, "acceleration": 13.0, "model_year": 73, "origin": "usa", "name": "plymouth custom suburb", "h1": 170.0, "h2": 28900.0, "h3": 4913000.0, "pred": 13.517315488356196}, {"mpg": 12.0, "cylinders": 8, "displacement": 350.0, "horsepower": 180.0, "weight": 4499, "acceleration": 12.5, "model_year": 73, "origin": "usa", "name": "oldsmobile vista cruiser", "h1": 180.0, "h2": 32400.0, "h3": 5832000.0, "pred": 13.132604413936505}, {"mpg": 18.0, "cylinders": 6, "displacement": 232.0, "horsepower": 100.0, "weight": 2789, "acceleration": 15.0, "model_year": 73, "origin": "usa", "name": "amc gremlin", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 20.0, "cylinders": 4, "displacement": 97.0, "horsepower": 88.0, "weight": 2279, "acceleration": 19.0, "model_year": 73, "origin": "japan", "name": "toyota carina", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 21.0, "cylinders": 4, "displacement": 140.0, "horsepower": 72.0, "weight": 2401, "acceleration": 19.5, "model_year": 73, "origin": "usa", "name": "chevrolet vega", "h1": 72.0, "h2": 5184.0, "h3": 373248.0, "pred": 29.703946222426843}, {"mpg": 22.0, "cylinders": 4, "displacement": 108.0, "horsepower": 94.0, "weight": 2379, "acceleration": 16.5, "model_year": 73, "origin": "japan", "name": "datsun 610", "h1": 94.0, "h2": 8836.0, "h3": 830584.0, "pred": 23.800063223716883}, {"mpg": 18.0, "cylinders": 3, "displacement": 70.0, "horsepower": 90.0, "weight": 2124, "acceleration": 13.5, "model_year": 73, "origin": "japan", "name": "maxda rx3", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 19.0, "cylinders": 4, "displacement": 122.0, "horsepower": 85.0, "weight": 2310, "acceleration": 18.5, "model_year": 73, "origin": "usa", "name": "ford pinto", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 21.0, "cylinders": 6, "displacement": 155.0, "horsepower": 107.0, "weight": 2472, "acceleration": 14.0, "model_year": 73, "origin": "usa", "name": "mercury capri v6", "h1": 107.0, "h2": 11449.0, "h3": 1225043.0, "pred": 20.990712075431972}, {"mpg": 26.0, "cylinders": 4, "displacement": 98.0, "horsepower": 90.0, "weight": 2265, "acceleration": 15.5, "model_year": 73, "origin": "europe", "name": "fiat 124 sport coupe", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 15.0, "cylinders": 8, "displacement": 350.0, "horsepower": 145.0, "weight": 4082, "acceleration": 13.0, "model_year": 73, "origin": "usa", "name": "chevrolet monte carlo s", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 16.0, "cylinders": 8, "displacement": 400.0, "horsepower": 230.0, "weight": 4278, "acceleration": 9.5, "model_year": 73, "origin": "usa", "name": "pontiac grand prix", "h1": 230.0, "h2": 52900.0, "h3": 12167000.0, "pred": 13.710953746789919}, {"mpg": 29.0, "cylinders": 4, "displacement": 68.0, "horsepower": 49.0, "weight": 1867, "acceleration": 19.5, "model_year": 73, "origin": "europe", "name": "fiat 128", "h1": 49.0, "h2": 2401.0, "h3": 117649.0, "pred": 37.55028626605237}, {"mpg": 24.0, "cylinders": 4, "displacement": 116.0, "horsepower": 75.0, "weight": 2158, "acceleration": 15.5, "model_year": 73, "origin": "europe", "name": "opel manta", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 20.0, "cylinders": 4, "displacement": 114.0, "horsepower": 91.0, "weight": 2582, "acceleration": 14.0, "model_year": 73, "origin": "europe", "name": "audi 100ls", "h1": 91.0, "h2": 8281.0, "h3": 753571.0, "pred": 24.51808045904218}, {"mpg": 19.0, "cylinders": 4, "displacement": 121.0, "horsepower": 112.0, "weight": 2868, "acceleration": 15.5, "model_year": 73, "origin": "europe", "name": "volvo 144ea", "h1": 112.0, "h2": 12544.0, "h3": 1404928.0, "pred": 20.03683296480814}, {"mpg": 15.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 3399, "acceleration": 11.0, "model_year": 73, "origin": "usa", "name": "dodge dart custom", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 24.0, "cylinders": 4, "displacement": 121.0, "horsepower": 110.0, "weight": 2660, "acceleration": 14.0, "model_year": 73, "origin": "europe", "name": "saab 99le", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 20.0, "cylinders": 6, "displacement": 156.0, "horsepower": 122.0, "weight": 2807, "acceleration": 13.5, "model_year": 73, "origin": "japan", "name": "toyota mark ii", "h1": 122.0, "h2": 14884.0, "h3": 1815848.0, "pred": 18.331126517722744}, {"mpg": 11.0, "cylinders": 8, "displacement": 350.0, "horsepower": 180.0, "weight": 3664, "acceleration": 11.0, "model_year": 73, "origin": "usa", "name": "oldsmobile omega", "h1": 180.0, "h2": 32400.0, "h3": 5832000.0, "pred": 13.132604413936505}, {"mpg": 20.0, "cylinders": 6, "displacement": 198.0, "horsepower": 95.0, "weight": 3102, "acceleration": 16.5, "model_year": 74, "origin": "usa", "name": "plymouth duster", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 19.0, "cylinders": 6, "displacement": 232.0, "horsepower": 100.0, "weight": 2901, "acceleration": 16.0, "model_year": 74, "origin": "usa", "name": "amc hornet", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 15.0, "cylinders": 6, "displacement": 250.0, "horsepower": 100.0, "weight": 3336, "acceleration": 17.0, "model_year": 74, "origin": "usa", "name": "chevrolet nova", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 31.0, "cylinders": 4, "displacement": 79.0, "horsepower": 67.0, "weight": 1950, "acceleration": 19.0, "model_year": 74, "origin": "japan", "name": "datsun b210", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 26.0, "cylinders": 4, "displacement": 122.0, "horsepower": 80.0, "weight": 2451, "acceleration": 16.5, "model_year": 74, "origin": "usa", "name": "ford pinto", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 32.0, "cylinders": 4, "displacement": 71.0, "horsepower": 65.0, "weight": 1836, "acceleration": 21.0, "model_year": 74, "origin": "japan", "name": "toyota corolla 1200", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 25.0, "cylinders": 4, "displacement": 140.0, "horsepower": 75.0, "weight": 2542, "acceleration": 17.0, "model_year": 74, "origin": "usa", "name": "chevrolet vega", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 16.0, "cylinders": 6, "displacement": 250.0, "horsepower": 100.0, "weight": 3781, "acceleration": 17.0, "model_year": 74, "origin": "usa", "name": "chevrolet chevelle malibu classic", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 16.0, "cylinders": 6, "displacement": 258.0, "horsepower": 110.0, "weight": 3632, "acceleration": 18.0, "model_year": 74, "origin": "usa", "name": "amc matador", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 18.0, "cylinders": 6, "displacement": 225.0, "horsepower": 105.0, "weight": 3613, "acceleration": 16.5, "model_year": 74, "origin": "usa", "name": "plymouth satellite sebring", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 16.0, "cylinders": 8, "displacement": 302.0, "horsepower": 140.0, "weight": 4141, "acceleration": 14.0, "model_year": 74, "origin": "usa", "name": "ford gran torino", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 13.0, "cylinders": 8, "displacement": 350.0, "horsepower": 150.0, "weight": 4699, "acceleration": 14.5, "model_year": 74, "origin": "usa", "name": "buick century luxus (sw)", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 14.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4457, "acceleration": 13.5, "model_year": 74, "origin": "usa", "name": "dodge coronet custom (sw)", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 14.0, "cylinders": 8, "displacement": 302.0, "horsepower": 140.0, "weight": 4638, "acceleration": 16.0, "model_year": 74, "origin": "usa", "name": "ford gran torino (sw)", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 14.0, "cylinders": 8, "displacement": 304.0, "horsepower": 150.0, "weight": 4257, "acceleration": 15.5, "model_year": 74, "origin": "usa", "name": "amc matador (sw)", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 29.0, "cylinders": 4, "displacement": 98.0, "horsepower": 83.0, "weight": 2219, "acceleration": 16.5, "model_year": 74, "origin": "europe", "name": "audi fox", "h1": 83.0, "h2": 6889.0, "h3": 571787.0, "pred": 26.56512005227141}, {"mpg": 26.0, "cylinders": 4, "displacement": 79.0, "horsepower": 67.0, "weight": 1963, "acceleration": 15.5, "model_year": 74, "origin": "europe", "name": "volkswagen dasher", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 26.0, "cylinders": 4, "displacement": 97.0, "horsepower": 78.0, "weight": 2300, "acceleration": 14.5, "model_year": 74, "origin": "europe", "name": "opel manta", "h1": 78.0, "h2": 6084.0, "h3": 474552.0, "pred": 27.944493797739305}, {"mpg": 31.0, "cylinders": 4, "displacement": 76.0, "horsepower": 52.0, "weight": 1649, "acceleration": 16.5, "model_year": 74, "origin": "japan", "name": "toyota corona", "h1": 52.0, "h2": 2704.0, "h3": 140608.0, "pred": 36.424391909338894}, {"mpg": 32.0, "cylinders": 4, "displacement": 83.0, "horsepower": 61.0, "weight": 2003, "acceleration": 19.0, "model_year": 74, "origin": "japan", "name": "datsun 710", "h1": 61.0, "h2": 3721.0, "h3": 226981.0, "pred": 33.23368468870961}, {"mpg": 28.0, "cylinders": 4, "displacement": 90.0, "horsepower": 75.0, "weight": 2125, "acceleration": 14.5, "model_year": 74, "origin": "usa", "name": "dodge colt", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 24.0, "cylinders": 4, "displacement": 90.0, "horsepower": 75.0, "weight": 2108, "acceleration": 15.5, "model_year": 74, "origin": "europe", "name": "fiat 128", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 26.0, "cylinders": 4, "displacement": 116.0, "horsepower": 75.0, "weight": 2246, "acceleration": 14.0, "model_year": 74, "origin": "europe", "name": "fiat 124 tc", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 24.0, "cylinders": 4, "displacement": 120.0, "horsepower": 97.0, "weight": 2489, "acceleration": 15.0, "model_year": 74, "origin": "japan", "name": "honda civic", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 26.0, "cylinders": 4, "displacement": 108.0, "horsepower": 93.0, "weight": 2391, "acceleration": 15.5, "model_year": 74, "origin": "japan", "name": "subaru", "h1": 93.0, "h2": 8649.0, "h3": 804357.0, "pred": 24.036437803638343}, {"mpg": 31.0, "cylinders": 4, "displacement": 79.0, "horsepower": 67.0, "weight": 2000, "acceleration": 16.0, "model_year": 74, "origin": "europe", "name": "fiat x1.9", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 19.0, "cylinders": 6, "displacement": 225.0, "horsepower": 95.0, "weight": 3264, "acceleration": 16.0, "model_year": 75, "origin": "usa", "name": "plymouth valiant custom", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 18.0, "cylinders": 6, "displacement": 250.0, "horsepower": 105.0, "weight": 3459, "acceleration": 16.0, "model_year": 75, "origin": "usa", "name": "chevrolet nova", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 15.0, "cylinders": 6, "displacement": 250.0, "horsepower": 72.0, "weight": 3432, "acceleration": 21.0, "model_year": 75, "origin": "usa", "name": "mercury monarch", "h1": 72.0, "h2": 5184.0, "h3": 373248.0, "pred": 29.703946222426843}, {"mpg": 15.0, "cylinders": 6, "displacement": 250.0, "horsepower": 72.0, "weight": 3158, "acceleration": 19.5, "model_year": 75, "origin": "usa", "name": "ford maverick", "h1": 72.0, "h2": 5184.0, "h3": 373248.0, "pred": 29.703946222426843}, {"mpg": 16.0, "cylinders": 8, "displacement": 400.0, "horsepower": 170.0, "weight": 4668, "acceleration": 11.5, "model_year": 75, "origin": "usa", "name": "pontiac catalina", "h1": 170.0, "h2": 28900.0, "h3": 4913000.0, "pred": 13.517315488356196}, {"mpg": 15.0, "cylinders": 8, "displacement": 350.0, "horsepower": 145.0, "weight": 4440, "acceleration": 14.0, "model_year": 75, "origin": "usa", "name": "chevrolet bel air", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 16.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4498, "acceleration": 14.5, "model_year": 75, "origin": "usa", "name": "plymouth grand fury", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 14.0, "cylinders": 8, "displacement": 351.0, "horsepower": 148.0, "weight": 4657, "acceleration": 13.5, "model_year": 75, "origin": "usa", "name": "ford ltd", "h1": 148.0, "h2": 21904.0, "h3": 3241792.0, "pred": 15.074713910106965}, {"mpg": 17.0, "cylinders": 6, "displacement": 231.0, "horsepower": 110.0, "weight": 3907, "acceleration": 21.0, "model_year": 75, "origin": "usa", "name": "buick century", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 16.0, "cylinders": 6, "displacement": 250.0, "horsepower": 105.0, "weight": 3897, "acceleration": 18.5, "model_year": 75, "origin": "usa", "name": "chevroelt chevelle malibu", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 15.0, "cylinders": 6, "displacement": 258.0, "horsepower": 110.0, "weight": 3730, "acceleration": 19.0, "model_year": 75, "origin": "usa", "name": "amc matador", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 18.0, "cylinders": 6, "displacement": 225.0, "horsepower": 95.0, "weight": 3785, "acceleration": 19.0, "model_year": 75, "origin": "usa", "name": "plymouth fury", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 21.0, "cylinders": 6, "displacement": 231.0, "horsepower": 110.0, "weight": 3039, "acceleration": 15.0, "model_year": 75, "origin": "usa", "name": "buick skyhawk", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 20.0, "cylinders": 8, "displacement": 262.0, "horsepower": 110.0, "weight": 3221, "acceleration": 13.5, "model_year": 75, "origin": "usa", "name": "chevrolet monza 2+2", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 13.0, "cylinders": 8, "displacement": 302.0, "horsepower": 129.0, "weight": 3169, "acceleration": 12.0, "model_year": 75, "origin": "usa", "name": "ford mustang ii", "h1": 129.0, "h2": 16641.0, "h3": 2146689.0, "pred": 17.29180654562964}, {"mpg": 29.0, "cylinders": 4, "displacement": 97.0, "horsepower": 75.0, "weight": 2171, "acceleration": 16.0, "model_year": 75, "origin": "japan", "name": "toyota corolla", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 23.0, "cylinders": 4, "displacement": 140.0, "horsepower": 83.0, "weight": 2639, "acceleration": 17.0, "model_year": 75, "origin": "usa", "name": "ford pinto", "h1": 83.0, "h2": 6889.0, "h3": 571787.0, "pred": 26.56512005227141}, {"mpg": 20.0, "cylinders": 6, "displacement": 232.0, "horsepower": 100.0, "weight": 2914, "acceleration": 16.0, "model_year": 75, "origin": "usa", "name": "amc gremlin", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 23.0, "cylinders": 4, "displacement": 140.0, "horsepower": 78.0, "weight": 2592, "acceleration": 18.5, "model_year": 75, "origin": "usa", "name": "pontiac astro", "h1": 78.0, "h2": 6084.0, "h3": 474552.0, "pred": 27.944493797739305}, {"mpg": 24.0, "cylinders": 4, "displacement": 134.0, "horsepower": 96.0, "weight": 2702, "acceleration": 13.5, "model_year": 75, "origin": "japan", "name": "toyota corona", "h1": 96.0, "h2": 9216.0, "h3": 884736.0, "pred": 23.336143160657514}, {"mpg": 25.0, "cylinders": 4, "displacement": 90.0, "horsepower": 71.0, "weight": 2223, "acceleration": 16.5, "model_year": 75, "origin": "europe", "name": "volkswagen dasher", "h1": 71.0, "h2": 5041.0, "h3": 357911.0, "pred": 30.008420541767695}, {"mpg": 24.0, "cylinders": 4, "displacement": 119.0, "horsepower": 97.0, "weight": 2545, "acceleration": 17.0, "model_year": 75, "origin": "japan", "name": "datsun 710", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 18.0, "cylinders": 6, "displacement": 171.0, "horsepower": 97.0, "weight": 2984, "acceleration": 14.5, "model_year": 75, "origin": "usa", "name": "ford pinto", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 29.0, "cylinders": 4, "displacement": 90.0, "horsepower": 70.0, "weight": 1937, "acceleration": 14.0, "model_year": 75, "origin": "europe", "name": "volkswagen rabbit", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 19.0, "cylinders": 6, "displacement": 232.0, "horsepower": 90.0, "weight": 3211, "acceleration": 17.0, "model_year": 75, "origin": "usa", "name": "amc pacer", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 23.0, "cylinders": 4, "displacement": 115.0, "horsepower": 95.0, "weight": 2694, "acceleration": 15.0, "model_year": 75, "origin": "europe", "name": "audi 100ls", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 23.0, "cylinders": 4, "displacement": 120.0, "horsepower": 88.0, "weight": 2957, "acceleration": 17.0, "model_year": 75, "origin": "europe", "name": "peugeot 504", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 22.0, "cylinders": 4, "displacement": 121.0, "horsepower": 98.0, "weight": 2945, "acceleration": 14.5, "model_year": 75, "origin": "europe", "name": "volvo 244dl", "h1": 98.0, "h2": 9604.0, "h3": 941192.0, "pred": 22.883909361606463}, {"mpg": 25.0, "cylinders": 4, "displacement": 121.0, "horsepower": 115.0, "weight": 2671, "acceleration": 13.5, "model_year": 75, "origin": "europe", "name": "saab 99le", "h1": 115.0, "h2": 13225.0, "h3": 1520875.0, "pred": 19.49719441545288}, {"mpg": 33.0, "cylinders": 4, "displacement": 91.0, "horsepower": 53.0, "weight": 1795, "acceleration": 17.5, "model_year": 75, "origin": "japan", "name": "honda civic cvcc", "h1": 53.0, "h2": 2809.0, "h3": 148877.0, "pred": 36.05608751392694}, {"mpg": 28.0, "cylinders": 4, "displacement": 107.0, "horsepower": 86.0, "weight": 2464, "acceleration": 15.5, "model_year": 76, "origin": "europe", "name": "fiat 131", "h1": 86.0, "h2": 7396.0, "h3": 636056.0, "pred": 25.77466687691218}, {"mpg": 25.0, "cylinders": 4, "displacement": 116.0, "horsepower": 81.0, "weight": 2220, "acceleration": 16.9, "model_year": 76, "origin": "europe", "name": "opel 1900", "h1": 81.0, "h2": 6561.0, "h3": 531441.0, "pred": 27.10751238370085}, {"mpg": 25.0, "cylinders": 4, "displacement": 140.0, "horsepower": 92.0, "weight": 2572, "acceleration": 14.9, "model_year": 76, "origin": "usa", "name": "capri ii", "h1": 92.0, "h2": 8464.0, "h3": 778688.0, "pred": 24.27577258882829}, {"mpg": 26.0, "cylinders": 4, "displacement": 98.0, "horsepower": 79.0, "weight": 2255, "acceleration": 17.7, "model_year": 76, "origin": "usa", "name": "dodge colt", "h1": 79.0, "h2": 6241.0, "h3": 493039.0, "pred": 27.662363764466633}, {"mpg": 27.0, "cylinders": 4, "displacement": 101.0, "horsepower": 83.0, "weight": 2202, "acceleration": 15.3, "model_year": 76, "origin": "europe", "name": "renault 12tl", "h1": 83.0, "h2": 6889.0, "h3": 571787.0, "pred": 26.56512005227141}, {"mpg": 17.5, "cylinders": 8, "displacement": 305.0, "horsepower": 140.0, "weight": 4215, "acceleration": 13.0, "model_year": 76, "origin": "usa", "name": "chevrolet chevelle malibu classic", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 16.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 4190, "acceleration": 13.0, "model_year": 76, "origin": "usa", "name": "dodge coronet brougham", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 15.5, "cylinders": 8, "displacement": 304.0, "horsepower": 120.0, "weight": 3962, "acceleration": 13.9, "model_year": 76, "origin": "usa", "name": "amc matador", "h1": 120.0, "h2": 14400.0, "h3": 1728000.0, "pred": 18.651162116085374}, {"mpg": 14.5, "cylinders": 8, "displacement": 351.0, "horsepower": 152.0, "weight": 4215, "acceleration": 12.8, "model_year": 76, "origin": "usa", "name": "ford gran torino", "h1": 152.0, "h2": 23104.0, "h3": 3511808.0, "pred": 14.714503570562592}, {"mpg": 22.0, "cylinders": 6, "displacement": 225.0, "horsepower": 100.0, "weight": 3233, "acceleration": 15.4, "model_year": 76, "origin": "usa", "name": "plymouth valiant", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 22.0, "cylinders": 6, "displacement": 250.0, "horsepower": 105.0, "weight": 3353, "acceleration": 14.5, "model_year": 76, "origin": "usa", "name": "chevrolet nova", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 24.0, "cylinders": 6, "displacement": 200.0, "horsepower": 81.0, "weight": 3012, "acceleration": 17.6, "model_year": 76, "origin": "usa", "name": "ford maverick", "h1": 81.0, "h2": 6561.0, "h3": 531441.0, "pred": 27.10751238370085}, {"mpg": 22.5, "cylinders": 6, "displacement": 232.0, "horsepower": 90.0, "weight": 3085, "acceleration": 17.6, "model_year": 76, "origin": "usa", "name": "amc hornet", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 29.0, "cylinders": 4, "displacement": 85.0, "horsepower": 52.0, "weight": 2035, "acceleration": 22.2, "model_year": 76, "origin": "usa", "name": "chevrolet chevette", "h1": 52.0, "h2": 2704.0, "h3": 140608.0, "pred": 36.424391909338894}, {"mpg": 24.5, "cylinders": 4, "displacement": 98.0, "horsepower": 60.0, "weight": 2164, "acceleration": 22.1, "model_year": 76, "origin": "usa", "name": "chevrolet woody", "h1": 60.0, "h2": 3600.0, "h3": 216000.0, "pred": 33.5745465533774}, {"mpg": 29.0, "cylinders": 4, "displacement": 90.0, "horsepower": 70.0, "weight": 1937, "acceleration": 14.2, "model_year": 76, "origin": "europe", "name": "vw rabbit", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 33.0, "cylinders": 4, "displacement": 91.0, "horsepower": 53.0, "weight": 1795, "acceleration": 17.4, "model_year": 76, "origin": "japan", "name": "honda civic", "h1": 53.0, "h2": 2809.0, "h3": 148877.0, "pred": 36.05608751392694}, {"mpg": 20.0, "cylinders": 6, "displacement": 225.0, "horsepower": 100.0, "weight": 3651, "acceleration": 17.7, "model_year": 76, "origin": "usa", "name": "dodge aspen se", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 18.0, "cylinders": 6, "displacement": 250.0, "horsepower": 78.0, "weight": 3574, "acceleration": 21.0, "model_year": 76, "origin": "usa", "name": "ford granada ghia", "h1": 78.0, "h2": 6084.0, "h3": 474552.0, "pred": 27.944493797739305}, {"mpg": 18.5, "cylinders": 6, "displacement": 250.0, "horsepower": 110.0, "weight": 3645, "acceleration": 16.2, "model_year": 76, "origin": "usa", "name": "pontiac ventura sj", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 17.5, "cylinders": 6, "displacement": 258.0, "horsepower": 95.0, "weight": 3193, "acceleration": 17.8, "model_year": 76, "origin": "usa", "name": "amc pacer d/l", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 29.5, "cylinders": 4, "displacement": 97.0, "horsepower": 71.0, "weight": 1825, "acceleration": 12.2, "model_year": 76, "origin": "europe", "name": "volkswagen rabbit", "h1": 71.0, "h2": 5041.0, "h3": 357911.0, "pred": 30.008420541767695}, {"mpg": 32.0, "cylinders": 4, "displacement": 85.0, "horsepower": 70.0, "weight": 1990, "acceleration": 17.0, "model_year": 76, "origin": "japan", "name": "datsun b-210", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 28.0, "cylinders": 4, "displacement": 97.0, "horsepower": 75.0, "weight": 2155, "acceleration": 16.4, "model_year": 76, "origin": "japan", "name": "toyota corolla", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 26.5, "cylinders": 4, "displacement": 140.0, "horsepower": 72.0, "weight": 2565, "acceleration": 13.6, "model_year": 76, "origin": "usa", "name": "ford pinto", "h1": 72.0, "h2": 5184.0, "h3": 373248.0, "pred": 29.703946222426843}, {"mpg": 20.0, "cylinders": 4, "displacement": 130.0, "horsepower": 102.0, "weight": 3150, "acceleration": 15.7, "model_year": 76, "origin": "europe", "name": "volvo 245", "h1": 102.0, "h2": 10404.0, "h3": 1061208.0, "pred": 22.014088403354364}, {"mpg": 13.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 3940, "acceleration": 13.2, "model_year": 76, "origin": "usa", "name": "plymouth volare premier v8", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 19.0, "cylinders": 4, "displacement": 120.0, "horsepower": 88.0, "weight": 3270, "acceleration": 21.9, "model_year": 76, "origin": "europe", "name": "peugeot 504", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 19.0, "cylinders": 6, "displacement": 156.0, "horsepower": 108.0, "weight": 2930, "acceleration": 15.5, "model_year": 76, "origin": "japan", "name": "toyota mark ii", "h1": 108.0, "h2": 11664.0, "h3": 1259712.0, "pred": 20.79442799494519}, {"mpg": 16.5, "cylinders": 6, "displacement": 168.0, "horsepower": 120.0, "weight": 3820, "acceleration": 16.7, "model_year": 76, "origin": "europe", "name": "mercedes-benz 280s", "h1": 120.0, "h2": 14400.0, "h3": 1728000.0, "pred": 18.651162116085374}, {"mpg": 16.5, "cylinders": 8, "displacement": 350.0, "horsepower": 180.0, "weight": 4380, "acceleration": 12.1, "model_year": 76, "origin": "usa", "name": "cadillac seville", "h1": 180.0, "h2": 32400.0, "h3": 5832000.0, "pred": 13.132604413936505}, {"mpg": 13.0, "cylinders": 8, "displacement": 350.0, "horsepower": 145.0, "weight": 4055, "acceleration": 12.0, "model_year": 76, "origin": "usa", "name": "chevy c10", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 13.0, "cylinders": 8, "displacement": 302.0, "horsepower": 130.0, "weight": 3870, "acceleration": 15.0, "model_year": 76, "origin": "usa", "name": "ford f108", "h1": 130.0, "h2": 16900.0, "h3": 2197000.0, "pred": 17.15342143823247}, {"mpg": 13.0, "cylinders": 8, "displacement": 318.0, "horsepower": 150.0, "weight": 3755, "acceleration": 14.0, "model_year": 76, "origin": "usa", "name": "dodge d100", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 31.5, "cylinders": 4, "displacement": 98.0, "horsepower": 68.0, "weight": 2045, "acceleration": 18.5, "model_year": 77, "origin": "japan", "name": "honda accord cvcc", "h1": 68.0, "h2": 4624.0, "h3": 314432.0, "pred": 30.941356378144647}, {"mpg": 30.0, "cylinders": 4, "displacement": 111.0, "horsepower": 80.0, "weight": 2155, "acceleration": 14.8, "model_year": 77, "origin": "usa", "name": "buick opel isuzu deluxe", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 36.0, "cylinders": 4, "displacement": 79.0, "horsepower": 58.0, "weight": 1825, "acceleration": 18.6, "model_year": 77, "origin": "europe", "name": "renault 5 gtl", "h1": 58.0, "h2": 3364.0, "h3": 195112.0, "pred": 34.26643887406512}, {"mpg": 25.5, "cylinders": 4, "displacement": 122.0, "horsepower": 96.0, "weight": 2300, "acceleration": 15.5, "model_year": 77, "origin": "usa", "name": "plymouth arrow gs", "h1": 96.0, "h2": 9216.0, "h3": 884736.0, "pred": 23.336143160657514}, {"mpg": 33.5, "cylinders": 4, "displacement": 85.0, "horsepower": 70.0, "weight": 1945, "acceleration": 16.8, "model_year": 77, "origin": "japan", "name": "datsun f-10 hatchback", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 17.5, "cylinders": 8, "displacement": 305.0, "horsepower": 145.0, "weight": 3880, "acceleration": 12.5, "model_year": 77, "origin": "usa", "name": "chevrolet caprice classic", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 17.0, "cylinders": 8, "displacement": 260.0, "horsepower": 110.0, "weight": 4060, "acceleration": 19.0, "model_year": 77, "origin": "usa", "name": "oldsmobile cutlass supreme", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 15.5, "cylinders": 8, "displacement": 318.0, "horsepower": 145.0, "weight": 4140, "acceleration": 13.7, "model_year": 77, "origin": "usa", "name": "dodge monaco brougham", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 15.0, "cylinders": 8, "displacement": 302.0, "horsepower": 130.0, "weight": 4295, "acceleration": 14.9, "model_year": 77, "origin": "usa", "name": "mercury cougar brougham", "h1": 130.0, "h2": 16900.0, "h3": 2197000.0, "pred": 17.15342143823247}, {"mpg": 17.5, "cylinders": 6, "displacement": 250.0, "horsepower": 110.0, "weight": 3520, "acceleration": 16.4, "model_year": 77, "origin": "usa", "name": "chevrolet concours", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 20.5, "cylinders": 6, "displacement": 231.0, "horsepower": 105.0, "weight": 3425, "acceleration": 16.9, "model_year": 77, "origin": "usa", "name": "buick skylark", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 19.0, "cylinders": 6, "displacement": 225.0, "horsepower": 100.0, "weight": 3630, "acceleration": 17.7, "model_year": 77, "origin": "usa", "name": "plymouth volare custom", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 18.5, "cylinders": 6, "displacement": 250.0, "horsepower": 98.0, "weight": 3525, "acceleration": 19.0, "model_year": 77, "origin": "usa", "name": "ford granada", "h1": 98.0, "h2": 9604.0, "h3": 941192.0, "pred": 22.883909361606463}, {"mpg": 16.0, "cylinders": 8, "displacement": 400.0, "horsepower": 180.0, "weight": 4220, "acceleration": 11.1, "model_year": 77, "origin": "usa", "name": "pontiac grand prix lj", "h1": 180.0, "h2": 32400.0, "h3": 5832000.0, "pred": 13.132604413936505}, {"mpg": 15.5, "cylinders": 8, "displacement": 350.0, "horsepower": 170.0, "weight": 4165, "acceleration": 11.4, "model_year": 77, "origin": "usa", "name": "chevrolet monte carlo landau", "h1": 170.0, "h2": 28900.0, "h3": 4913000.0, "pred": 13.517315488356196}, {"mpg": 15.5, "cylinders": 8, "displacement": 400.0, "horsepower": 190.0, "weight": 4325, "acceleration": 12.2, "model_year": 77, "origin": "usa", "name": "chrysler cordoba", "h1": 190.0, "h2": 36100.0, "h3": 6859000.0, "pred": 12.931859993802796}, {"mpg": 16.0, "cylinders": 8, "displacement": 351.0, "horsepower": 149.0, "weight": 4335, "acceleration": 14.5, "model_year": 77, "origin": "usa", "name": "ford thunderbird", "h1": 149.0, "h2": 22201.0, "h3": 3307949.0, "pred": 14.981315796532833}, {"mpg": 29.0, "cylinders": 4, "displacement": 97.0, "horsepower": 78.0, "weight": 1940, "acceleration": 14.5, "model_year": 77, "origin": "europe", "name": "volkswagen rabbit custom", "h1": 78.0, "h2": 6084.0, "h3": 474552.0, "pred": 27.944493797739305}, {"mpg": 24.5, "cylinders": 4, "displacement": 151.0, "horsepower": 88.0, "weight": 2740, "acceleration": 16.0, "model_year": 77, "origin": "usa", "name": "pontiac sunbird coupe", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 26.0, "cylinders": 4, "displacement": 97.0, "horsepower": 75.0, "weight": 2265, "acceleration": 18.2, "model_year": 77, "origin": "japan", "name": "toyota corolla liftback", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 25.5, "cylinders": 4, "displacement": 140.0, "horsepower": 89.0, "weight": 2755, "acceleration": 15.8, "model_year": 77, "origin": "usa", "name": "ford mustang ii 2+2", "h1": 89.0, "h2": 7921.0, "h3": 704969.0, "pred": 25.011666973563678}, {"mpg": 30.5, "cylinders": 4, "displacement": 98.0, "horsepower": 63.0, "weight": 2051, "acceleration": 17.0, "model_year": 77, "origin": "usa", "name": "chevrolet chevette", "h1": 63.0, "h2": 3969.0, "h3": 250047.0, "pred": 32.562065151948815}, {"mpg": 33.5, "cylinders": 4, "displacement": 98.0, "horsepower": 83.0, "weight": 2075, "acceleration": 15.9, "model_year": 77, "origin": "usa", "name": "dodge colt m/m", "h1": 83.0, "h2": 6889.0, "h3": 571787.0, "pred": 26.56512005227141}, {"mpg": 30.0, "cylinders": 4, "displacement": 97.0, "horsepower": 67.0, "weight": 1985, "acceleration": 16.4, "model_year": 77, "origin": "japan", "name": "subaru dl", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 30.5, "cylinders": 4, "displacement": 97.0, "horsepower": 78.0, "weight": 2190, "acceleration": 14.1, "model_year": 77, "origin": "europe", "name": "volkswagen dasher", "h1": 78.0, "h2": 6084.0, "h3": 474552.0, "pred": 27.944493797739305}, {"mpg": 22.0, "cylinders": 6, "displacement": 146.0, "horsepower": 97.0, "weight": 2815, "acceleration": 14.5, "model_year": 77, "origin": "japan", "name": "datsun 810", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 21.5, "cylinders": 4, "displacement": 121.0, "horsepower": 110.0, "weight": 2600, "acceleration": 12.8, "model_year": 77, "origin": "europe", "name": "bmw 320i", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 21.5, "cylinders": 3, "displacement": 80.0, "horsepower": 110.0, "weight": 2720, "acceleration": 13.5, "model_year": 77, "origin": "japan", "name": "mazda rx-4", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 43.1, "cylinders": 4, "displacement": 90.0, "horsepower": 48.0, "weight": 1985, "acceleration": 21.5, "model_year": 78, "origin": "europe", "name": "volkswagen rabbit custom diesel", "h1": 48.0, "h2": 2304.0, "h3": 110592.0, "pred": 37.93262104096762}, {"mpg": 36.1, "cylinders": 4, "displacement": 98.0, "horsepower": 66.0, "weight": 1800, "acceleration": 14.4, "model_year": 78, "origin": "usa", "name": "ford fiesta", "h1": 66.0, "h2": 4356.0, "h3": 287496.0, "pred": 31.579703131912588}, {"mpg": 32.8, "cylinders": 4, "displacement": 78.0, "horsepower": 52.0, "weight": 1985, "acceleration": 19.4, "model_year": 78, "origin": "japan", "name": "mazda glc deluxe", "h1": 52.0, "h2": 2704.0, "h3": 140608.0, "pred": 36.424391909338894}, {"mpg": 39.4, "cylinders": 4, "displacement": 85.0, "horsepower": 70.0, "weight": 2070, "acceleration": 18.6, "model_year": 78, "origin": "japan", "name": "datsun b210 gx", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 36.1, "cylinders": 4, "displacement": 91.0, "horsepower": 60.0, "weight": 1800, "acceleration": 16.4, "model_year": 78, "origin": "japan", "name": "honda civic cvcc", "h1": 60.0, "h2": 3600.0, "h3": 216000.0, "pred": 33.5745465533774}, {"mpg": 19.9, "cylinders": 8, "displacement": 260.0, "horsepower": 110.0, "weight": 3365, "acceleration": 15.5, "model_year": 78, "origin": "usa", "name": "oldsmobile cutlass salon brougham", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 19.4, "cylinders": 8, "displacement": 318.0, "horsepower": 140.0, "weight": 3735, "acceleration": 13.2, "model_year": 78, "origin": "usa", "name": "dodge diplomat", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 20.2, "cylinders": 8, "displacement": 302.0, "horsepower": 139.0, "weight": 3570, "acceleration": 12.8, "model_year": 78, "origin": "usa", "name": "mercury monarch ghia", "h1": 139.0, "h2": 19321.0, "h3": 2685619.0, "pred": 16.01817434523113}, {"mpg": 19.2, "cylinders": 6, "displacement": 231.0, "horsepower": 105.0, "weight": 3535, "acceleration": 19.2, "model_year": 78, "origin": "usa", "name": "pontiac phoenix lj", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 20.5, "cylinders": 6, "displacement": 200.0, "horsepower": 95.0, "weight": 3155, "acceleration": 18.2, "model_year": 78, "origin": "usa", "name": "chevrolet malibu", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 20.2, "cylinders": 6, "displacement": 200.0, "horsepower": 85.0, "weight": 2965, "acceleration": 15.8, "model_year": 78, "origin": "usa", "name": "ford fairmont (auto)", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 25.1, "cylinders": 4, "displacement": 140.0, "horsepower": 88.0, "weight": 2720, "acceleration": 15.4, "model_year": 78, "origin": "usa", "name": "ford fairmont (man)", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 20.5, "cylinders": 6, "displacement": 225.0, "horsepower": 100.0, "weight": 3430, "acceleration": 17.2, "model_year": 78, "origin": "usa", "name": "plymouth volare", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 19.4, "cylinders": 6, "displacement": 232.0, "horsepower": 90.0, "weight": 3210, "acceleration": 17.2, "model_year": 78, "origin": "usa", "name": "amc concord", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 20.6, "cylinders": 6, "displacement": 231.0, "horsepower": 105.0, "weight": 3380, "acceleration": 15.8, "model_year": 78, "origin": "usa", "name": "buick century special", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 20.8, "cylinders": 6, "displacement": 200.0, "horsepower": 85.0, "weight": 3070, "acceleration": 16.7, "model_year": 78, "origin": "usa", "name": "mercury zephyr", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 18.6, "cylinders": 6, "displacement": 225.0, "horsepower": 110.0, "weight": 3620, "acceleration": 18.7, "model_year": 78, "origin": "usa", "name": "dodge aspen", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 18.1, "cylinders": 6, "displacement": 258.0, "horsepower": 120.0, "weight": 3410, "acceleration": 15.1, "model_year": 78, "origin": "usa", "name": "amc concord d/l", "h1": 120.0, "h2": 14400.0, "h3": 1728000.0, "pred": 18.651162116085374}, {"mpg": 19.2, "cylinders": 8, "displacement": 305.0, "horsepower": 145.0, "weight": 3425, "acceleration": 13.2, "model_year": 78, "origin": "usa", "name": "chevrolet monte carlo landau", "h1": 145.0, "h2": 21025.0, "h3": 3048625.0, "pred": 15.368470682158012}, {"mpg": 17.7, "cylinders": 6, "displacement": 231.0, "horsepower": 165.0, "weight": 3445, "acceleration": 13.4, "model_year": 78, "origin": "usa", "name": "buick regal sport coupe (turbo)", "h1": 165.0, "h2": 27225.0, "h3": 4492125.0, "pred": 13.782683444506674}, {"mpg": 18.1, "cylinders": 8, "displacement": 302.0, "horsepower": 139.0, "weight": 3205, "acceleration": 11.2, "model_year": 78, "origin": "usa", "name": "ford futura", "h1": 139.0, "h2": 19321.0, "h3": 2685619.0, "pred": 16.01817434523113}, {"mpg": 17.5, "cylinders": 8, "displacement": 318.0, "horsepower": 140.0, "weight": 4080, "acceleration": 13.7, "model_year": 78, "origin": "usa", "name": "dodge magnum xe", "h1": 140.0, "h2": 19600.0, "h3": 2744000.0, "pred": 15.904046191999996}, {"mpg": 30.0, "cylinders": 4, "displacement": 98.0, "horsepower": 68.0, "weight": 2155, "acceleration": 16.5, "model_year": 78, "origin": "usa", "name": "chevrolet chevette", "h1": 68.0, "h2": 4624.0, "h3": 314432.0, "pred": 30.941356378144647}, {"mpg": 27.5, "cylinders": 4, "displacement": 134.0, "horsepower": 95.0, "weight": 2560, "acceleration": 14.2, "model_year": 78, "origin": "japan", "name": "toyota corona", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 27.2, "cylinders": 4, "displacement": 119.0, "horsepower": 97.0, "weight": 2300, "acceleration": 14.7, "model_year": 78, "origin": "japan", "name": "datsun 510", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 30.9, "cylinders": 4, "displacement": 105.0, "horsepower": 75.0, "weight": 2230, "acceleration": 14.5, "model_year": 78, "origin": "usa", "name": "dodge omni", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 21.1, "cylinders": 4, "displacement": 134.0, "horsepower": 95.0, "weight": 2515, "acceleration": 14.8, "model_year": 78, "origin": "japan", "name": "toyota celica gt liftback", "h1": 95.0, "h2": 9025.0, "h3": 857375.0, "pred": 23.56663596930843}, {"mpg": 23.2, "cylinders": 4, "displacement": 156.0, "horsepower": 105.0, "weight": 2745, "acceleration": 16.7, "model_year": 78, "origin": "usa", "name": "plymouth sapporo", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 23.8, "cylinders": 4, "displacement": 151.0, "horsepower": 85.0, "weight": 2855, "acceleration": 17.6, "model_year": 78, "origin": "usa", "name": "oldsmobile starfire sx", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 23.9, "cylinders": 4, "displacement": 119.0, "horsepower": 97.0, "weight": 2405, "acceleration": 14.9, "model_year": 78, "origin": "japan", "name": "datsun 200-sx", "h1": 97.0, "h2": 9409.0, "h3": 912673.0, "pred": 23.108571918008685}, {"mpg": 20.3, "cylinders": 5, "displacement": 131.0, "horsepower": 103.0, "weight": 2830, "acceleration": 15.9, "model_year": 78, "origin": "europe", "name": "audi 5000", "h1": 103.0, "h2": 10609.0, "h3": 1092727.0, "pred": 21.803776081853194}, {"mpg": 17.0, "cylinders": 6, "displacement": 163.0, "horsepower": 125.0, "weight": 3140, "acceleration": 13.6, "model_year": 78, "origin": "europe", "name": "volvo 264gl", "h1": 125.0, "h2": 15625.0, "h3": 1953125.0, "pred": 17.870441113489683}, {"mpg": 21.6, "cylinders": 4, "displacement": 121.0, "horsepower": 115.0, "weight": 2795, "acceleration": 15.7, "model_year": 78, "origin": "europe", "name": "saab 99gle", "h1": 115.0, "h2": 13225.0, "h3": 1520875.0, "pred": 19.49719441545288}, {"mpg": 16.2, "cylinders": 6, "displacement": 163.0, "horsepower": 133.0, "weight": 3410, "acceleration": 15.8, "model_year": 78, "origin": "europe", "name": "peugeot 604sl", "h1": 133.0, "h2": 17689.0, "h3": 2352637.0, "pred": 16.75311652291633}, {"mpg": 31.5, "cylinders": 4, "displacement": 89.0, "horsepower": 71.0, "weight": 1990, "acceleration": 14.9, "model_year": 78, "origin": "europe", "name": "volkswagen scirocco", "h1": 71.0, "h2": 5041.0, "h3": 357911.0, "pred": 30.008420541767695}, {"mpg": 29.5, "cylinders": 4, "displacement": 98.0, "horsepower": 68.0, "weight": 2135, "acceleration": 16.6, "model_year": 78, "origin": "japan", "name": "honda accord lx", "h1": 68.0, "h2": 4624.0, "h3": 314432.0, "pred": 30.941356378144647}, {"mpg": 21.5, "cylinders": 6, "displacement": 231.0, "horsepower": 115.0, "weight": 3245, "acceleration": 15.4, "model_year": 79, "origin": "usa", "name": "pontiac lemans v6", "h1": 115.0, "h2": 13225.0, "h3": 1520875.0, "pred": 19.49719441545288}, {"mpg": 19.8, "cylinders": 6, "displacement": 200.0, "horsepower": 85.0, "weight": 2990, "acceleration": 18.2, "model_year": 79, "origin": "usa", "name": "mercury zephyr 6", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 22.3, "cylinders": 4, "displacement": 140.0, "horsepower": 88.0, "weight": 2890, "acceleration": 17.3, "model_year": 79, "origin": "usa", "name": "ford fairmont 4", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 20.2, "cylinders": 6, "displacement": 232.0, "horsepower": 90.0, "weight": 3265, "acceleration": 18.2, "model_year": 79, "origin": "usa", "name": "amc concord dl 6", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 20.6, "cylinders": 6, "displacement": 225.0, "horsepower": 110.0, "weight": 3360, "acceleration": 16.6, "model_year": 79, "origin": "usa", "name": "dodge aspen 6", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 17.0, "cylinders": 8, "displacement": 305.0, "horsepower": 130.0, "weight": 3840, "acceleration": 15.4, "model_year": 79, "origin": "usa", "name": "chevrolet caprice classic", "h1": 130.0, "h2": 16900.0, "h3": 2197000.0, "pred": 17.15342143823247}, {"mpg": 17.6, "cylinders": 8, "displacement": 302.0, "horsepower": 129.0, "weight": 3725, "acceleration": 13.4, "model_year": 79, "origin": "usa", "name": "ford ltd landau", "h1": 129.0, "h2": 16641.0, "h3": 2146689.0, "pred": 17.29180654562964}, {"mpg": 16.5, "cylinders": 8, "displacement": 351.0, "horsepower": 138.0, "weight": 3955, "acceleration": 13.2, "model_year": 79, "origin": "usa", "name": "mercury grand marquis", "h1": 138.0, "h2": 19044.0, "h3": 2628072.0, "pred": 16.134670234979268}, {"mpg": 18.2, "cylinders": 8, "displacement": 318.0, "horsepower": 135.0, "weight": 3830, "acceleration": 15.2, "model_year": 79, "origin": "usa", "name": "dodge st. regis", "h1": 135.0, "h2": 18225.0, "h3": 2460375.0, "pred": 16.49849312088036}, {"mpg": 16.9, "cylinders": 8, "displacement": 350.0, "horsepower": 155.0, "weight": 4360, "acceleration": 14.9, "model_year": 79, "origin": "usa", "name": "buick estate wagon (sw)", "h1": 155.0, "h2": 24025.0, "h3": 3723875.0, "pred": 14.467494041855744}, {"mpg": 15.5, "cylinders": 8, "displacement": 351.0, "horsepower": 142.0, "weight": 4054, "acceleration": 14.3, "model_year": 79, "origin": "usa", "name": "ford country squire (sw)", "h1": 142.0, "h2": 20164.0, "h3": 2863288.0, "pred": 15.682841576066856}, {"mpg": 19.2, "cylinders": 8, "displacement": 267.0, "horsepower": 125.0, "weight": 3605, "acceleration": 15.0, "model_year": 79, "origin": "usa", "name": "chevrolet malibu classic (sw)", "h1": 125.0, "h2": 15625.0, "h3": 1953125.0, "pred": 17.870441113489683}, {"mpg": 18.5, "cylinders": 8, "displacement": 360.0, "horsepower": 150.0, "weight": 3940, "acceleration": 13.0, "model_year": 79, "origin": "usa", "name": "chrysler lebaron town @ country (sw)", "h1": 150.0, "h2": 22500.0, "h3": 3375000.0, "pred": 14.890156621921044}, {"mpg": 31.9, "cylinders": 4, "displacement": 89.0, "horsepower": 71.0, "weight": 1925, "acceleration": 14.0, "model_year": 79, "origin": "europe", "name": "vw rabbit custom", "h1": 71.0, "h2": 5041.0, "h3": 357911.0, "pred": 30.008420541767695}, {"mpg": 34.1, "cylinders": 4, "displacement": 86.0, "horsepower": 65.0, "weight": 1975, "acceleration": 15.2, "model_year": 79, "origin": "japan", "name": "maxda glc deluxe", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 35.7, "cylinders": 4, "displacement": 98.0, "horsepower": 80.0, "weight": 1915, "acceleration": 14.4, "model_year": 79, "origin": "usa", "name": "dodge colt hatchback custom", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 27.4, "cylinders": 4, "displacement": 121.0, "horsepower": 80.0, "weight": 2670, "acceleration": 15.0, "model_year": 79, "origin": "usa", "name": "amc spirit dl", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 25.4, "cylinders": 5, "displacement": 183.0, "horsepower": 77.0, "weight": 3530, "acceleration": 20.1, "model_year": 79, "origin": "europe", "name": "mercedes benz 300d", "h1": 77.0, "h2": 5929.0, "h3": 456533.0, "pred": 28.229777232612463}, {"mpg": 23.0, "cylinders": 8, "displacement": 350.0, "horsepower": 125.0, "weight": 3900, "acceleration": 17.4, "model_year": 79, "origin": "usa", "name": "cadillac eldorado", "h1": 125.0, "h2": 15625.0, "h3": 1953125.0, "pred": 17.870441113489683}, {"mpg": 27.2, "cylinders": 4, "displacement": 141.0, "horsepower": 71.0, "weight": 3190, "acceleration": 24.8, "model_year": 79, "origin": "europe", "name": "peugeot 504", "h1": 71.0, "h2": 5041.0, "h3": 357911.0, "pred": 30.008420541767695}, {"mpg": 23.9, "cylinders": 8, "displacement": 260.0, "horsepower": 90.0, "weight": 3420, "acceleration": 22.2, "model_year": 79, "origin": "usa", "name": "oldsmobile cutlass salon brougham", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 34.2, "cylinders": 4, "displacement": 105.0, "horsepower": 70.0, "weight": 2200, "acceleration": 13.2, "model_year": 79, "origin": "usa", "name": "plymouth horizon", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 34.5, "cylinders": 4, "displacement": 105.0, "horsepower": 70.0, "weight": 2150, "acceleration": 14.9, "model_year": 79, "origin": "usa", "name": "plymouth horizon tc3", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 31.8, "cylinders": 4, "displacement": 85.0, "horsepower": 65.0, "weight": 2020, "acceleration": 19.2, "model_year": 79, "origin": "japan", "name": "datsun 210", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 37.3, "cylinders": 4, "displacement": 91.0, "horsepower": 69.0, "weight": 2130, "acceleration": 14.7, "model_year": 79, "origin": "europe", "name": "fiat strada custom", "h1": 69.0, "h2": 4761.0, "h3": 328509.0, "pred": 30.627112739871134}, {"mpg": 28.4, "cylinders": 4, "displacement": 151.0, "horsepower": 90.0, "weight": 2670, "acceleration": 16.0, "model_year": 79, "origin": "usa", "name": "buick skylark limited", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 28.8, "cylinders": 6, "displacement": 173.0, "horsepower": 115.0, "weight": 2595, "acceleration": 11.3, "model_year": 79, "origin": "usa", "name": "chevrolet citation", "h1": 115.0, "h2": 13225.0, "h3": 1520875.0, "pred": 19.49719441545288}, {"mpg": 26.8, "cylinders": 6, "displacement": 173.0, "horsepower": 115.0, "weight": 2700, "acceleration": 12.9, "model_year": 79, "origin": "usa", "name": "oldsmobile omega brougham", "h1": 115.0, "h2": 13225.0, "h3": 1520875.0, "pred": 19.49719441545288}, {"mpg": 33.5, "cylinders": 4, "displacement": 151.0, "horsepower": 90.0, "weight": 2556, "acceleration": 13.2, "model_year": 79, "origin": "usa", "name": "pontiac phoenix", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 41.5, "cylinders": 4, "displacement": 98.0, "horsepower": 76.0, "weight": 2144, "acceleration": 14.7, "model_year": 80, "origin": "europe", "name": "vw rabbit", "h1": 76.0, "h2": 5776.0, "h3": 438976.0, "pred": 28.518226948841573}, {"mpg": 38.1, "cylinders": 4, "displacement": 89.0, "horsepower": 60.0, "weight": 1968, "acceleration": 18.8, "model_year": 80, "origin": "japan", "name": "toyota corolla tercel", "h1": 60.0, "h2": 3600.0, "h3": 216000.0, "pred": 33.5745465533774}, {"mpg": 32.1, "cylinders": 4, "displacement": 98.0, "horsepower": 70.0, "weight": 2120, "acceleration": 15.5, "model_year": 80, "origin": "usa", "name": "chevrolet chevette", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 37.2, "cylinders": 4, "displacement": 86.0, "horsepower": 65.0, "weight": 2019, "acceleration": 16.4, "model_year": 80, "origin": "japan", "name": "datsun 310", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 28.0, "cylinders": 4, "displacement": 151.0, "horsepower": 90.0, "weight": 2678, "acceleration": 16.5, "model_year": 80, "origin": "usa", "name": "chevrolet citation", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 26.4, "cylinders": 4, "displacement": 140.0, "horsepower": 88.0, "weight": 2870, "acceleration": 18.1, "model_year": 80, "origin": "usa", "name": "ford fairmont", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 24.3, "cylinders": 4, "displacement": 151.0, "horsepower": 90.0, "weight": 3003, "acceleration": 20.1, "model_year": 80, "origin": "usa", "name": "amc concord", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 19.1, "cylinders": 6, "displacement": 225.0, "horsepower": 90.0, "weight": 3381, "acceleration": 18.7, "model_year": 80, "origin": "usa", "name": "dodge aspen", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 34.3, "cylinders": 4, "displacement": 97.0, "horsepower": 78.0, "weight": 2188, "acceleration": 15.8, "model_year": 80, "origin": "europe", "name": "audi 4000", "h1": 78.0, "h2": 6084.0, "h3": 474552.0, "pred": 27.944493797739305}, {"mpg": 29.8, "cylinders": 4, "displacement": 134.0, "horsepower": 90.0, "weight": 2711, "acceleration": 15.5, "model_year": 80, "origin": "japan", "name": "toyota corona liftback", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 31.3, "cylinders": 4, "displacement": 120.0, "horsepower": 75.0, "weight": 2542, "acceleration": 17.5, "model_year": 80, "origin": "japan", "name": "mazda 626", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 37.0, "cylinders": 4, "displacement": 119.0, "horsepower": 92.0, "weight": 2434, "acceleration": 15.0, "model_year": 80, "origin": "japan", "name": "datsun 510 hatchback", "h1": 92.0, "h2": 8464.0, "h3": 778688.0, "pred": 24.27577258882829}, {"mpg": 32.2, "cylinders": 4, "displacement": 108.0, "horsepower": 75.0, "weight": 2265, "acceleration": 15.2, "model_year": 80, "origin": "japan", "name": "toyota corolla", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 46.6, "cylinders": 4, "displacement": 86.0, "horsepower": 65.0, "weight": 2110, "acceleration": 17.9, "model_year": 80, "origin": "japan", "name": "mazda glc", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 27.9, "cylinders": 4, "displacement": 156.0, "horsepower": 105.0, "weight": 2800, "acceleration": 14.4, "model_year": 80, "origin": "usa", "name": "dodge colt", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 40.8, "cylinders": 4, "displacement": 85.0, "horsepower": 65.0, "weight": 2110, "acceleration": 19.2, "model_year": 80, "origin": "japan", "name": "datsun 210", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 44.3, "cylinders": 4, "displacement": 90.0, "horsepower": 48.0, "weight": 2085, "acceleration": 21.7, "model_year": 80, "origin": "europe", "name": "vw rabbit c (diesel)", "h1": 48.0, "h2": 2304.0, "h3": 110592.0, "pred": 37.93262104096762}, {"mpg": 43.4, "cylinders": 4, "displacement": 90.0, "horsepower": 48.0, "weight": 2335, "acceleration": 23.7, "model_year": 80, "origin": "europe", "name": "vw dasher (diesel)", "h1": 48.0, "h2": 2304.0, "h3": 110592.0, "pred": 37.93262104096762}, {"mpg": 36.4, "cylinders": 5, "displacement": 121.0, "horsepower": 67.0, "weight": 2950, "acceleration": 19.9, "model_year": 80, "origin": "europe", "name": "audi 5000s (diesel)", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 30.0, "cylinders": 4, "displacement": 146.0, "horsepower": 67.0, "weight": 3250, "acceleration": 21.8, "model_year": 80, "origin": "europe", "name": "mercedes-benz 240d", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 44.6, "cylinders": 4, "displacement": 91.0, "horsepower": 67.0, "weight": 1850, "acceleration": 13.8, "model_year": 80, "origin": "japan", "name": "honda civic 1500 gl", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 33.8, "cylinders": 4, "displacement": 97.0, "horsepower": 67.0, "weight": 2145, "acceleration": 18.0, "model_year": 80, "origin": "japan", "name": "subaru dl", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 29.8, "cylinders": 4, "displacement": 89.0, "horsepower": 62.0, "weight": 1845, "acceleration": 15.3, "model_year": 80, "origin": "europe", "name": "vokswagen rabbit", "h1": 62.0, "h2": 3844.0, "h3": 238328.0, "pred": 32.89619518148524}, {"mpg": 32.7, "cylinders": 6, "displacement": 168.0, "horsepower": 132.0, "weight": 2910, "acceleration": 11.4, "model_year": 80, "origin": "japan", "name": "datsun 280-zx", "h1": 132.0, "h2": 17424.0, "h3": 2299968.0, "pred": 16.884089306631274}, {"mpg": 23.7, "cylinders": 3, "displacement": 70.0, "horsepower": 100.0, "weight": 2420, "acceleration": 12.5, "model_year": 80, "origin": "japan", "name": "mazda rx-7 gs", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 35.0, "cylinders": 4, "displacement": 122.0, "horsepower": 88.0, "weight": 2500, "acceleration": 15.1, "model_year": 80, "origin": "europe", "name": "triumph tr7 coupe", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 32.4, "cylinders": 4, "displacement": 107.0, "horsepower": 72.0, "weight": 2290, "acceleration": 17.0, "model_year": 80, "origin": "japan", "name": "honda accord", "h1": 72.0, "h2": 5184.0, "h3": 373248.0, "pred": 29.703946222426843}, {"mpg": 27.2, "cylinders": 4, "displacement": 135.0, "horsepower": 84.0, "weight": 2490, "acceleration": 15.7, "model_year": 81, "origin": "usa", "name": "plymouth reliant", "h1": 84.0, "h2": 7056.0, "h3": 592704.0, "pred": 26.29856383066914}, {"mpg": 26.6, "cylinders": 4, "displacement": 151.0, "horsepower": 84.0, "weight": 2635, "acceleration": 16.4, "model_year": 81, "origin": "usa", "name": "buick skylark", "h1": 84.0, "h2": 7056.0, "h3": 592704.0, "pred": 26.29856383066914}, {"mpg": 25.8, "cylinders": 4, "displacement": 156.0, "horsepower": 92.0, "weight": 2620, "acceleration": 14.4, "model_year": 81, "origin": "usa", "name": "dodge aries wagon (sw)", "h1": 92.0, "h2": 8464.0, "h3": 778688.0, "pred": 24.27577258882829}, {"mpg": 23.5, "cylinders": 6, "displacement": 173.0, "horsepower": 110.0, "weight": 2725, "acceleration": 12.6, "model_year": 81, "origin": "usa", "name": "chevrolet citation", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 30.0, "cylinders": 4, "displacement": 135.0, "horsepower": 84.0, "weight": 2385, "acceleration": 12.9, "model_year": 81, "origin": "usa", "name": "plymouth reliant", "h1": 84.0, "h2": 7056.0, "h3": 592704.0, "pred": 26.29856383066914}, {"mpg": 39.1, "cylinders": 4, "displacement": 79.0, "horsepower": 58.0, "weight": 1755, "acceleration": 16.9, "model_year": 81, "origin": "japan", "name": "toyota starlet", "h1": 58.0, "h2": 3364.0, "h3": 195112.0, "pred": 34.26643887406512}, {"mpg": 39.0, "cylinders": 4, "displacement": 86.0, "horsepower": 64.0, "weight": 1875, "acceleration": 16.4, "model_year": 81, "origin": "usa", "name": "plymouth champ", "h1": 64.0, "h2": 4096.0, "h3": 262144.0, "pred": 32.231281720344874}, {"mpg": 35.1, "cylinders": 4, "displacement": 81.0, "horsepower": 60.0, "weight": 1760, "acceleration": 16.1, "model_year": 81, "origin": "japan", "name": "honda civic 1300", "h1": 60.0, "h2": 3600.0, "h3": 216000.0, "pred": 33.5745465533774}, {"mpg": 32.3, "cylinders": 4, "displacement": 97.0, "horsepower": 67.0, "weight": 2065, "acceleration": 17.8, "model_year": 81, "origin": "japan", "name": "subaru", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 37.0, "cylinders": 4, "displacement": 85.0, "horsepower": 65.0, "weight": 1975, "acceleration": 19.4, "model_year": 81, "origin": "japan", "name": "datsun 210 mpg", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 37.7, "cylinders": 4, "displacement": 89.0, "horsepower": 62.0, "weight": 2050, "acceleration": 17.3, "model_year": 81, "origin": "japan", "name": "toyota tercel", "h1": 62.0, "h2": 3844.0, "h3": 238328.0, "pred": 32.89619518148524}, {"mpg": 34.1, "cylinders": 4, "displacement": 91.0, "horsepower": 68.0, "weight": 1985, "acceleration": 16.0, "model_year": 81, "origin": "japan", "name": "mazda glc 4", "h1": 68.0, "h2": 4624.0, "h3": 314432.0, "pred": 30.941356378144647}, {"mpg": 34.7, "cylinders": 4, "displacement": 105.0, "horsepower": 63.0, "weight": 2215, "acceleration": 14.9, "model_year": 81, "origin": "usa", "name": "plymouth horizon 4", "h1": 63.0, "h2": 3969.0, "h3": 250047.0, "pred": 32.562065151948815}, {"mpg": 34.4, "cylinders": 4, "displacement": 98.0, "horsepower": 65.0, "weight": 2045, "acceleration": 16.2, "model_year": 81, "origin": "usa", "name": "ford escort 4w", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 29.9, "cylinders": 4, "displacement": 98.0, "horsepower": 65.0, "weight": 2380, "acceleration": 20.7, "model_year": 81, "origin": "usa", "name": "ford escort 2h", "h1": 65.0, "h2": 4225.0, "h3": 274625.0, "pred": 31.903832006917956}, {"mpg": 33.0, "cylinders": 4, "displacement": 105.0, "horsepower": 74.0, "weight": 2190, "acceleration": 14.2, "model_year": 81, "origin": "europe", "name": "volkswagen jetta", "h1": 74.0, "h2": 5476.0, "h3": 405224.0, "pred": 29.104676744389508}, {"mpg": 33.7, "cylinders": 4, "displacement": 107.0, "horsepower": 75.0, "weight": 2210, "acceleration": 14.4, "model_year": 81, "origin": "japan", "name": "honda prelude", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 32.4, "cylinders": 4, "displacement": 108.0, "horsepower": 75.0, "weight": 2350, "acceleration": 16.8, "model_year": 81, "origin": "japan", "name": "toyota corolla", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 32.9, "cylinders": 4, "displacement": 119.0, "horsepower": 100.0, "weight": 2615, "acceleration": 14.8, "model_year": 81, "origin": "japan", "name": "datsun 200sx", "h1": 100.0, "h2": 10000.0, "h3": 1000000.0, "pred": 22.44325878851999}, {"mpg": 31.6, "cylinders": 4, "displacement": 120.0, "horsepower": 74.0, "weight": 2635, "acceleration": 18.3, "model_year": 81, "origin": "japan", "name": "mazda 626", "h1": 74.0, "h2": 5476.0, "h3": 405224.0, "pred": 29.104676744389508}, {"mpg": 28.1, "cylinders": 4, "displacement": 141.0, "horsepower": 80.0, "weight": 3230, "acceleration": 20.4, "model_year": 81, "origin": "europe", "name": "peugeot 505s turbo diesel", "h1": 80.0, "h2": 6400.0, "h3": 512000.0, "pred": 27.383374253038966}, {"mpg": 30.7, "cylinders": 6, "displacement": 145.0, "horsepower": 76.0, "weight": 3160, "acceleration": 19.6, "model_year": 81, "origin": "europe", "name": "volvo diesel", "h1": 76.0, "h2": 5776.0, "h3": 438976.0, "pred": 28.518226948841573}, {"mpg": 25.4, "cylinders": 6, "displacement": 168.0, "horsepower": 116.0, "weight": 2900, "acceleration": 12.6, "model_year": 81, "origin": "japan", "name": "toyota cressida", "h1": 116.0, "h2": 13456.0, "h3": 1560896.0, "pred": 19.322685773304833}, {"mpg": 24.2, "cylinders": 6, "displacement": 146.0, "horsepower": 120.0, "weight": 2930, "acceleration": 13.8, "model_year": 81, "origin": "japan", "name": "datsun 810 maxima", "h1": 120.0, "h2": 14400.0, "h3": 1728000.0, "pred": 18.651162116085374}, {"mpg": 22.4, "cylinders": 6, "displacement": 231.0, "horsepower": 110.0, "weight": 3415, "acceleration": 15.8, "model_year": 81, "origin": "usa", "name": "buick century", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 26.6, "cylinders": 8, "displacement": 350.0, "horsepower": 105.0, "weight": 3725, "acceleration": 19.0, "model_year": 81, "origin": "usa", "name": "oldsmobile cutlass ls", "h1": 105.0, "h2": 11025.0, "h3": 1157625.0, "pred": 21.391632782236833}, {"mpg": 20.2, "cylinders": 6, "displacement": 200.0, "horsepower": 88.0, "weight": 3060, "acceleration": 17.1, "model_year": 81, "origin": "usa", "name": "ford granada gl", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 17.6, "cylinders": 6, "displacement": 225.0, "horsepower": 85.0, "weight": 3465, "acceleration": 16.6, "model_year": 81, "origin": "usa", "name": "chrysler lebaron salon", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 28.0, "cylinders": 4, "displacement": 112.0, "horsepower": 88.0, "weight": 2605, "acceleration": 19.6, "model_year": 82, "origin": "usa", "name": "chevrolet cavalier", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 27.0, "cylinders": 4, "displacement": 112.0, "horsepower": 88.0, "weight": 2640, "acceleration": 18.6, "model_year": 82, "origin": "usa", "name": "chevrolet cavalier wagon", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 34.0, "cylinders": 4, "displacement": 112.0, "horsepower": 88.0, "weight": 2395, "acceleration": 18.0, "model_year": 82, "origin": "usa", "name": "chevrolet cavalier 2-door", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 31.0, "cylinders": 4, "displacement": 112.0, "horsepower": 85.0, "weight": 2575, "acceleration": 16.2, "model_year": 82, "origin": "usa", "name": "pontiac j2000 se hatchback", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 29.0, "cylinders": 4, "displacement": 135.0, "horsepower": 84.0, "weight": 2525, "acceleration": 16.0, "model_year": 82, "origin": "usa", "name": "dodge aries se", "h1": 84.0, "h2": 7056.0, "h3": 592704.0, "pred": 26.29856383066914}, {"mpg": 27.0, "cylinders": 4, "displacement": 151.0, "horsepower": 90.0, "weight": 2735, "acceleration": 18.0, "model_year": 82, "origin": "usa", "name": "pontiac phoenix", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 24.0, "cylinders": 4, "displacement": 140.0, "horsepower": 92.0, "weight": 2865, "acceleration": 16.4, "model_year": 82, "origin": "usa", "name": "ford fairmont futura", "h1": 92.0, "h2": 8464.0, "h3": 778688.0, "pred": 24.27577258882829}, {"mpg": 36.0, "cylinders": 4, "displacement": 105.0, "horsepower": 74.0, "weight": 1980, "acceleration": 15.3, "model_year": 82, "origin": "europe", "name": "volkswagen rabbit l", "h1": 74.0, "h2": 5476.0, "h3": 405224.0, "pred": 29.104676744389508}, {"mpg": 37.0, "cylinders": 4, "displacement": 91.0, "horsepower": 68.0, "weight": 2025, "acceleration": 18.2, "model_year": 82, "origin": "japan", "name": "mazda glc custom l", "h1": 68.0, "h2": 4624.0, "h3": 314432.0, "pred": 30.941356378144647}, {"mpg": 31.0, "cylinders": 4, "displacement": 91.0, "horsepower": 68.0, "weight": 1970, "acceleration": 17.6, "model_year": 82, "origin": "japan", "name": "mazda glc custom", "h1": 68.0, "h2": 4624.0, "h3": 314432.0, "pred": 30.941356378144647}, {"mpg": 38.0, "cylinders": 4, "displacement": 105.0, "horsepower": 63.0, "weight": 2125, "acceleration": 14.7, "model_year": 82, "origin": "usa", "name": "plymouth horizon miser", "h1": 63.0, "h2": 3969.0, "h3": 250047.0, "pred": 32.562065151948815}, {"mpg": 36.0, "cylinders": 4, "displacement": 98.0, "horsepower": 70.0, "weight": 2125, "acceleration": 17.3, "model_year": 82, "origin": "usa", "name": "mercury lynx l", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 36.0, "cylinders": 4, "displacement": 120.0, "horsepower": 88.0, "weight": 2160, "acceleration": 14.5, "model_year": 82, "origin": "japan", "name": "nissan stanza xe", "h1": 88.0, "h2": 7744.0, "h3": 681472.0, "pred": 25.262971377382208}, {"mpg": 36.0, "cylinders": 4, "displacement": 107.0, "horsepower": 75.0, "weight": 2205, "acceleration": 14.5, "model_year": 82, "origin": "japan", "name": "honda accord", "h1": 75.0, "h2": 5625.0, "h3": 421875.0, "pred": 28.809855826182098}, {"mpg": 34.0, "cylinders": 4, "displacement": 108.0, "horsepower": 70.0, "weight": 2245, "acceleration": 16.9, "model_year": 82, "origin": "japan", "name": "toyota corolla", "h1": 70.0, "h2": 4900.0, "h3": 343000.0, "pred": 30.316138420997305}, {"mpg": 38.0, "cylinders": 4, "displacement": 91.0, "horsepower": 67.0, "weight": 1965, "acceleration": 15.0, "model_year": 82, "origin": "japan", "name": "honda civic", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 32.0, "cylinders": 4, "displacement": 91.0, "horsepower": 67.0, "weight": 1965, "acceleration": 15.7, "model_year": 82, "origin": "japan", "name": "honda civic (auto)", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 38.0, "cylinders": 4, "displacement": 91.0, "horsepower": 67.0, "weight": 1995, "acceleration": 16.2, "model_year": 82, "origin": "japan", "name": "datsun 310 gx", "h1": 67.0, "h2": 4489.0, "h3": 300763.0, "pred": 31.258882215573312}, {"mpg": 25.0, "cylinders": 6, "displacement": 181.0, "horsepower": 110.0, "weight": 2945, "acceleration": 16.4, "model_year": 82, "origin": "usa", "name": "buick century limited", "h1": 110.0, "h2": 12100.0, "h3": 1331000.0, "pred": 20.41014798102558}, {"mpg": 38.0, "cylinders": 6, "displacement": 262.0, "horsepower": 85.0, "weight": 3015, "acceleration": 17.0, "model_year": 82, "origin": "usa", "name": "oldsmobile cutlass ciera (diesel)", "h1": 85.0, "h2": 7225.0, "h3": 614125.0, "pred": 26.035083732134552}, {"mpg": 26.0, "cylinders": 4, "displacement": 156.0, "horsepower": 92.0, "weight": 2585, "acceleration": 14.5, "model_year": 82, "origin": "usa", "name": "chrysler lebaron medallion", "h1": 92.0, "h2": 8464.0, "h3": 778688.0, "pred": 24.27577258882829}, {"mpg": 22.0, "cylinders": 6, "displacement": 232.0, "horsepower": 112.0, "weight": 2835, "acceleration": 14.7, "model_year": 82, "origin": "usa", "name": "ford granada l", "h1": 112.0, "h2": 12544.0, "h3": 1404928.0, "pred": 20.03683296480814}, {"mpg": 32.0, "cylinders": 4, "displacement": 144.0, "horsepower": 96.0, "weight": 2665, "acceleration": 13.9, "model_year": 82, "origin": "japan", "name": "toyota celica gt", "h1": 96.0, "h2": 9216.0, "h3": 884736.0, "pred": 23.336143160657514}, {"mpg": 36.0, "cylinders": 4, "displacement": 135.0, "horsepower": 84.0, "weight": 2370, "acceleration": 13.0, "model_year": 82, "origin": "usa", "name": "dodge charger 2.2", "h1": 84.0, "h2": 7056.0, "h3": 592704.0, "pred": 26.29856383066914}, {"mpg": 27.0, "cylinders": 4, "displacement": 151.0, "horsepower": 90.0, "weight": 2950, "acceleration": 17.3, "model_year": 82, "origin": "usa", "name": "chevrolet camaro", "h1": 90.0, "h2": 8100.0, "h3": 729000.0, "pred": 24.763374294035486}, {"mpg": 27.0, "cylinders": 4, "displacement": 140.0, "horsepower": 86.0, "weight": 2790, "acceleration": 15.6, "model_year": 82, "origin": "usa", "name": "ford mustang gl", "h1": 86.0, "h2": 7396.0, "h3": 636056.0, "pred": 25.77466687691218}, {"mpg": 44.0, "cylinders": 4, "displacement": 97.0, "horsepower": 52.0, "weight": 2130, "acceleration": 24.6, "model_year": 82, "origin": "europe", "name": "vw pickup", "h1": 52.0, "h2": 2704.0, "h3": 140608.0, "pred": 36.424391909338894}, {"mpg": 32.0, "cylinders": 4, "displacement": 135.0, "horsepower": 84.0, "weight": 2295, "acceleration": 11.6, "model_year": 82, "origin": "usa", "name": "dodge rampage", "h1": 84.0, "h2": 7056.0, "h3": 592704.0, "pred": 26.29856383066914}, {"mpg": 28.0, "cylinders": 4, "displacement": 120.0, "horsepower": 79.0, "weight": 2625, "acceleration": 18.6, "model_year": 82, "origin": "usa", "name": "ford ranger", "h1": 79.0, "h2": 6241.0, "h3": 493039.0, "pred": 27.662363764466633}, {"mpg": 31.0, "cylinders": 4, "displacement": 119.0, "horsepower": 82.0, "weight": 2720, "acceleration": 19.4, "model_year": 82, "origin": "usa", "name": "chevy s-10", "h1": 82.0, "h2": 6724.0, "h3": 551368.0, "pred": 26.83476527669682}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+</section>
+<section id="warnings-about-polynomial-regression">
+<h2>Warnings about polynomial regression<a class="headerlink" href="#warnings-about-polynomial-regression" title="Permalink to this headline">#</a></h2>
+<p>We might be pretty impressed by the fit above! It looks like the degree three polynomial fits the data well, but this is in part due to a problem called <em>overfitting</em>. In general, the better a fit appears to be, the worse it will perform on future data. Part of the issue with large degree polynomials is that we have a lot of flexibility/choice in the coefficients.</p>
+<p>We have a few minutes left in class, let’s try to see this type of problem in action! <font color=red> After lecture note: I think this was too ambitious of an example for just a few minutes. Lecture 12 has a much more in-depth and careful example. </font></p>
+<p>Here is a relevant quote that you can meditate on:</p>
+<blockquote>
+<div><p>“We are drowning in information but starved for knowledge.” John Naisbitt, Megatrends, 1982</p>
+</div></blockquote>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=8e9de48c-afaa-4179-9c2b-b4b24077f730' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./lectures"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lec10.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 10: August 28th, 2023</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lec12.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lecture 12: September 1st, 2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-information">Final Project Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-regression">Polynomial Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warnings-about-polynomial-regression">Warnings about polynomial regression</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis and Yasmeen Baki
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
