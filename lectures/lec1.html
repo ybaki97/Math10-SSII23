@@ -191,6 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../w5vid.html">Week 5 Lecture Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lec13.html">Lecture 13: September 6th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec14.html">Lecture 14: September 8th, 2023</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project</span></p>
 <ul class="nav bd-sidenav">
@@ -545,7 +546,7 @@ To execute a cell, I can press <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.010369914844042483
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.34921783098762127
 </pre></div>
 </div>
 </div>
@@ -557,7 +558,7 @@ To execute a cell, I can press <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.54315768, 0.51100456, 0.7392988 , 0.33065934, 0.42218571])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.55783215, 0.89926938, 0.40902763, 0.32905374, 0.78347864])
 </pre></div>
 </div>
 </div>
@@ -582,8 +583,8 @@ To execute a cell, I can press <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.00279106, 0.88842951, 0.32022762, 1.11301317, 4.05654804,
-       4.50933985, 2.63345874, 3.92800151, 9.11471448, 3.29967071])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.47799189, 4.32885288, 1.86581944, 8.87698979, 5.01577115,
+       5.00965399, 4.7372245 , 9.5900495 , 5.27923008, 7.31364887])
 </pre></div>
 </div>
 </div>
@@ -615,7 +616,7 @@ To execute a cell, I can press <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.971867116645818
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.99889259617844
 </pre></div>
 </div>
 </div>
@@ -723,13 +724,13 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 1, 4],
-       [2, 2, 1],
-       [2, 3, 4],
-       [4, 1, 4],
-       [3, 2, 3],
-       [1, 3, 3],
-       [1, 1, 4]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 3, 1],
+       [4, 4, 1],
+       [1, 4, 1],
+       [4, 2, 1],
+       [3, 1, 1],
+       [2, 1, 4],
+       [3, 1, 4]])
 </pre></div>
 </div>
 </div>
@@ -763,13 +764,13 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3, 4, 1],
-       [1, 1, 2],
-       [1, 1, 3],
-       [1, 1, 4],
-       [3, 4, 2],
-       [2, 3, 1],
-       [1, 3, 1]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 1, 3],
+       [3, 3, 2],
+       [3, 1, 2],
+       [2, 3, 3],
+       [3, 2, 3],
+       [4, 3, 2],
+       [3, 3, 2]])
 </pre></div>
 </div>
 </div>
@@ -840,8 +841,8 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.65642689, 1.37906194, 3.95555194, 7.76138443, 1.65351772,
-       6.15273103, 6.78775001, 2.52382862, 6.6037401 , 7.99462965])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.04827272, 5.86039133, 5.87949044, 9.60603164, 5.41694545,
+       8.20111819, 6.7875044 , 2.91586161, 7.90103859, 2.96745142])
 </pre></div>
 </div>
 </div>
@@ -853,117 +854,117 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False,  True, False, False, False, False, False,
-        True, False, False, False,  True, False, False,  True, False,
-       False, False, False,  True, False, False, False,  True, False,
-        True, False, False, False, False, False, False, False, False,
-       False, False, False, False, False,  True, False, False, False,
-        True, False, False, False,  True, False,  True,  True, False,
-        True, False, False, False, False, False,  True,  True,  True,
-       False,  True, False,  True, False, False, False, False, False,
-       False, False, False, False, False, False, False,  True,  True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False,  True, False,  True, False, False,  True,
+       False, False,  True,  True, False,  True, False, False,  True,
+       False, False,  True, False, False, False, False,  True, False,
+        True,  True, False, False,  True, False, False, False,  True,
+        True, False,  True, False, False, False, False, False, False,
+       False, False, False,  True,  True,  True,  True, False, False,
+       False, False,  True,  True, False, False, False,  True, False,
+       False, False, False, False,  True, False, False, False, False,
+        True, False, False, False, False, False,  True,  True, False,
        False, False,  True, False,  True, False, False,  True, False,
-       False, False, False, False, False, False, False, False, False,
-       False,  True, False,  True, False, False,  True, False, False,
-       False,  True, False, False,  True, False,  True, False,  True,
-       False, False, False,  True, False, False, False, False, False,
-       False,  True,  True, False,  True, False, False, False,  True,
-       False, False, False, False, False, False, False, False, False,
-        True, False, False, False,  True,  True, False, False,  True,
-       False, False, False, False, False, False,  True, False, False,
-       False, False,  True, False, False, False, False, False,  True,
-       False,  True, False, False, False,  True, False, False, False,
-       False, False, False,  True, False, False,  True, False, False,
-       False,  True, False, False, False,  True,  True,  True, False,
-        True, False,  True,  True, False, False, False, False,  True,
-        True, False,  True, False,  True, False, False,  True,  True,
-       False, False,  True, False, False, False, False, False,  True,
-       False, False, False, False,  True, False, False, False, False,
-       False,  True, False, False,  True, False,  True, False, False,
-       False, False, False, False,  True,  True, False, False, False,
-        True, False, False, False,  True,  True, False, False,  True,
-       False, False,  True, False, False, False,  True, False, False,
-        True, False, False, False,  True,  True, False, False, False,
-       False, False, False, False, False,  True, False, False, False,
-       False,  True, False, False, False, False, False, False,  True,
-       False, False,  True, False, False,  True, False, False, False,
-        True,  True, False,  True, False,  True, False, False, False,
-       False, False, False, False,  True,  True, False,  True, False,
-       False, False, False, False, False, False, False, False,  True,
-       False, False,  True, False, False, False,  True, False,  True,
-       False, False,  True, False, False, False, False, False, False,
-        True,  True, False, False, False,  True, False, False, False,
-        True, False, False, False, False, False, False, False, False,
-       False, False, False, False, False, False, False, False,  True,
-       False, False,  True,  True, False,  True,  True, False,  True,
-       False,  True, False,  True, False, False,  True,  True,  True,
-       False, False, False, False,  True, False,  True, False,  True,
+       False,  True,  True, False,  True, False, False, False, False,
+       False,  True,  True, False,  True,  True, False,  True, False,
        False, False, False,  True, False,  True,  True, False, False,
-        True,  True,  True, False, False, False,  True, False,  True,
-       False, False, False, False,  True, False, False, False, False,
-       False, False,  True,  True,  True, False, False,  True,  True,
-       False, False, False, False,  True, False,  True, False,  True,
-       False,  True, False, False, False,  True, False, False, False,
-       False, False, False, False, False, False, False, False, False,
-       False, False,  True, False,  True, False, False, False, False,
-       False,  True,  True,  True, False, False,  True, False, False,
-       False, False,  True, False,  True, False, False, False, False,
-       False,  True, False, False, False,  True, False, False, False,
-       False, False,  True, False, False, False,  True, False,  True,
+        True, False, False,  True, False,  True, False, False, False,
+       False, False, False, False, False,  True, False, False,  True,
+       False, False,  True, False, False, False, False,  True, False,
+        True,  True, False,  True, False, False, False,  True, False,
        False, False, False, False, False,  True, False, False, False,
-       False, False,  True,  True,  True, False, False, False, False,
-       False,  True, False, False, False,  True, False, False,  True,
-       False,  True,  True,  True,  True,  True,  True, False, False,
-       False,  True, False, False,  True, False, False, False, False,
-        True,  True, False, False, False,  True, False, False,  True,
-       False,  True,  True, False, False, False,  True, False, False,
-        True,  True,  True, False, False,  True, False, False, False,
-       False,  True,  True, False, False, False,  True, False,  True,
-       False, False,  True, False, False, False,  True,  True, False,
-        True, False, False, False, False, False,  True, False, False,
-       False,  True,  True,  True,  True, False, False, False, False,
-       False, False,  True,  True, False,  True, False,  True,  True,
-       False, False, False, False,  True, False,  True, False, False,
-       False, False, False,  True, False,  True, False,  True, False,
-       False, False, False, False, False, False, False,  True,  True,
-       False, False,  True, False, False, False,  True,  True, False,
-        True, False,  True, False,  True,  True, False, False, False,
-       False, False,  True,  True, False,  True, False,  True, False,
-       False,  True, False,  True,  True, False, False,  True,  True,
         True, False, False, False,  True, False,  True, False, False,
-       False, False, False, False,  True, False, False,  True, False,
-       False, False, False, False,  True, False,  True,  True, False,
-       False,  True,  True,  True, False,  True, False, False, False,
-       False,  True, False, False, False,  True, False, False,  True,
+       False,  True, False, False,  True, False,  True, False, False,
+       False, False, False, False, False, False, False,  True, False,
+       False,  True, False, False,  True,  True, False,  True,  True,
        False,  True, False,  True, False, False, False, False,  True,
-       False,  True, False,  True,  True,  True, False, False, False,
-        True,  True, False, False, False, False,  True,  True, False,
-       False, False, False, False,  True, False, False,  True, False,
-       False,  True, False,  True, False,  True, False, False, False,
-       False,  True,  True,  True, False,  True,  True, False, False,
-       False,  True, False, False, False, False, False, False, False,
-        True,  True, False,  True, False,  True, False, False,  True,
-        True, False, False, False, False, False, False,  True,  True,
-        True, False, False, False, False, False, False,  True, False,
-       False, False, False, False,  True, False,  True, False,  True,
-        True,  True, False, False, False, False, False, False,  True,
-       False, False, False, False, False, False, False, False, False,
-       False, False, False, False, False, False,  True,  True, False,
-       False, False, False, False, False,  True, False, False, False,
-       False, False, False, False, False,  True, False, False, False,
        False, False, False,  True,  True, False, False, False, False,
-        True, False, False,  True,  True,  True, False, False, False,
         True, False, False, False,  True, False, False, False, False,
-       False,  True,  True, False, False, False,  True,  True,  True,
-       False, False, False, False, False, False, False, False,  True,
-       False, False, False, False, False, False, False, False,  True,
-       False, False,  True, False,  True,  True,  True,  True, False,
-       False, False, False, False, False, False,  True,  True, False,
+       False, False,  True, False, False, False, False, False, False,
+        True, False, False, False, False, False, False,  True, False,
+       False,  True, False, False, False, False,  True, False, False,
+        True, False,  True,  True, False, False, False, False,  True,
+        True,  True,  True,  True,  True,  True, False, False, False,
+        True, False,  True,  True, False,  True, False, False, False,
        False, False, False,  True, False, False,  True, False, False,
+        True,  True,  True, False, False,  True, False, False, False,
+       False, False, False, False, False, False,  True, False, False,
+       False, False, False, False, False, False,  True, False,  True,
+       False, False, False,  True, False, False, False, False, False,
+       False, False,  True, False, False, False, False, False, False,
+       False,  True, False, False,  True, False,  True, False, False,
+        True, False, False, False, False, False,  True, False, False,
+       False, False, False, False,  True, False, False,  True, False,
+        True, False, False, False, False, False,  True, False, False,
+       False,  True, False, False,  True, False, False,  True, False,
+       False, False, False,  True, False, False, False, False, False,
+       False, False, False,  True, False, False,  True, False, False,
+       False, False, False,  True, False, False, False, False, False,
+        True, False, False, False, False,  True, False, False, False,
+        True, False, False, False, False, False,  True, False, False,
+       False, False, False, False, False,  True, False, False, False,
+        True, False, False,  True, False,  True,  True,  True, False,
+       False, False, False, False, False, False, False, False, False,
+       False,  True, False, False, False, False, False, False, False,
+        True,  True,  True, False, False, False,  True, False, False,
+       False,  True, False, False, False, False, False, False, False,
+        True, False, False, False, False,  True, False,  True,  True,
+       False, False, False,  True, False, False,  True, False, False,
+        True,  True, False, False,  True,  True, False, False, False,
+        True, False,  True,  True, False,  True,  True, False, False,
+        True, False,  True, False, False, False, False, False, False,
+        True,  True,  True, False, False, False,  True, False, False,
+       False, False, False, False, False, False,  True, False, False,
+        True, False, False, False, False, False, False, False, False,
+       False,  True, False, False, False, False,  True,  True, False,
+       False, False, False, False, False, False, False, False,  True,
+       False, False, False, False, False, False, False, False,  True,
+       False, False, False,  True, False, False, False, False, False,
+       False, False, False, False,  True, False,  True,  True, False,
+       False, False, False,  True,  True,  True, False, False, False,
+        True, False, False, False,  True, False,  True, False,  True,
+        True,  True,  True, False, False, False, False, False,  True,
+        True, False, False, False, False, False,  True,  True, False,
+       False, False, False, False, False,  True,  True,  True, False,
+       False,  True,  True,  True, False, False, False,  True,  True,
+       False,  True, False, False,  True, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False,  True, False,  True, False, False, False,  True, False,
+        True, False, False, False, False, False, False,  True, False,
+       False, False,  True, False,  True,  True, False,  True, False,
+       False,  True, False,  True, False,  True, False, False, False,
+       False,  True, False,  True,  True, False, False, False, False,
+        True, False, False, False, False,  True,  True, False, False,
+       False,  True, False, False, False,  True, False,  True, False,
        False, False,  True,  True, False, False, False, False, False,
-       False, False, False, False, False,  True,  True, False,  True,
-       False, False,  True,  True,  True, False, False,  True, False,
-       False, False, False, False,  True,  True, False, False, False,
+       False,  True, False, False, False, False, False, False, False,
+        True,  True,  True, False, False, False,  True,  True,  True,
+       False, False,  True, False,  True, False,  True, False, False,
+       False, False, False,  True,  True,  True,  True, False, False,
+       False,  True, False, False,  True,  True, False,  True, False,
+       False, False, False, False,  True,  True, False,  True,  True,
+       False, False, False, False, False,  True, False,  True,  True,
+       False, False, False,  True, False,  True, False, False, False,
+        True, False, False,  True, False, False,  True, False, False,
+       False,  True, False, False,  True, False, False, False, False,
+       False,  True,  True, False, False,  True, False, False, False,
+       False, False,  True, False, False, False, False, False, False,
+       False, False,  True, False, False, False, False, False, False,
+       False, False, False,  True, False, False, False, False, False,
+       False, False, False, False,  True, False, False, False, False,
+       False,  True, False,  True, False,  True, False,  True,  True,
+       False,  True,  True, False, False, False, False,  True,  True,
+       False,  True, False, False,  True, False, False, False, False,
+       False,  True, False, False, False, False, False,  True,  True,
+       False, False, False, False, False, False, False, False,  True,
+        True,  True,  True,  True, False, False, False, False,  True,
+       False, False,  True, False, False,  True,  True, False,  True,
+        True, False,  True, False,  True, False, False, False, False,
+       False, False,  True, False, False, False, False, False, False,
+       False, False,  True, False, False, False, False, False, False,
+        True,  True, False,  True, False,  True,  True, False, False,
+       False, False,  True,  True, False, False,  True, False, False,
+        True, False, False,  True, False, False, False, False,  True,
+       False, False, False,  True, False, False, False, False,  True,
        False])
 </pre></div>
 </div>
@@ -1002,7 +1003,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>302
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>294
 </pre></div>
 </div>
 </div>
@@ -1015,7 +1016,7 @@ integers(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.302
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.294
 </pre></div>
 </div>
 </div>
