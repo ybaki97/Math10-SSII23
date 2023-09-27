@@ -1,0 +1,1674 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Predicting Formula 1 Constructor’s Champion &#8212; Math 10, Summer Session II 2023</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'students/laurenkim/LaurenKim';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="COVID-19 Data Discovery" href="../jameslai/JamesLai.html" />
+    <link rel="prev" title="Online Chess Games Examination" href="../shayankermani/ShayanKermani.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/confuse.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/confuse.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    UC Irvine, Math 10, Summer 2023
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../w1vid.html">Week 1 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec1.html">Lecture 1: August 7th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/wkst1.html">Discussion 1: August 7th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec2.html">Lecture 2: August 9th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../worksheets/wkst2.html">Discussion 2: August 9th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec3.html">Lecture 3: August 11th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../w2vid.html">Week 2 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec4.html">Lecture 4: August 14th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec5.html">Lecture 5: August 16th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec6.html">Lecture 6: August 18th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../w3vid.html">Week 3 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec7.html">Lecture 7: August 21st, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec8.html">Lecture 8: August 23nd, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec9.html">Lecture 9: August 25th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec10.html">Lecture 10: August 28th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec11.html">Lecture 11: August 30th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec12.html">Lecture 12: September 1st, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../w5vid.html">Week 5 Lecture Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec13.html">Lecture 13: September 6th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec14.html">Lecture 14: September 8th, 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Project and Finals Week</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/lec15.html">Lecture 15: September 11th, 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final/final.html">🎉 Final Project Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../final/extra.html">Possible Extra Topics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../proj.html">Student Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../brianbui/BrianBui.html">League of Legends 13.13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../titusdejong/TitusdeJong.html">Detecting events in Timestamp data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../yufeng/YuFeng.html">Predict Diabetes Based on Various Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../harrisonhong/HarrisonHong.html">Mushroom Edibility Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shayankermani/ShayanKermani.html">Online Chess Games Examination</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Predicting Formula 1 Constructor’s Champion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jameslai/JamesLai.html">COVID-19 Data Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BaoyeLiu.html">Heart Disease Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../JiahangLiu.html">Global Sales of Video Games</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SanathNair.html">Spotify Artist Prediction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../JamesNguyen.html">Accounting Automated</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NataniaNguyen.html">Online Shopping Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../HamidSaebiMonfared.html">📊 A Data-Driven Dive into Life Expectancy Worldwide: An Actuarial Exploration Analyzing Determinants of Longevity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SalaarSaraj.html">Drug Consumption Patterns</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../XinyiSong.html">The Change in the Suicide Rate around the World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RowanSpeckman.html">Geographical range of amanita mushrooms in the United States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../NoahStemen.html">Analyzing my Spotify Streaming History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DavidWang.html">Analyzing Best Studying Strategies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../AustinWu.html">Analyzing Factors Affecting Final Grade and Predicting Student Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../KailinWu.html">The relationship between salary, gender, and national GDP.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RuoyanXiong.html">Prediction of Sleep Disorder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../DanXu.html">🔪Crime Analysis in the City of Los Angeles🌴</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SihongYao.html">Analyzing Income Level in the Adult Dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LuoningZhang.html">Analysis on Airline Dataset: Passenger’s Characteristics And Prediction of Flight Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RudanZheng.html">Involution in Chinese Society</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../MoZhou.html">Most Streamed Spotify Songs of 2023</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ybaki97/Math10-SSI23" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ybaki97/Math10-SSI23/issues/new?title=Issue%20on%20page%20%2Fstudents/laurenkim/LaurenKim.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/students/laurenkim/LaurenKim.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Predicting Formula 1 Constructor’s Champion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring">Exploring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="predicting-formula-1-constructor-s-champion">
+<h1>Predicting Formula 1 Constructor’s Champion<a class="headerlink" href="#predicting-formula-1-constructor-s-champion" title="Permalink to this headline">#</a></h1>
+<p>Author: Lauren Y Kim (<a class="reference external" href="mailto:laurenkim04102001&#37;&#52;&#48;gmail&#46;com">laurenkim04102001<span>&#64;</span>gmail<span>&#46;</span>com</a>)</p>
+<p>Course Project, UC Irvine, Math 10, Summer 2023</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>In this project, I will be predicting the Constructor’s standing of Race ID#1105 through LogisticRegression. Followed by accessing the accuracy of the test and ways to improve them.</p>
+</section>
+<section id="exploring">
+<h2>Exploring<a class="headerlink" href="#exploring" title="Permalink to this headline">#</a></h2>
+<p>You can either have all one section or divide into multiple sections.  To make new sections, use <code class="docutils literal notranslate"><span class="pre">##</span></code> in a markdown cell.  Double-click this cell for an example of using <code class="docutils literal notranslate"><span class="pre">##</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import pandas as pd
+import numpy as np
+import altair as alt
+from sklearn.linear_model import LogisticRegression
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>drivers = pd.read_csv(&quot;drivers.csv&quot;)
+results = pd.read_csv(&quot;results.csv&quot;)
+races = pd.read_csv(&quot;races.csv&quot;)
+constructors = pd.read_csv(&quot;constructors.csv&quot;)
+constructor_standing = pd.read_csv(&quot;constructor_standings.csv&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>results = results[[&#39;raceId&#39;, &#39;driverId&#39;, &#39;constructorId&#39;, &#39;grid&#39;, &#39;position&#39;]]
+races = races[[&#39;raceId&#39;, &#39;year&#39;]]
+races = races[races[&#39;raceId&#39;] == 1105]
+constructors = constructors[[&#39;constructorId&#39;, &#39;name&#39;]]
+constructor_standing = constructor_standing[[&#39;raceId&#39;, &#39;constructorId&#39;, &#39;position&#39;]]
+constructor = pd.merge(constructor_standing, constructors, on=&#39;constructorId&#39;)
+race = pd.merge(constructor, races, on=&#39;raceId&#39;)
+race = race.rename(columns={&#39;position&#39;: &#39;constructorPosition&#39;})
+race = race.rename(columns={&#39;name&#39;: &#39;constructorName&#39;})
+drivers = drivers[[&#39;driverId&#39;, &#39;surname&#39;, &#39;forename&#39;]]
+driver = pd.merge(drivers, results, on=&#39;driverId&#39;)
+driver = driver.rename(columns={&#39;position&#39;: &#39;driverPosition&#39;})
+result = pd.merge(driver, race, on=[&#39;constructorId&#39;, &#39;raceId&#39;])
+#ChatGPT helped me with the code below to filter out any rows with \\N as their values.
+result = result[~result[&#39;driverPosition&#39;].str.contains(r&quot;\\N&quot;)]
+result[&#39;driverPosition&#39;] = result[&#39;driverPosition&#39;].astype(int)
+result
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>driverId</th>
+      <th>surname</th>
+      <th>forename</th>
+      <th>raceId</th>
+      <th>constructorId</th>
+      <th>grid</th>
+      <th>driverPosition</th>
+      <th>constructorPosition</th>
+      <th>constructorName</th>
+      <th>year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Hamilton</td>
+      <td>Lewis</td>
+      <td>1105</td>
+      <td>131</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Mercedes</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>847</td>
+      <td>Russell</td>
+      <td>George</td>
+      <td>1105</td>
+      <td>131</td>
+      <td>12</td>
+      <td>3</td>
+      <td>2</td>
+      <td>Mercedes</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4</td>
+      <td>Alonso</td>
+      <td>Fernando</td>
+      <td>1105</td>
+      <td>117</td>
+      <td>8</td>
+      <td>7</td>
+      <td>3</td>
+      <td>Aston Martin</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>840</td>
+      <td>Stroll</td>
+      <td>Lance</td>
+      <td>1105</td>
+      <td>117</td>
+      <td>5</td>
+      <td>6</td>
+      <td>3</td>
+      <td>Aston Martin</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>842</td>
+      <td>Gasly</td>
+      <td>Pierre</td>
+      <td>1105</td>
+      <td>214</td>
+      <td>10</td>
+      <td>10</td>
+      <td>5</td>
+      <td>Alpine F1 Team</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>839</td>
+      <td>Ocon</td>
+      <td>Esteban</td>
+      <td>1105</td>
+      <td>214</td>
+      <td>6</td>
+      <td>8</td>
+      <td>5</td>
+      <td>Alpine F1 Team</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>807</td>
+      <td>Hülkenberg</td>
+      <td>Nico</td>
+      <td>1105</td>
+      <td>210</td>
+      <td>7</td>
+      <td>15</td>
+      <td>7</td>
+      <td>Haas F1 Team</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>825</td>
+      <td>Magnussen</td>
+      <td>Kevin</td>
+      <td>1105</td>
+      <td>210</td>
+      <td>17</td>
+      <td>18</td>
+      <td>7</td>
+      <td>Haas F1 Team</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>815</td>
+      <td>Pérez</td>
+      <td>Sergio</td>
+      <td>1105</td>
+      <td>9</td>
+      <td>11</td>
+      <td>4</td>
+      <td>1</td>
+      <td>Red Bull</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>830</td>
+      <td>Verstappen</td>
+      <td>Max</td>
+      <td>1105</td>
+      <td>9</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Red Bull</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>822</td>
+      <td>Bottas</td>
+      <td>Valtteri</td>
+      <td>1105</td>
+      <td>51</td>
+      <td>16</td>
+      <td>19</td>
+      <td>8</td>
+      <td>Alfa Romeo</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>855</td>
+      <td>Zhou</td>
+      <td>Guanyu</td>
+      <td>1105</td>
+      <td>51</td>
+      <td>13</td>
+      <td>9</td>
+      <td>8</td>
+      <td>Alfa Romeo</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>832</td>
+      <td>Sainz</td>
+      <td>Carlos</td>
+      <td>1105</td>
+      <td>6</td>
+      <td>2</td>
+      <td>5</td>
+      <td>4</td>
+      <td>Ferrari</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>844</td>
+      <td>Leclerc</td>
+      <td>Charles</td>
+      <td>1105</td>
+      <td>6</td>
+      <td>19</td>
+      <td>11</td>
+      <td>4</td>
+      <td>Ferrari</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>846</td>
+      <td>Norris</td>
+      <td>Lando</td>
+      <td>1105</td>
+      <td>1</td>
+      <td>3</td>
+      <td>17</td>
+      <td>6</td>
+      <td>McLaren</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>857</td>
+      <td>Piastri</td>
+      <td>Oscar</td>
+      <td>1105</td>
+      <td>1</td>
+      <td>9</td>
+      <td>13</td>
+      <td>6</td>
+      <td>McLaren</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>848</td>
+      <td>Albon</td>
+      <td>Alexander</td>
+      <td>1105</td>
+      <td>3</td>
+      <td>18</td>
+      <td>16</td>
+      <td>10</td>
+      <td>Williams</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>858</td>
+      <td>Sargeant</td>
+      <td>Logan</td>
+      <td>1105</td>
+      <td>3</td>
+      <td>20</td>
+      <td>20</td>
+      <td>10</td>
+      <td>Williams</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>852</td>
+      <td>Tsunoda</td>
+      <td>Yuki</td>
+      <td>1105</td>
+      <td>213</td>
+      <td>15</td>
+      <td>12</td>
+      <td>9</td>
+      <td>AlphaTauri</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>856</td>
+      <td>de Vries</td>
+      <td>Nyck</td>
+      <td>1105</td>
+      <td>213</td>
+      <td>14</td>
+      <td>14</td>
+      <td>9</td>
+      <td>AlphaTauri</td>
+      <td>2023</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>I have merged different datasets to create a master dataset, which we can see that it is a large Dataset with 10 columns. I then filtered the dataset to make the dataset only include datas from Race ID#1105. I chose this Race ID as it was the most recent dataset with datas from all 20 drivers of 10 constructor teams.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>result[&#39;driverPositionAve&#39;] = result.groupby(&#39;constructorId&#39;)[&#39;driverPosition&#39;].transform(&#39;sum&#39;)/2
+result[&#39;gridAve&#39;] = result.groupby(&#39;constructorId&#39;)[&#39;grid&#39;].transform(&#39;sum&#39;)/2
+result[&#39;finalPositionAve&#39;] = result[&#39;gridAve&#39;] + result[&#39;driverPositionAve&#39;]
+
+result_sorted = result.sort_values(by=&#39;constructorName&#39;, ascending=True)
+#ChatGPT helped me write the code below to keep only 1 row for each constructor&#39;s team.
+result_sorted = result_sorted[result_sorted.index % 2 == 0]
+
+result_sorted = result_sorted[[&#39;constructorName&#39;,&#39;gridAve&#39;,&#39;driverPositionAve&#39;, &#39;finalPositionAve&#39;,&#39;constructorPosition&#39;]]
+result_sorted
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>constructorName</th>
+      <th>gridAve</th>
+      <th>driverPositionAve</th>
+      <th>finalPositionAve</th>
+      <th>constructorPosition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>Alfa Romeo</td>
+      <td>14.5</td>
+      <td>14.0</td>
+      <td>28.5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>AlphaTauri</td>
+      <td>14.5</td>
+      <td>13.0</td>
+      <td>27.5</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Alpine F1 Team</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>17.0</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aston Martin</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>13.0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ferrari</td>
+      <td>10.5</td>
+      <td>8.0</td>
+      <td>18.5</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Haas F1 Team</td>
+      <td>12.0</td>
+      <td>16.5</td>
+      <td>28.5</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>McLaren</td>
+      <td>6.0</td>
+      <td>15.0</td>
+      <td>21.0</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Mercedes</td>
+      <td>8.0</td>
+      <td>2.5</td>
+      <td>10.5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Red Bull</td>
+      <td>6.0</td>
+      <td>2.5</td>
+      <td>8.5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Williams</td>
+      <td>19.0</td>
+      <td>18.0</td>
+      <td>37.0</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Using the master dataset I created above, I then calculated the average of grid positions, average of the driver positions, and the average of both grid and driver positions combined, by summing grid and driver positions of drivers by constructor teams and dividing them by 2. I created new columns for all three averages. Then, I removed the columns that were not needed anymore to make the dataset easier to understand. I also sorted the dataset alphabetically by the constructor’s team name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>clf = LogisticRegression(max_iter=2000)
+grid = result_sorted[[&#39;gridAve&#39;]]
+gridy = result_sorted[&#39;constructorPosition&#39;]
+clf.fit(grid, gridy)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(max_iter=2000)
+</pre></div>
+</div>
+</div>
+</div>
+<p>After, I set up the LinearRegression between average grid position average and the actual constructor’s standings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>driv = result_sorted[[&#39;driverPositionAve&#39;]]
+drivy = result_sorted[&#39;constructorPosition&#39;]
+clf.fit(driv, drivy)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(max_iter=2000)
+</pre></div>
+</div>
+</div>
+</div>
+<p>I repeated the process above with average driver’s position and the actual constructor’s standings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>result_sorted[&#39;predGridConstructorPosition&#39;] = clf.predict(grid)
+result_sorted[&#39;predDrivConstructorPosition&#39;] = clf.predict(driv)
+
+result_sorted
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/shared-libs/python3.7/py/lib/python3.7/site-packages/sklearn/base.py:493: FutureWarning: The feature names should match those that were passed during fit. Starting version 1.2, an error will be raised.
+Feature names unseen at fit time:
+- gridAve
+Feature names seen at fit time, yet now missing:
+- driverPositionAve
+
+  warnings.warn(message, FutureWarning)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>constructorName</th>
+      <th>gridAve</th>
+      <th>driverPositionAve</th>
+      <th>finalPositionAve</th>
+      <th>constructorPosition</th>
+      <th>predGridConstructorPosition</th>
+      <th>predDrivConstructorPosition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>Alfa Romeo</td>
+      <td>14.5</td>
+      <td>14.0</td>
+      <td>28.5</td>
+      <td>8</td>
+      <td>6</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>AlphaTauri</td>
+      <td>14.5</td>
+      <td>13.0</td>
+      <td>27.5</td>
+      <td>9</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Alpine F1 Team</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>17.0</td>
+      <td>5</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aston Martin</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>13.0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ferrari</td>
+      <td>10.5</td>
+      <td>8.0</td>
+      <td>18.5</td>
+      <td>4</td>
+      <td>5</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Haas F1 Team</td>
+      <td>12.0</td>
+      <td>16.5</td>
+      <td>28.5</td>
+      <td>7</td>
+      <td>9</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>McLaren</td>
+      <td>6.0</td>
+      <td>15.0</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>3</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Mercedes</td>
+      <td>8.0</td>
+      <td>2.5</td>
+      <td>10.5</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Red Bull</td>
+      <td>6.0</td>
+      <td>2.5</td>
+      <td>8.5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Williams</td>
+      <td>19.0</td>
+      <td>18.0</td>
+      <td>37.0</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Then, I added the predicted constructor’s standings found using average grid position. I also added the predicted constructor’s standings found using average driver’s position.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
+X = result_sorted[[&#39;gridAve&#39;, &#39;driverPositionAve&#39;]]
+y = result_sorted[&#39;constructorPosition&#39;]
+clf.fit(X, y)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(max_iter=2000)
+</pre></div>
+</div>
+</div>
+</div>
+<p>I repeated the process above with the average of both grid and driver’s position and the actual constructor’s standings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>result_sorted[&#39;predBothConstructorPosition&#39;] = clf.predict(X)
+result_sorted
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>constructorName</th>
+      <th>gridAve</th>
+      <th>driverPositionAve</th>
+      <th>finalPositionAve</th>
+      <th>constructorPosition</th>
+      <th>predGridConstructorPosition</th>
+      <th>predDrivConstructorPosition</th>
+      <th>predBothConstructorPosition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>Alfa Romeo</td>
+      <td>14.5</td>
+      <td>14.0</td>
+      <td>28.5</td>
+      <td>8</td>
+      <td>6</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>AlphaTauri</td>
+      <td>14.5</td>
+      <td>13.0</td>
+      <td>27.5</td>
+      <td>9</td>
+      <td>6</td>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Alpine F1 Team</td>
+      <td>8.0</td>
+      <td>9.0</td>
+      <td>17.0</td>
+      <td>5</td>
+      <td>4</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aston Martin</td>
+      <td>6.5</td>
+      <td>6.5</td>
+      <td>13.0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Ferrari</td>
+      <td>10.5</td>
+      <td>8.0</td>
+      <td>18.5</td>
+      <td>4</td>
+      <td>5</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Haas F1 Team</td>
+      <td>12.0</td>
+      <td>16.5</td>
+      <td>28.5</td>
+      <td>7</td>
+      <td>9</td>
+      <td>10</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>McLaren</td>
+      <td>6.0</td>
+      <td>15.0</td>
+      <td>21.0</td>
+      <td>6</td>
+      <td>3</td>
+      <td>6</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Mercedes</td>
+      <td>8.0</td>
+      <td>2.5</td>
+      <td>10.5</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Red Bull</td>
+      <td>6.0</td>
+      <td>2.5</td>
+      <td>8.5</td>
+      <td>1</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Williams</td>
+      <td>19.0</td>
+      <td>18.0</td>
+      <td>37.0</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Then, I added the predicted constructor’s standings found using average of both grid and driver’s position.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chart = alt.Chart(result_sorted).mark_circle(size=70).encode(
+    x=alt.X(&#39;predGridConstructorPosition&#39;,scale=alt.Scale(domain=[1, 11])),
+    y=alt.Y(&#39;constructorPosition&#39;,scale=alt.Scale(domain=[1, 10])),
+    color=alt.Color(&#39;constructorName:N&#39;, scale=alt.Scale(scheme=&#39;magma&#39;)),
+    tooltip=[&#39;gridAve&#39;, &#39;driverPositionAve&#39;, &#39;constructorName:N&#39;]
+).properties(
+    width=500,
+    height=300
+)
+chart
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-203387c1475f4c4b86fb25928e5f3a3c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-203387c1475f4c4b86fb25928e5f3a3c") {
+      outputDiv = document.getElementById("altair-viz-203387c1475f4c4b86fb25928e5f3a3c");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-90009fd9a08269e124d696c0fde587a2"}, "mark": {"type": "circle", "size": 70}, "encoding": {"color": {"field": "constructorName", "scale": {"scheme": "magma"}, "type": "nominal"}, "tooltip": [{"field": "gridAve", "type": "quantitative"}, {"field": "driverPositionAve", "type": "quantitative"}, {"field": "constructorName", "type": "nominal"}], "x": {"field": "predGridConstructorPosition", "scale": {"domain": [1, 11]}, "type": "quantitative"}, "y": {"field": "constructorPosition", "scale": {"domain": [1, 10]}, "type": "quantitative"}}, "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-90009fd9a08269e124d696c0fde587a2": [{"constructorName": "Alfa Romeo", "gridAve": 14.5, "driverPositionAve": 14.0, "finalPositionAve": 28.5, "constructorPosition": 8, "predGridConstructorPosition": 6, "predDrivConstructorPosition": 8, "predBothConstructorPosition": 8}, {"constructorName": "AlphaTauri", "gridAve": 14.5, "driverPositionAve": 13.0, "finalPositionAve": 27.5, "constructorPosition": 9, "predGridConstructorPosition": 6, "predDrivConstructorPosition": 9, "predBothConstructorPosition": 9}, {"constructorName": "Alpine F1 Team", "gridAve": 8.0, "driverPositionAve": 9.0, "finalPositionAve": 17.0, "constructorPosition": 5, "predGridConstructorPosition": 4, "predDrivConstructorPosition": 5, "predBothConstructorPosition": 5}, {"constructorName": "Aston Martin", "gridAve": 6.5, "driverPositionAve": 6.5, "finalPositionAve": 13.0, "constructorPosition": 3, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 3, "predBothConstructorPosition": 3}, {"constructorName": "Ferrari", "gridAve": 10.5, "driverPositionAve": 8.0, "finalPositionAve": 18.5, "constructorPosition": 4, "predGridConstructorPosition": 5, "predDrivConstructorPosition": 4, "predBothConstructorPosition": 4}, {"constructorName": "Haas F1 Team", "gridAve": 12.0, "driverPositionAve": 16.5, "finalPositionAve": 28.5, "constructorPosition": 7, "predGridConstructorPosition": 9, "predDrivConstructorPosition": 10, "predBothConstructorPosition": 7}, {"constructorName": "McLaren", "gridAve": 6.0, "driverPositionAve": 15.0, "finalPositionAve": 21.0, "constructorPosition": 6, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 6, "predBothConstructorPosition": 6}, {"constructorName": "Mercedes", "gridAve": 8.0, "driverPositionAve": 2.5, "finalPositionAve": 10.5, "constructorPosition": 2, "predGridConstructorPosition": 4, "predDrivConstructorPosition": 2, "predBothConstructorPosition": 2}, {"constructorName": "Red Bull", "gridAve": 6.0, "driverPositionAve": 2.5, "finalPositionAve": 8.5, "constructorPosition": 1, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 2, "predBothConstructorPosition": 1}, {"constructorName": "Williams", "gridAve": 19.0, "driverPositionAve": 18.0, "finalPositionAve": 37.0, "constructorPosition": 10, "predGridConstructorPosition": 10, "predDrivConstructorPosition": 10, "predBothConstructorPosition": 10}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>I then created a chart comparing the predicted constructor’s standings found using average grid positions and the actual constructor’s standings of each teams. As we can see from this chart, using average grid positions to predict the constructor’s standing is not recommended as it only predicted 2 constructor’s teams’ standings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chart = alt.Chart(result_sorted).mark_circle(size=70).encode(
+    x=alt.X(&#39;predDrivConstructorPosition&#39;,scale=alt.Scale(domain=[1, 11])),
+    y=alt.Y(&#39;constructorPosition&#39;,scale=alt.Scale(domain=[1, 10])),
+    color=alt.Color(&#39;constructorName:N&#39;, scale=alt.Scale(scheme=&#39;magma&#39;)),
+    tooltip=[&#39;gridAve&#39;, &#39;driverPositionAve&#39;, &#39;constructorName:N&#39;]
+).properties(
+    width=500,
+    height=300
+)
+chart
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-9da8c8ecbf5e4f199858a698bc0ddbe2"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-9da8c8ecbf5e4f199858a698bc0ddbe2") {
+      outputDiv = document.getElementById("altair-viz-9da8c8ecbf5e4f199858a698bc0ddbe2");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-90009fd9a08269e124d696c0fde587a2"}, "mark": {"type": "circle", "size": 70}, "encoding": {"color": {"field": "constructorName", "scale": {"scheme": "magma"}, "type": "nominal"}, "tooltip": [{"field": "gridAve", "type": "quantitative"}, {"field": "driverPositionAve", "type": "quantitative"}, {"field": "constructorName", "type": "nominal"}], "x": {"field": "predDrivConstructorPosition", "scale": {"domain": [1, 11]}, "type": "quantitative"}, "y": {"field": "constructorPosition", "scale": {"domain": [1, 10]}, "type": "quantitative"}}, "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-90009fd9a08269e124d696c0fde587a2": [{"constructorName": "Alfa Romeo", "gridAve": 14.5, "driverPositionAve": 14.0, "finalPositionAve": 28.5, "constructorPosition": 8, "predGridConstructorPosition": 6, "predDrivConstructorPosition": 8, "predBothConstructorPosition": 8}, {"constructorName": "AlphaTauri", "gridAve": 14.5, "driverPositionAve": 13.0, "finalPositionAve": 27.5, "constructorPosition": 9, "predGridConstructorPosition": 6, "predDrivConstructorPosition": 9, "predBothConstructorPosition": 9}, {"constructorName": "Alpine F1 Team", "gridAve": 8.0, "driverPositionAve": 9.0, "finalPositionAve": 17.0, "constructorPosition": 5, "predGridConstructorPosition": 4, "predDrivConstructorPosition": 5, "predBothConstructorPosition": 5}, {"constructorName": "Aston Martin", "gridAve": 6.5, "driverPositionAve": 6.5, "finalPositionAve": 13.0, "constructorPosition": 3, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 3, "predBothConstructorPosition": 3}, {"constructorName": "Ferrari", "gridAve": 10.5, "driverPositionAve": 8.0, "finalPositionAve": 18.5, "constructorPosition": 4, "predGridConstructorPosition": 5, "predDrivConstructorPosition": 4, "predBothConstructorPosition": 4}, {"constructorName": "Haas F1 Team", "gridAve": 12.0, "driverPositionAve": 16.5, "finalPositionAve": 28.5, "constructorPosition": 7, "predGridConstructorPosition": 9, "predDrivConstructorPosition": 10, "predBothConstructorPosition": 7}, {"constructorName": "McLaren", "gridAve": 6.0, "driverPositionAve": 15.0, "finalPositionAve": 21.0, "constructorPosition": 6, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 6, "predBothConstructorPosition": 6}, {"constructorName": "Mercedes", "gridAve": 8.0, "driverPositionAve": 2.5, "finalPositionAve": 10.5, "constructorPosition": 2, "predGridConstructorPosition": 4, "predDrivConstructorPosition": 2, "predBothConstructorPosition": 2}, {"constructorName": "Red Bull", "gridAve": 6.0, "driverPositionAve": 2.5, "finalPositionAve": 8.5, "constructorPosition": 1, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 2, "predBothConstructorPosition": 1}, {"constructorName": "Williams", "gridAve": 19.0, "driverPositionAve": 18.0, "finalPositionAve": 37.0, "constructorPosition": 10, "predGridConstructorPosition": 10, "predDrivConstructorPosition": 10, "predBothConstructorPosition": 10}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>I then created a chart comparing the predicted constructor’s standings found using average driver’s positions and the actual constructor’s standings of each teams. As we can see from this chart, using average driver’s positions to predict the constructor’s standing is not recommended but it is certainly better than using grid position, as it predicted 8 out 10 correctly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chart = alt.Chart(result_sorted).mark_circle(size=70).encode(
+    x=alt.X(&#39;predBothConstructorPosition&#39;,scale=alt.Scale(domain=[1, 11])),
+    y=alt.Y(&#39;constructorPosition&#39;,scale=alt.Scale(domain=[1, 10])),
+    color=alt.Color(&#39;constructorName:N&#39;, scale=alt.Scale(scheme=&#39;magma&#39;)),
+    tooltip=[&#39;gridAve&#39;, &#39;driverPositionAve&#39;, &#39;constructorName:N&#39;]
+).properties(
+    width=500,
+    height=300
+)
+chart
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-9de3f32fb8b64b71b408620d86588213"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-9de3f32fb8b64b71b408620d86588213") {
+      outputDiv = document.getElementById("altair-viz-9de3f32fb8b64b71b408620d86588213");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-90009fd9a08269e124d696c0fde587a2"}, "mark": {"type": "circle", "size": 70}, "encoding": {"color": {"field": "constructorName", "scale": {"scheme": "magma"}, "type": "nominal"}, "tooltip": [{"field": "gridAve", "type": "quantitative"}, {"field": "driverPositionAve", "type": "quantitative"}, {"field": "constructorName", "type": "nominal"}], "x": {"field": "predBothConstructorPosition", "scale": {"domain": [1, 11]}, "type": "quantitative"}, "y": {"field": "constructorPosition", "scale": {"domain": [1, 10]}, "type": "quantitative"}}, "height": 300, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-90009fd9a08269e124d696c0fde587a2": [{"constructorName": "Alfa Romeo", "gridAve": 14.5, "driverPositionAve": 14.0, "finalPositionAve": 28.5, "constructorPosition": 8, "predGridConstructorPosition": 6, "predDrivConstructorPosition": 8, "predBothConstructorPosition": 8}, {"constructorName": "AlphaTauri", "gridAve": 14.5, "driverPositionAve": 13.0, "finalPositionAve": 27.5, "constructorPosition": 9, "predGridConstructorPosition": 6, "predDrivConstructorPosition": 9, "predBothConstructorPosition": 9}, {"constructorName": "Alpine F1 Team", "gridAve": 8.0, "driverPositionAve": 9.0, "finalPositionAve": 17.0, "constructorPosition": 5, "predGridConstructorPosition": 4, "predDrivConstructorPosition": 5, "predBothConstructorPosition": 5}, {"constructorName": "Aston Martin", "gridAve": 6.5, "driverPositionAve": 6.5, "finalPositionAve": 13.0, "constructorPosition": 3, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 3, "predBothConstructorPosition": 3}, {"constructorName": "Ferrari", "gridAve": 10.5, "driverPositionAve": 8.0, "finalPositionAve": 18.5, "constructorPosition": 4, "predGridConstructorPosition": 5, "predDrivConstructorPosition": 4, "predBothConstructorPosition": 4}, {"constructorName": "Haas F1 Team", "gridAve": 12.0, "driverPositionAve": 16.5, "finalPositionAve": 28.5, "constructorPosition": 7, "predGridConstructorPosition": 9, "predDrivConstructorPosition": 10, "predBothConstructorPosition": 7}, {"constructorName": "McLaren", "gridAve": 6.0, "driverPositionAve": 15.0, "finalPositionAve": 21.0, "constructorPosition": 6, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 6, "predBothConstructorPosition": 6}, {"constructorName": "Mercedes", "gridAve": 8.0, "driverPositionAve": 2.5, "finalPositionAve": 10.5, "constructorPosition": 2, "predGridConstructorPosition": 4, "predDrivConstructorPosition": 2, "predBothConstructorPosition": 2}, {"constructorName": "Red Bull", "gridAve": 6.0, "driverPositionAve": 2.5, "finalPositionAve": 8.5, "constructorPosition": 1, "predGridConstructorPosition": 3, "predDrivConstructorPosition": 2, "predBothConstructorPosition": 1}, {"constructorName": "Williams", "gridAve": 19.0, "driverPositionAve": 18.0, "finalPositionAve": 37.0, "constructorPosition": 10, "predGridConstructorPosition": 10, "predDrivConstructorPosition": 10, "predBothConstructorPosition": 10}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<p>I then created a chart comparing the predicted constructor’s standings found using average of both grid and driver’s positions and the actual constructor’s standings of each teams. As we can see from this chart, using average of both grid and driver’s positions to predict the constructor’s standing is highly recommended as it predicted all constructor’s teams’ standings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from sklearn.metrics import accuracy_score
+gridAccuracy = accuracy_score(result_sorted[&#39;predGridConstructorPosition&#39;], result_sorted[&#39;constructorPosition&#39;])
+gridAccuracy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>drivAccuracy = accuracy_score(result_sorted[&#39;predDrivConstructorPosition&#39;], result_sorted[&#39;constructorPosition&#39;])
+drivAccuracy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bothAccuracy = accuracy_score(result_sorted[&#39;predBothConstructorPosition&#39;], result_sorted[&#39;constructorPosition&#39;])
+bothAccuracy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>I calculated the accuracy score for all three tests I ran to see if any of the predictions were successful. As we can see from above, using the average of both grid and driver’s positions was the most successful in predicting the constructor’s standings of Race ID#1105.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<p>In this project, I was able to explore different factors that could be used to predict the Formula 1 constructor’s standing of Race ID#1105. I ran three tests to see if any of these three factors were useful in predicting the constructor’s standing of Race ID#1105. I finished by calculating the accuracy score for all three tests to see which factor was most successful in predicting the constructor’s standing of Race ID#1105.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<p>Your code above should include references.  Here is some additional space for references.</p>
+<ul class="simple">
+<li><p>What is the source of your dataset(s)?
+<a class="reference external" href="https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020">https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020</a></p></li>
+</ul>
+<ul class="simple">
+<li><p>List any other references that you found helpful.
+I used ChatGPT for some help with writing codes to filter my huge master dataset.</p></li>
+</ul>
+<a style='text-decoration:none;line-height:16px;display:flex;color:#5B5B62;padding:10px;justify-content:end;' href='https://deepnote.com?utm_source=created-in-deepnote-cell&projectId=f63ee7df-da36-4632-b544-2fb9a10deb6f' target="_blank">
+<img alt='Created in deepnote.com' style='display:inline;max-height:16px;margin:0px;margin-right:7.5px;' src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgODAgODAiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDU0LjEgKDc2NDkwKSAtIGh0dHBzOi8vc2tldGNoYXBwLmNvbSAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9IkxhbmRpbmciIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJBcnRib2FyZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEyMzUuMDAwMDAwLCAtNzkuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjM1LjAwMDAwMCwgNzkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8cG9seWdvbiBpZD0iUGF0aC0yMCIgZmlsbD0iIzAyNjVCNCIgcG9pbnRzPSIyLjM3NjIzNzYyIDgwIDM4LjA0NzY2NjcgODAgNTcuODIxNzgyMiA3My44MDU3NTkyIDU3LjgyMTc4MjIgMzIuNzU5MjczOSAzOS4xNDAyMjc4IDMxLjY4MzE2ODMiPjwvcG9seWdvbj4KICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0zNS4wMDc3MTgsODAgQzQyLjkwNjIwMDcsNzYuNDU0OTM1OCA0Ny41NjQ5MTY3LDcxLjU0MjI2NzEgNDguOTgzODY2LDY1LjI2MTk5MzkgQzUxLjExMjI4OTksNTUuODQxNTg0MiA0MS42NzcxNzk1LDQ5LjIxMjIyODQgMjUuNjIzOTg0Niw0OS4yMTIyMjg0IEMyNS40ODQ5Mjg5LDQ5LjEyNjg0NDggMjkuODI2MTI5Niw0My4yODM4MjQ4IDM4LjY0NzU4NjksMzEuNjgzMTY4MyBMNzIuODcxMjg3MSwzMi41NTQ0MjUgTDY1LjI4MDk3Myw2Ny42NzYzNDIxIEw1MS4xMTIyODk5LDc3LjM3NjE0NCBMMzUuMDA3NzE4LDgwIFoiIGlkPSJQYXRoLTIyIiBmaWxsPSIjMDAyODY4Ij48L3BhdGg+CiAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMCwzNy43MzA0NDA1IEwyNy4xMTQ1MzcsMC4yNTcxMTE0MzYgQzYyLjM3MTUxMjMsLTEuOTkwNzE3MDEgODAsMTAuNTAwMzkyNyA4MCwzNy43MzA0NDA1IEM4MCw2NC45NjA0ODgyIDY0Ljc3NjUwMzgsNzkuMDUwMzQxNCAzNC4zMjk1MTEzLDgwIEM0Ny4wNTUzNDg5LDc3LjU2NzA4MDggNTMuNDE4MjY3Nyw3MC4zMTM2MTAzIDUzLjQxODI2NzcsNTguMjM5NTg4NSBDNTMuNDE4MjY3Nyw0MC4xMjg1NTU3IDM2LjMwMzk1NDQsMzcuNzMwNDQwNSAyNS4yMjc0MTcsMzcuNzMwNDQwNSBDMTcuODQzMDU4NiwzNy43MzA0NDA1IDkuNDMzOTE5NjYsMzcuNzMwNDQwNSAwLDM3LjczMDQ0MDUgWiIgaWQ9IlBhdGgtMTkiIGZpbGw9IiMzNzkzRUYiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+' > </img>
+Created in <span style='font-weight:600;margin-left:4px;'>Deepnote</span></a></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./students/laurenkim"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../shayankermani/ShayanKermani.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Online Chess Games Examination</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../jameslai/JamesLai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">COVID-19 Data Discovery</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring">Exploring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Christopher Davis and Yasmeen Baki
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
